@@ -19,7 +19,7 @@ Backend - Node.Js Express
 Database - MySQL (AWS RDS)
 
 # Scrum meetings schedule:
-Every Friday
+Every Sunday
 
 # Tasks:
 Frontend: Unmesh Rajendra Padhye, Pratik Joseph Dabre
