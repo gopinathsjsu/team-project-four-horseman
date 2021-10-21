@@ -1,7 +1,7 @@
 # CMPE 202 Fall 2021 Team Project
 team-project-four-horseman created by GitHub Classroom
 
-# Airline Booking Application (Team 14)
+# Airline Booking Application
 
 # Team Members:
 1. Krishna Gupta
