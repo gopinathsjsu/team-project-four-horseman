@@ -1,6 +1,6 @@
 # Team: Four Horsemen
 
-##Airline Booking Project Journal
+## Airline Booking Project Journal
 
 ## Week 1:
 
