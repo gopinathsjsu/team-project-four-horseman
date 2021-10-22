@@ -21,7 +21,7 @@ Database - MySQL (AWS RDS)
 # Scrum meetings schedule:
 Every Sunday
 
-# Tasks:
+# Responsibilities:
 Frontend: Unmesh Rajendra Padhye, Pratik Joseph Dabre
 
 Backend and Database: Siddharth Sircar, Krishna Gupta
@@ -31,6 +31,9 @@ Project documentation and Deployment diagrams: Siddharth Sircar, Krishna Gupta, 
 UML diagrams: Siddharth Sircar, Krishna Gupta, Unmesh Rajendra Padhye, Pratik Joseph Dabre 
 
 Deployment: Siddharth Sircar, Krishna Gupta, Unmesh Rajendra Padhye, Pratik Joseph Dabre 
+
+# Weekly Scrum Board
+https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocument/WeeklyScrumBoard.md
 
 # XP Core Values Implemented:
 Krishna Gupta - Communication
@@ -42,6 +45,8 @@ Unmesh Rajendra Padhye - Simplicity
 Pratik Joseph Dabre - Feedback
 
 https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocument/XPValues.md
+
+# TaskSheet & Burndown Charts
 
 # Architectural Diagram:
 
