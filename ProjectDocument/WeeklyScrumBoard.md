@@ -14,7 +14,7 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Siddharth
 
-Q1. Completed Db setup. [Created db on RDS and created models in node]
+Q1. Completed Db setup. [Created db on RDS and created models in node]  
 Q2. Implement User routes: Login, Registration, Profile  
 Q3. What tasks are blocked waiting on another team member? N/A
 
@@ -42,8 +42,8 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Siddharth
 
-Q1. Completed APIs for user login and registration
-Q2. Complete user profiles APIs
+Q1. Completed APIs for user login and registration  
+Q2. Complete user profiles APIs   
 Q3. What tasks are blocked waiting on another team member? N/A
 
 #### Unmesh
