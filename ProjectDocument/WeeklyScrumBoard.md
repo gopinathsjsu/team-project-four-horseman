@@ -13,7 +13,7 @@ Q1. What tasks did I work on / complete?
  - Worked on DB design
 
 Q2. What am I planning to work on next?
- - Write script to get airports of the world and update it in DB
+ - Write script to get cities of the world and update it in DB
 
 Q3. What tasks are blocked waiting on another team member? 
  - N/A
@@ -44,11 +44,9 @@ Q3. What tasks are blocked waiting on another team member?
 
 Q1. What tasks did I work on / complete?  
 - Researched about the technologies that we are going to use in the project.
-
 Q2. What am I planning to work on next?  
 - Work on the login and signup UI webpage.
-
-Q3. What tasks are blocked waiting on another team member?  
+Q3. What tasks are blocked waiting on another team member?
 - N/A
 
 ## Week 2:
@@ -58,40 +56,32 @@ Q3. What tasks are blocked waiting on another team member?
 #### Krishna
 
 Q1. What tasks did I work on / complete?  
- - Completed script to get airports of the world and update it in DB
- 
 Q2. What am I planning to work on next?  
- - Work on implementing Flight Search
-
 Q3. What tasks are blocked waiting on another team member?
-
 
 #### Siddharth
 
-Q1. What tasks did I work on / complete?  
-- Completed APIs for user login and registration  
-
-Q2. What am I planning to work on next?  
-- Complete user profiles APIs   
-
-Q3. What tasks are blocked waiting on another team member? 
-- N/A
+Q1. Completed APIs for user login and registration  
+Q2. Complete user profiles APIs   
+Q3. What tasks are blocked waiting on another team member? N/A
 
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-- Setup React and other Frontend tools for development
+ - Installed Node.js, React framework
+ - To learn react, played around with existing examples referred in official documentation
 
-Q2. What am I planning to work on next?  
+Q2. What am I planning to work on next?
+ - Creating the login page
+ - Exploring AWS services required for hosting the web app
 
-Q3. What tasks are blocked waiting on another team member?
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
 
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
-
 Q2. What am I planning to work on next?  
-
 Q3. What tasks are blocked waiting on another team member?
 
 ## Week 3:
@@ -101,19 +91,13 @@ Q3. What tasks are blocked waiting on another team member?
 #### Krishna
 
 Q1. What tasks did I work on / complete?  
- - Completed on implementing Flight Search
-
 Q2. What am I planning to work on next?  
-
 Q3. What tasks are blocked waiting on another team member?
 
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
-- Completed user profiles APIs  
-
 Q2. What am I planning to work on next?  
-
 Q3. What tasks are blocked waiting on another team member?
 
 #### Unmesh
