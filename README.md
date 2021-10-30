@@ -3,11 +3,13 @@ team-project-four-horseman created by GitHub Classroom
 
 # Airline Booking Application
 
+
 # Team Members:
 1. Krishna Gupta
 2. Siddharth Sircar
 3. Unmesh Rajendra Padhye 
 4. Pratik Joseph Dabre
+
 
 # Tools and Languages:
 MERN Stack
@@ -18,8 +20,10 @@ Backend - Node.Js Express
 
 Database - MySQL (AWS RDS)
 
+
 # Scrum meetings schedule:
 Every Sunday
+
 
 # Responsibilities:
 Frontend: Unmesh Rajendra Padhye, Pratik Joseph Dabre
@@ -32,8 +36,10 @@ UML diagrams: Siddharth Sircar, Krishna Gupta, Unmesh Rajendra Padhye, Pratik Jo
 
 Deployment: Siddharth Sircar, Krishna Gupta, Unmesh Rajendra Padhye, Pratik Joseph Dabre 
 
+
 # Weekly Scrum Board
 https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocument/WeeklyScrumBoard.md
+
 
 # XP Core Values Implemented:
 Krishna Gupta - Communication
@@ -46,19 +52,20 @@ Pratik Joseph Dabre - Feedback
 
 https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocument/XPValues.md
 
+
 # TaskSheet & Burndown Charts
 
-# Architectural Diagram:
+
+
+# Project Diagrams:
+
+## Component Diagram
 
 
 ## Component Diagram
 
 
-
 ## Deployment Diagram
-
-
-## Sprint Sheet
 
 
 ## UI wireframes
