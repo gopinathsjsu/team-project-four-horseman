@@ -45,7 +45,7 @@ Q3. What tasks are blocked waiting on another team member?
 Q1. What tasks did I work on / complete?  
 - Researched about the technologies that we are going to use in the project.
 Q2. What am I planning to work on next?  
-- Work on the login and signup UI webpage.
+- Work on the login and signup UI webpage.  
 Q3. What tasks are blocked waiting on another team member?
 - N/A
 
@@ -56,14 +56,23 @@ Q3. What tasks are blocked waiting on another team member?
 #### Krishna
 
 Q1. What tasks did I work on / complete?  
+ - Completed script to get airports of the world and update it in DB
+ 
 Q2. What am I planning to work on next?  
+ - Work on implementing Flight Search
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Siddharth
 
-Q1. Completed APIs for user login and registration  
-Q2. Complete user profiles APIs   
-Q3. What tasks are blocked waiting on another team member? N/A
+Q1. What tasks did I work on / complete?  
+- Completed APIs for user login and registration  
+
+Q2. What am I planning to work on next?  
+- Complete user profiles APIs   
+
+Q3. What tasks are blocked waiting on another team member? 
+- N/A
 
 #### Unmesh
 
