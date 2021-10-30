@@ -59,7 +59,7 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 
 # Project Diagrams:
 
-## Component Diagram
+## Architecture Diagram
 
 
 ## Component Diagram
