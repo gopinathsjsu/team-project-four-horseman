@@ -68,8 +68,15 @@ Q3. What tasks are blocked waiting on another team member? N/A
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-Q2. What am I planning to work on next?  
-Q3. What tasks are blocked waiting on another team member?
+ - Installed Node.js, React framework
+ - To learn react, played around with existing examples referred in official documentation
+
+Q2. What am I planning to work on next?
+ - Creating the login page
+ - Exploring AWS services required for hosting the web app
+
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
 
 #### Pratik
 
