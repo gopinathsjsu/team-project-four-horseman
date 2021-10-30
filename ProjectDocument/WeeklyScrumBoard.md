@@ -43,10 +43,9 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
-- Researched about the technologies that we are going to use in the project.
+- Researched about the technologies that we are going to use in the project.  
 Q2. What am I planning to work on next?  
 - Work on the login and signup UI webpage.  
-
 Q3. What tasks are blocked waiting on another team member?
 - N/A
 
