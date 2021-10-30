@@ -102,13 +102,21 @@ Q3. What tasks are blocked waiting on another team member?
 #### Krishna
 
 Q1. What tasks did I work on / complete?  
+ - Implemented API routes for flight search
+
 Q2. What am I planning to work on next?  
+ - Implement add flight by employee  
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
+- Added routes and controllers for user profile  
+
 Q2. What am I planning to work on next?  
+- Implement user miles  
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Unmesh
