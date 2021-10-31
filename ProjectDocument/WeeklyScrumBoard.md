@@ -122,8 +122,15 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-Q2. What am I planning to work on next?  
-Q3. What tasks are blocked waiting on another team member?
+ - Working on creating UI wireframes for the web application
+
+Q2. What am I planning to work on next?
+ - Adding, modifying components for Login page
+ - Finalizing the UI wireframes and flow of work
+ - Communicating in the team sprint about final workflow of the app
+
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
 
 #### Pratik
 
