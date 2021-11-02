@@ -95,7 +95,7 @@ Q1. What tasks did I work on / complete?
  - Research about AWS hosting services
  
 Q2. What am I planning to work on next?  
- - Implementing the Signin Page(UI) and React Hooks.
+ - Implementing the Signin Page(UI) and React API endpoints.
  
 Q3. What tasks are blocked waiting on another team member?
  - N/A
@@ -143,7 +143,7 @@ Q1. What tasks did I work on / complete?
  - Completed Signin UI.
  
 Q2. What am I planning to work on next?  
- - Implement Sign in react hooks.
+ - Implement Sign in react API endpoints.
  
 Q3. What tasks are blocked waiting on another team member?
  - N/A
