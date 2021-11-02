@@ -43,13 +43,13 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
-- Researched about the technologies that we are going to use in the project.  
+ - Researched about the technologies that we are going to use in the project.  
 
 Q2. What am I planning to work on next?  
-- Work on the login and signup UI webpage.  
-
+ - Research about AWS hosting services.
+ 
 Q3. What tasks are blocked waiting on another team member?
-- N/A
+ - N/A
 
 ## Week 2:
 
@@ -91,9 +91,14 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Pratik
 
-Q1. What tasks did I work on / complete?  
+Q1. What tasks did I work on / complete? 
+ - Research about AWS hosting services
+ 
 Q2. What am I planning to work on next?  
+ - Implementing the Signin Page(UI) and React Hooks.
+ 
 Q3. What tasks are blocked waiting on another team member?
+ - N/A
 
 ## Week 3:
 
@@ -135,8 +140,13 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
+ - Completed Signin UI.
+ 
 Q2. What am I planning to work on next?  
+ - Implement Sign in react hooks.
+ 
 Q3. What tasks are blocked waiting on another team member?
+ - N/A
 
 ## Week 4:
 
