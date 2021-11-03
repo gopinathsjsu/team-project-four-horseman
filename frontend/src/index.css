@@ -11,3 +11,95 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header,.personal-info {
+    margin-left: 6rem;
+    margin-right: 3rem;
+    font-size: 1rem;
+}
+
+.signin-textbox{
+  width:20rem;
+  height: 2.5rem;
+  margin-top: -1rem;
+  margin-right: 3rem;
+
+}
+
+.selectList{
+  width:9.5rem;
+  height:2.9rem;
+}
+
+.dob{
+  width:4rem;
+  margin-left: 0.75rem;
+  height:2.5rem;
+
+}
+
+button, input[type=submit] {
+  background-color:blueviolet;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+  margin-top:2rem;
+}
+
+button{
+  background-color: rgb(154, 108, 197);
+}
+
+.navigation-bar{
+  background-color: blueviolet;
+  width:10rem;
+}
+
+.signin h3::after,.signin small::after{
+  content:'*';
+  color: red;
+}
+
+
+
+/* Put your css in here */
+.input-bar {
+  display: table;
+  width: 100%;
+  margin-top: 10%;
+  margin-left: 20%;
+}
+
+.input-bar input[type='text']{
+  height: 10rem;
+
+
+}
+
+.input-bar-item > button {
+  margin-left: 70rem;
+  height: 10rem;
+  margin-top: -15.5rem;
+  background-color: blueviolet;
+  width:10rem;
+
+
+}
+.input-bar-item button:hover{
+  background-color: rgb(154, 108, 197);
+
+}
+  
+.width100 {
+width: 25%;
+}
+
+.width100-2{
+  margin-top:-10rem;
+  margin-left: 35rem;
+
+}
+
