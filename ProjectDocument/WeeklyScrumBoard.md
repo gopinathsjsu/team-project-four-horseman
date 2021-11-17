@@ -167,8 +167,15 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-Q2. What am I planning to work on next?  
-Q3. What tasks are blocked waiting on another team member?
+ - Login page UI changes and state management
+
+Q2. What am I planning to work on next?
+ - Learning Redux
+ - Complex state management code for the login page
+ - Connection part for Customer to frequent flyer miles account
+
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
 
 #### Pratik
 
