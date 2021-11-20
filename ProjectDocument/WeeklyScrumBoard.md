@@ -181,7 +181,7 @@ Q3. What tasks are blocked waiting on another team member?
 
 Q1. What tasks did I work on / complete?  
  - Completed Search Flights Page UI, Flight Details page UI
- -
+ 
 Q2. What am I planning to work on next?  
  - Setup a fake json server to input data from the fake database into the components.
  
