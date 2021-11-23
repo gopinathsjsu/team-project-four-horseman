@@ -57,36 +57,9 @@ const getFlightDetails = async (id) => {
     );
     if (flightDetails !== undefined && flightDetails !== null) {
       flightDetails = flightDetails.map((flight) => {
-        let {
-          id,
-          flightCode,
-          fromAirportName,
-          fromAirportCode,
-          fromAirportCity,
-          toAirportName,
-          toAirportCode,
-          toAirportCity,
-          deptTime,
-          arrTime,
-          price,
-          tax,
-          seats,
-        } = flight;
-        seats = JSON.parse(seats);
         return {
-          id,
-          flightCode,
-          fromAirportName,
-          fromAirportCity,
-          fromAirportCode,
-          toAirportName,
-          toAirportCity,
-          toAirportCode,
-          deptTime,
-          arrTime,
-          price,
-          tax,
-          seats,
+          ...flight,
+          ...{ seats: JSON.parse(flight.seats) },
         };
       });
       if (flightDetails.length > 0) {
