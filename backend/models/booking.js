@@ -3,7 +3,7 @@ const dbConfig = require("./config");
 
 const DT = Sequelize.DataTypes;
 
-const bookings = dbConfig.define("flights", {
+const bookings = dbConfig.define("bookings", {
   pnr: {
     type: DT.STRING(50),
     allowNull: false,
@@ -18,11 +18,11 @@ const bookings = dbConfig.define("flights", {
     allowNull: false,
   },
   totalCost: {
-    type: DT.DOUBLE(50),
+    type: DT.DOUBLE,
     allowNull: false,
   },
   milesUsed: {
-    type: DT.INTEGER(50),
+    type: DT.INTEGER,
     allowNull: false,
   },
   seats: {
