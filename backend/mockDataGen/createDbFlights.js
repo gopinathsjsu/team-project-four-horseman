@@ -29,7 +29,7 @@ const getDistance = (location1, location2) => {
 };
 
 const getPrice = (distance) => {
-  return distance * 0.093;
+  return parseFloat((distance * 0.093).toFixed(2));
 };
 
 const getFakeDate = () => {
@@ -42,7 +42,7 @@ const getFakeDate = () => {
 };
 
 const getTax = (price) => {
-  return price * 0.1;
+  return parseFloat((price * 0.1).toFixed(2));
 };
 
 const getArrTime = (distance, deptTime) => {
