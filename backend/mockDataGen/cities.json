@@ -1,0 +1,30 @@
+[
+    {
+        "city": "New York",
+        "state": "New-York"
+    },
+    {
+        "city": "Los Angeles",
+        "state": "California"
+    },
+    {
+        "city": "Chicago",
+        "state": "Illinois"
+    },
+    {
+        "city": "Houston",
+        "state": "Texas"
+    },
+    {
+        "city": "San Jose",
+        "state": "California"
+    },
+    {
+        "city": "Austin",
+        "state": "Texas"
+    },
+    {
+        "city": "San Francisco",
+        "state": "California"
+    }
+]
