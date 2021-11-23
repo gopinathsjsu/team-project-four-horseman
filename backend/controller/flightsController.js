@@ -26,7 +26,7 @@ const getFlights = async (from, to, deptTime) => {
       }
       return {
         statusCode: 404,
-        body: "No flights for this Date.",
+        body: "No flights found.",
       };
     }
     return {
@@ -89,15 +89,17 @@ const getFlightDetails = async (id) => {
           seats,
         };
       });
+      if (flightDetails.length > 0) {
+        return {
+          statusCode: 200,
+          body: flightDetails,
+        };
+      }
       return {
-        statusCode: 200,
-        body: flightDetails,
+        statusCode: 404,
+        body: "Flight Details not found. Check flight Id",
       };
     }
-    return {
-      statusCode: 404,
-      body: "No flights for these locations.",
-    };
   } catch (err) {
     console.log("Error while fetching Flights: ", err);
     return {
