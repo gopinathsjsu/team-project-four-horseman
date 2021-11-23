@@ -59,9 +59,10 @@ const users = sequelize.define(
       allowNull: false,
       defaultValue: "user",
     },
-    milesId: {
-      type: DT.UUID,
-      defaultValue: DT.UUIDV1,
+    miles: {
+      type: DT.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
     },
   },
   {
