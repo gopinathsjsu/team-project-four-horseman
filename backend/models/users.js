@@ -54,6 +54,15 @@ const users = sequelize.define(
       type: DT.STRING(50),
       allowNull: false,
     },
+    role: {
+      type: DT.STRING(50),
+      allowNull: false,
+      defaultValue: "user",
+    },
+    milesId: {
+      type: DT.UUID,
+      defaultValue: DT.UUIDV1,
+    },
   },
   {
     hooks: {
