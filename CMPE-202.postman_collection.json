@@ -77,6 +77,54 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Search Flights",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\":\"4a1b9780-4c11-11ec-bc30-c13971008366\",\r\n    \"to\":\"4a1c81e0-4c11-11ec-bc30-c13971008366\",\r\n    \"deptTime\":\"2021-12-03\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/flights",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"flights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Flight Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/flights/details/04796600-4c8c-11ec-b53b-fd6aea83b54a",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"flights",
+						"details",
+						"04796600-4c8c-11ec-b53b-fd6aea83b54a"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
