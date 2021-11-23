@@ -26,6 +26,11 @@ const airports = sequelize.define("aiports", {
     allowNull: false,
     unique: true,
   },
+  tz: {
+    type: DT.STRING(50),
+    allowNull: false,
+    defaultValue: "America/Los_Angeles",
+  },
 });
 
 airports.sync();
