@@ -4,10 +4,10 @@ const dbConfig = require("./config");
 const DT = Sequelize.DataTypes;
 
 const bookings = dbConfig.define("flights", {
-  id: {
-    type: DT.UUID,
+  pnr: {
+    type: DT.STRING(50),
+    allowNull: false,
     primaryKey: true,
-    defaultValue: DT.UUIDV1,
   },
   flight: {
     type: DT.STRING(50),
