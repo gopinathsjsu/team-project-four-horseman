@@ -3,7 +3,7 @@ const sequelize = require("./config");
 
 const DT = Sequelize.DataTypes;
 
-const airports = sequelize.define("aiports", {
+const airports = sequelize.define("airports", {
   id: {
     type: DT.UUID,
     primaryKey: true,

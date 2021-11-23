@@ -183,9 +183,9 @@ router.get("/profile/:user_id", async (req, res) => {
   }
 });
 
-router.put("/profile/:user_id", async (req, res) => {
+router.put("/profile/:userId", async (req, res) => {
   const updateData = req.body;
-  const user_id = req.params.user_id;
+  const user_id = req.params.userId;
   try {
     const updateRes = await updateUser(user_id, updateData);
     if (updateRes.statusCode === 200) {
