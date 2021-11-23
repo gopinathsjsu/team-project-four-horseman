@@ -8,11 +8,6 @@ const {
   getUserByCreds,
 } = require("../controller/userController");
 
-const {
-  addMilesAccount,
-  getMilesAccount,
-} = require("../controller/milesController");
-
 router.post("/register", async (req, res) => {
   const userDetails = req.body;
   const {
@@ -51,16 +46,12 @@ router.post("/register", async (req, res) => {
         role
       );
       if (createRes.statusCode === 201) {
-        const milesAccount = await addMilesAccount(
-          createRes.body.dataValues.milesId
-        );
         res.status(201).send({
           user: {
             id: createRes.body.dataValues.id,
             firstName: createRes.body.dataValues.firstName,
             lastName: createRes.body.dataValues.lastName,
             role: createRes.body.dataValues.role,
-            milesId: createRes.body.dataValues.milesId,
           },
         });
       } else {
@@ -112,7 +103,6 @@ router.post("/login", async (req, res) => {
               firstName: userDetails.firstName,
               lastName: userDetails.lastName,
               role: userDetails.role,
-              milesId: userDetails.milesId,
             },
           });
         }
@@ -140,24 +130,9 @@ router.get("/profile/:user_id", async (req, res) => {
   try {
     const userDetails = await getUser(user_id);
     if (userDetails.statusCode === 200) {
-      const milesAccount = await getMilesAccount(
-        userDetails.body.dataValues.milesId
-      );
       res.status(200).send({
         user: {
-          id: userDetails.body.dataValues.id,
-          firstName: userDetails.body.dataValues.firstName,
-          lastName: userDetails.body.dataValues.lastName,
-          phoneNumber: userDetails.body.dataValues.phoneNumber,
-          email: userDetails.body.dataValues.email,
-          address: userDetails.body.dataValues.address,
-          city: userDetails.body.dataValues.city,
-          zip: userDetails.body.dataValues.zip,
-          state: userDetails.body.dataValues.state,
-          country: userDetails.body.dataValues.country,
-          role: userDetails.body.dataValues.role,
-          milesId: userDetails.body.dataValues.milesId,
-          miles: milesAccount.body.dataValues.miles,
+          ...userDetails.body.dataValues,
         },
       });
     } else if (userDetails.statusCode === 404) {
