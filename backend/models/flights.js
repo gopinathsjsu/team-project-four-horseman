@@ -22,12 +22,12 @@ const flights = sequelize.define("flights", {
     allowNull: false,
   },
   deptTime: {
-    type: DT.DATE(50),
+    type: DT.DATE,
     allowNull: false,
     unique: true,
   },
   arrTime: {
-    type: DT.DATE(50),
+    type: DT.DATE,
     allowNull: false,
     unique: true,
   },
@@ -42,7 +42,6 @@ const flights = sequelize.define("flights", {
   seats: {
     type: DT.TEXT,
     allowNull: false,
-    unique: false,
   },
 });
 

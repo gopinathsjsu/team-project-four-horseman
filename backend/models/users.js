@@ -8,20 +8,20 @@ const salt = 10;
 const users = sequelize.define(
   "users",
   {
-    user_id: {
+    id: {
       type: DT.UUID,
       primaryKey: true,
       defaultValue: DT.UUIDV1,
     },
-    first_name: {
+    firstName: {
       type: DT.STRING(50),
       allowNull: false,
     },
-    last_name: {
+    lastName: {
       type: DT.STRING(50),
       allowNull: false,
     },
-    phone_number: {
+    phoneNumber: {
       type: DT.STRING(50),
       allowNull: false,
     },
@@ -34,7 +34,7 @@ const users = sequelize.define(
       type: DT.STRING(200),
       allowNull: false,
     },
-    street_address: {
+    address: {
       type: DT.STRING(50),
       allowNull: false,
     },
