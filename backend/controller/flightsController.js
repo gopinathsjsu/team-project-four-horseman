@@ -16,10 +16,8 @@ const getFlights = async (from, to, deptTime) => {
     if (flightsData !== undefined && flightsData !== null) {
       let flight = JSON.parse(JSON.stringify(flightsData));
       flight = flight.filter((item) => {
-        console.log(item.deptTime.toString().split("T")[0]);
         return deptTime === item.deptTime.toString().split("T")[0];
       });
-      console.log("Flights: ", flight);
       if (flight.length > 0) {
         return {
           statusCode: 200,
@@ -48,14 +46,13 @@ const getFlightDetails = async (id) => {
   try {
     let flightDetails = await sequelize.query(
       `
-      SELECT id, flightCode, 
-      (SELECT name FROM airports WHERE id = (SELECT flights.from FROM flights WHERE id = '${id}')) AS fromAirportName,
-      (SELECT airportCode FROM airports WHERE id = (SELECT flights.from FROM flights WHERE id = '${id}')) AS fromAirportCode, 
-      (SELECT name FROM airports WHERE id = (SELECT flights.to FROM flights WHERE id = '${id}')) AS toAirportName,
-      (SELECT airportCode FROM airports WHERE id = (SELECT flights.to FROM flights WHERE id = '${id}')) AS toAirportCode,      
-      deptTime, arrTime, price, tax, seats
+      SELECT flights.id, flights.flightCode, flights.seats, flights.deptTime, flights.arrTime, flights.price, flights.tax, 
+      airportFrom.airportCode AS fromAirportCode, airportFrom.name AS fromAirportName, airportFrom.city AS fromAirportCity, 
+      airportTo.airportCode AS toAirportCode, airportTo.name AS toAirportName, airportTo.city AS toAirportCity 
       FROM flights 
-      WHERE id = '${id}'`,
+      JOIN airports AS airportFrom ON flights.from = airportFrom.id 
+      JOIN airports AS airportTo ON flights.to = airportTo.id 
+      WHERE flights.id = '${id}'`,
       { type: QueryTypes.SELECT }
     );
     if (flightDetails !== undefined && flightDetails !== null) {
@@ -65,8 +62,10 @@ const getFlightDetails = async (id) => {
           flightCode,
           fromAirportName,
           fromAirportCode,
+          fromAirportCity,
           toAirportName,
           toAirportCode,
+          toAirportCity,
           deptTime,
           arrTime,
           price,
@@ -78,8 +77,10 @@ const getFlightDetails = async (id) => {
           id,
           flightCode,
           fromAirportName,
+          fromAirportCity,
           fromAirportCode,
           toAirportName,
+          toAirportCity,
           toAirportCode,
           deptTime,
           arrTime,
