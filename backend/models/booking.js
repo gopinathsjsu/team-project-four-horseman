@@ -25,6 +25,10 @@ const bookings = dbConfig.define("bookings", {
     type: DT.INTEGER,
     allowNull: false,
   },
+  milesEarned: {
+    type: DT.INTEGER,
+    allowNull: false,
+  },
   seats: {
     type: DT.INTEGER,
     allowNull: false,
