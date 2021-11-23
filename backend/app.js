@@ -1,13 +1,15 @@
 const express = require("express");
+const bp = require("body-parser");
+
 const app = express();
-const port = 3000;
-
+app.use(bp.json());
+app.use(
+  bp.urlencoded({
+    extended: true,
+  })
+);
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome to FH Airlines");
 });
 
-app.use("/user", require("./routes/userRoutes"));
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+module.exports = app;

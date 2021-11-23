@@ -1,29 +1,31 @@
 const { users } = require("../models/index");
 
 const createUser = async (
-  first_name,
-  last_name,
-  phone_number,
+  firstName,
+  lastName,
+  phoneNumber,
   email,
   password,
-  street_address,
+  address,
   city,
   zip,
   state,
-  country
+  country,
+  role
 ) => {
   try {
     const userObject = await users.create({
-      first_name,
-      last_name,
-      phone_number,
+      firstName,
+      lastName,
+      phoneNumber,
       email,
       password,
-      street_address,
+      address,
       city,
       zip,
       state,
       country,
+      role,
     });
     return {
       statusCode: 201,

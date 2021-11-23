@@ -8,6 +8,11 @@ const {
   getUserByCreds,
 } = require("../controller/userController");
 
+const {
+  addMilesAccount,
+  getMilesAccount,
+} = require("../controller/milesController");
+
 router.post("/register", async (req, res) => {
   const userDetails = req.body;
   const {
@@ -21,6 +26,7 @@ router.post("/register", async (req, res) => {
     zip,
     state,
     country,
+    role,
   } = userDetails;
   try {
     let user = await getUserByCreds(email);
@@ -41,21 +47,20 @@ router.post("/register", async (req, res) => {
         city,
         zip,
         state,
-        country
+        country,
+        role
       );
       if (createRes.statusCode === 201) {
+        const milesAccount = await addMilesAccount(
+          createRes.body.dataValues.milesId
+        );
         res.status(201).send({
           user: {
             id: createRes.body.dataValues.id,
             firstName: createRes.body.dataValues.firstName,
             lastName: createRes.body.dataValues.lastName,
-            phoneNumber: createRes.body.dataValues.phoneNumber,
-            email: createRes.body.dataValues.email,
-            address: createRes.body.dataValues.address,
-            city: createRes.body.dataValues.city,
-            zip: createRes.body.dataValues.zip,
-            state: createRes.body.dataValues.state,
-            country: createRes.body.dataValues.country,
+            role: createRes.body.dataValues.role,
+            milesId: createRes.body.dataValues.milesId,
           },
         });
       } else {
@@ -106,13 +111,8 @@ router.post("/login", async (req, res) => {
               id: userDetails.id,
               firstName: userDetails.firstName,
               lastName: userDetails.lastName,
-              phoneNumber: userDetails.phoneNumber,
-              email: userDetails.email,
-              address: userDetails.address,
-              city: userDetails.city,
-              zip: userDetails.zip,
-              state: userDetails.state,
-              country: userDetails.country,
+              role: userDetails.role,
+              milesId: userDetails.milesId,
             },
           });
         }
@@ -126,6 +126,55 @@ router.post("/login", async (req, res) => {
     }
   } catch (err) {
     console.log("Error encountered while user login: ", err);
+    res.status(500).send({
+      errors: {
+        message: "Internal Server Error",
+      },
+    });
+  }
+});
+
+router.get("/profile/:user_id", async (req, res) => {
+  const user_id = req.params.user_id;
+  console.log(user_id);
+  try {
+    const userDetails = await getUser(user_id);
+    if (userDetails.statusCode === 200) {
+      const milesAccount = await getMilesAccount(
+        userDetails.body.dataValues.milesId
+      );
+      res.status(200).send({
+        user: {
+          id: userDetails.body.dataValues.id,
+          firstName: userDetails.body.dataValues.firstName,
+          lastName: userDetails.body.dataValues.lastName,
+          phoneNumber: userDetails.body.dataValues.phoneNumber,
+          email: userDetails.body.dataValues.email,
+          address: userDetails.body.dataValues.address,
+          city: userDetails.body.dataValues.city,
+          zip: userDetails.body.dataValues.zip,
+          state: userDetails.body.dataValues.state,
+          country: userDetails.body.dataValues.country,
+          role: userDetails.body.dataValues.role,
+          milesId: userDetails.body.dataValues.milesId,
+          miles: milesAccount.body.dataValues.miles,
+        },
+      });
+    } else if (userDetails.statusCode === 404) {
+      res.status(404).send({
+        errors: {
+          message: userDetails.body,
+        },
+      });
+    } else {
+      res.status(500).send({
+        errors: {
+          message: userDetails.body,
+        },
+      });
+    }
+  } catch (err) {
+    console.log("Error encountered while getting user profile: ", err);
     res.status(500).send({
       errors: {
         message: "Internal Server Error",
@@ -151,49 +200,6 @@ router.put("/profile/:user_id", async (req, res) => {
     }
   } catch (err) {
     console.log("Error encountered while updating user: ", err);
-    res.status(500).send({
-      errors: {
-        message: "Internal Server Error",
-      },
-    });
-  }
-});
-
-router.get("/profile/:user_id", async (req, res) => {
-  const user_id = req.params.user_id;
-  console.log(user_id);
-  try {
-    const userDetails = await getUser(user_id);
-    if (userDetails.statusCode === 200) {
-      res.status(200).send({
-        user: {
-          id: userDetails.body.dataValues.id,
-          firstName: userDetails.body.dataValues.firstName,
-          lastName: userDetails.body.dataValues.lastName,
-          phoneNumber: userDetails.body.dataValues.phoneNumber,
-          email: userDetails.body.dataValues.email,
-          address: userDetails.body.dataValues.address,
-          city: userDetails.body.dataValues.city,
-          zip: userDetails.body.dataValues.zip,
-          state: userDetails.body.dataValues.state,
-          country: userDetails.body.dataValues.country,
-        },
-      });
-    } else if (userDetails.statusCode === 404) {
-      res.status(404).send({
-        errors: {
-          message: userDetails.body,
-        },
-      });
-    } else {
-      res.status(500).send({
-        errors: {
-          message: userDetails.body,
-        },
-      });
-    }
-  } catch (err) {
-    console.log("Error encountered while getting user profile: ", err);
     res.status(500).send({
       errors: {
         message: "Internal Server Error",
