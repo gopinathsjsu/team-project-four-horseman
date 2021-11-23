@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "8fbabd05-7c6b-4436-9226-0558edca5702",
+		"name": "CMPE-202",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sid@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/user/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Siddharth\",\r\n    \"lastName\": \"Sircar\",\r\n    \"phoneNumber\": 4082077389,\r\n    \"email\": \"sid@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"address\": \"817 N 10th St\",\r\n    \"city\": \"San Jose\",\r\n    \"zip\": 12345,\r\n    \"state\": \"California\",\r\n    \"country\": \"United States\",\r\n    \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/user/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/user/profile/621312b0-4c29-11ec-a80a-53099b49b40b",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"profile",
+						"621312b0-4c29-11ec-a80a-53099b49b40b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:3000"
+		}
+	]
+}
