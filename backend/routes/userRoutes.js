@@ -11,12 +11,12 @@ const {
 router.post("/register", async (req, res) => {
   const userDetails = req.body;
   const {
-    first_name,
-    last_name,
-    phone_number,
+    firstName,
+    lastName,
+    phoneNumber,
     email,
     password,
-    street_address,
+    address,
     city,
     zip,
     state,
@@ -32,12 +32,12 @@ router.post("/register", async (req, res) => {
       });
     } else {
       const createRes = await createUser(
-        first_name,
-        last_name,
-        phone_number,
+        firstName,
+        lastName,
+        phoneNumber,
         email,
         password,
-        street_address,
+        address,
         city,
         zip,
         state,
@@ -46,12 +46,12 @@ router.post("/register", async (req, res) => {
       if (createRes.statusCode === 201) {
         res.status(201).send({
           user: {
-            user_id: createRes.body.dataValues.user_id,
-            first_name: createRes.body.dataValues.first_name,
-            last_name: createRes.body.dataValues.last_name,
-            phone_number: createRes.body.dataValues.phone_number,
+            id: createRes.body.dataValues.id,
+            firstName: createRes.body.dataValues.firstName,
+            lastName: createRes.body.dataValues.lastName,
+            phoneNumber: createRes.body.dataValues.phoneNumber,
             email: createRes.body.dataValues.email,
-            street_address: createRes.body.dataValues.street_address,
+            address: createRes.body.dataValues.address,
             city: createRes.body.dataValues.city,
             zip: createRes.body.dataValues.zip,
             state: createRes.body.dataValues.state,
@@ -103,12 +103,12 @@ router.post("/login", async (req, res) => {
           delete userDetails.password;
           res.status(200).send({
             user: {
-              user_id: userDetails.user_id,
-              first_name: userDetails.first_name,
-              last_name: userDetails.last_name,
-              phone_number: userDetails.phone_number,
+              id: userDetails.id,
+              firstName: userDetails.firstName,
+              lastName: userDetails.lastName,
+              phoneNumber: userDetails.phoneNumber,
               email: userDetails.email,
-              street_address: userDetails.street_address,
+              address: userDetails.address,
               city: userDetails.city,
               zip: userDetails.zip,
               state: userDetails.state,
@@ -167,12 +167,12 @@ router.get("/profile/:user_id", async (req, res) => {
     if (userDetails.statusCode === 200) {
       res.status(200).send({
         user: {
-          user_id: userDetails.body.dataValues.user_id,
-          first_name: userDetails.body.dataValues.first_name,
-          last_name: userDetails.body.dataValues.last_name,
-          phone_number: userDetails.body.dataValues.phone_number,
+          id: userDetails.body.dataValues.id,
+          firstName: userDetails.body.dataValues.firstName,
+          lastName: userDetails.body.dataValues.lastName,
+          phoneNumber: userDetails.body.dataValues.phoneNumber,
           email: userDetails.body.dataValues.email,
-          street_address: userDetails.body.dataValues.street_address,
+          address: userDetails.body.dataValues.address,
           city: userDetails.body.dataValues.city,
           zip: userDetails.body.dataValues.zip,
           state: userDetails.body.dataValues.state,
