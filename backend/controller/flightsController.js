@@ -5,12 +5,13 @@ const getFlights = async (from, to, deptTime) => {
   try {
     const flightsData = await sequelize.query(
       `
-    SELECT id, flightCode, 
-    (SELECT airportCode FROM airports WHERE id = '${from}') AS fromAirportCode, 
-    (SELECT airportCode FROM airports WHERE id = '${to}') AS toAirportCode, 
-    deptTime, arrTime, price 
-    FROM flights 
-    WHERE flights.from = '${from}' AND flights.to = '${to}'`,
+      SELECT flights.id, flights.flightCode,flights.deptTime, flights.arrTime, flights.price, 
+      airportFrom.airportCode AS fromAirportCode, airportFrom.name AS fromAirportName, airportFrom.city AS fromAirportCity, 
+      airportTo.airportCode AS toAirportCode, airportTo.name AS toAirportName, airportTo.city AS toAirportCity 
+      FROM flights 
+      JOIN airports AS airportFrom ON flights.from = airportFrom.id 
+      JOIN airports AS airportTo ON flights.to = airportTo.id 
+      WHERE flights.from = '${from}' AND flights.to = '${to}'`,
       { type: QueryTypes.SELECT }
     );
     if (flightsData !== undefined && flightsData !== null) {
