@@ -35,13 +35,12 @@ router.get("/details/:flightId", async (req, res) => {
   try {
     const flightsData = await getFlightDetails(flightId);
     if (flightsData.statusCode === 200) {
-      res.status(200).send(flightsData.body);
+      res.status(200).send(flightsData.body[0]);
     } else {
       res.status(flightsData.statusCode).send({
         message: flightsData.body,
       });
     }
-    res.status(200).send(flightsData.body[0]);
   } catch (err) {
     console.log("Error encountered while searching Flights: ", err);
     res.status(500).send({
