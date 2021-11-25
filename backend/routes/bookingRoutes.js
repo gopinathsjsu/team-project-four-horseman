@@ -15,7 +15,7 @@ router.get("/:pnr", async (req, res) => {
   try {
     let booking = await getBookingById(pnr);
     if (booking.status != 200) {
-      res.status(booking.status).send({ ...booking.body });
+      res.status(booking.status).send(booking.body);
     }
     booking = booking.body.dataValues;
 
