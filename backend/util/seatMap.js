@@ -2,6 +2,7 @@ const seats = () => {
   return {
     totalSeats: 150,
     availableSeats: 150,
+    pnrCount: 0,
     seatMap: {
       "1A": {
         userId: "",
