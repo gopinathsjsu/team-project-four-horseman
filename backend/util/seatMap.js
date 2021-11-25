@@ -2,758 +2,758 @@ const seats = () => {
   return {
     totalSeats: 150,
     availableSeats: 150,
-    seats: [
-      {
-        seatNum: "1A",
+    pnrCount: 0,
+    seatMap: {
+      "1A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "1B",
+
+      "1B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "1C",
+
+      "1C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "1D",
+
+      "1D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "1E",
+
+      "1E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "1F",
+
+      "1F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "2A",
+
+      "2A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "2B",
+
+      "2B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "2C",
+
+      "2C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "2D",
+
+      "2D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "2E",
+
+      "2E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "2F",
+
+      "2F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "3A",
+
+      "3A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "3B",
+
+      "3B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "3C",
+
+      "3C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "3D",
+
+      "3D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "3E",
+
+      "3E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "3F",
+
+      "3F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "4A",
+
+      "4A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "4B",
+
+      "4B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "4C",
+
+      "4C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "4D",
+
+      "4D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "4E",
+
+      "4E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "4F",
+
+      "4F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "5A",
+
+      "5A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "5B",
+
+      "5B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "5C",
+
+      "5C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "5D",
+
+      "5D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "5E",
+
+      "5E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "5F",
+
+      "5F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "6A",
+
+      "6A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "6B",
+
+      "6B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "6C",
+
+      "6C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "6D",
+
+      "6D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "6E",
+
+      "6E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "6F",
+
+      "6F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "7A",
+
+      "7A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "7B",
+
+      "7B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "7C",
+
+      "7C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "7D",
+
+      "7D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "7E",
+
+      "7E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "7F",
+
+      "7F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "8A",
+
+      "8A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "8B",
+
+      "8B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "8C",
+
+      "8C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "8D",
+
+      "8D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "8E",
+
+      "8E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "8F",
+
+      "8F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "9A",
+
+      "9A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "9B",
+
+      "9B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "9C",
+
+      "9C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "9D",
+
+      "9D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "9E",
+
+      "9E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "9F",
+
+      "9F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "10A",
+
+      "10A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "10B",
+
+      "10B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "10C",
+
+      "10C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "10D",
+
+      "10D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "10E",
+
+      "10E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "10F",
+
+      "10F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "11A",
+
+      "11A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "11B",
+
+      "11B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "11C",
+
+      "11C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "11D",
+
+      "11D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "11E",
+
+      "11E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "11F",
+
+      "11F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "12A",
+
+      "12A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "12B",
+
+      "12B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "12C",
+
+      "12C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "12D",
+
+      "12D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "12E",
+
+      "12E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "12F",
+
+      "12F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "13A",
+
+      "13A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "13B",
+
+      "13B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "13C",
+
+      "13C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "13D",
+
+      "13D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "13E",
+
+      "13E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "13F",
+
+      "13F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "14A",
+
+      "14A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "14B",
+
+      "14B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "14C",
+
+      "14C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "14D",
+
+      "14D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "14E",
+
+      "14E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "14F",
+
+      "14F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "15A",
+
+      "15A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "15B",
+
+      "15B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "15C",
+
+      "15C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "15D",
+
+      "15D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "15E",
+
+      "15E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "15F",
+
+      "15F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "16A",
+
+      "16A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "16B",
+
+      "16B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "16C",
+
+      "16C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "16D",
+
+      "16D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "16E",
+
+      "16E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "16F",
+
+      "16F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "17A",
+
+      "17A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "17B",
+
+      "17B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "17C",
+
+      "17C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "17D",
+
+      "17D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "17E",
+
+      "17E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "17F",
+
+      "17F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "18A",
+
+      "18A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "18B",
+
+      "18B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "18C",
+
+      "18C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "18D",
+
+      "18D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "18E",
+
+      "18E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "18F",
+
+      "18F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "19A",
+
+      "19A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "19B",
+
+      "19B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "19C",
+
+      "19C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "19D",
+
+      "19D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "19E",
+
+      "19E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "19F",
+
+      "19F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "20A",
+
+      "20A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "20B",
+
+      "20B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "20C",
+
+      "20C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "20D",
+
+      "20D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "20E",
+
+      "20E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "20F",
+
+      "20F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "21A",
+
+      "21A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "21B",
+
+      "21B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "21C",
+
+      "21C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "21D",
+
+      "21D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "21E",
+
+      "21E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "21F",
+
+      "21F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "22A",
+
+      "22A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "22B",
+
+      "22B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "22C",
+
+      "22C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "22D",
+
+      "22D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "22E",
+
+      "22E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "22F",
+
+      "22F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "23A",
+
+      "23A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "23B",
+
+      "23B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "23C",
+
+      "23C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "23D",
+
+      "23D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "23E",
+
+      "23E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "23F",
+
+      "23F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "24A",
+
+      "24A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "24B",
+
+      "24B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "24C",
+
+      "24C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "24D",
+
+      "24D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "24E",
+
+      "24E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "24F",
+
+      "24F": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "25A",
+
+      "25A": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "25B",
+
+      "25B": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "25C",
+
+      "25C": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "25D",
+
+      "25D": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "25E",
+
+      "25E": {
         userId: "",
         passengerName: "",
       },
-      {
-        seatNum: "25F",
+
+      "25F": {
         userId: "",
         passengerName: "",
       },
-    ],
+    },
   };
 };
 
