@@ -1,6 +1,8 @@
 import React from 'react'
+import {useParams} from 'react-router-dom';
 
 const SingleFlightDetails = () => {
+    const {id} = useParams();
     return (
         <div className='single-flight-details'>
         <p style={{ fontSize: "2rem" }}>Travel Information</p>
@@ -17,7 +19,7 @@ const SingleFlightDetails = () => {
             height: "1.5rem",
           }}
         >
-          Flight 
+          Flight
         </div>
         <p style={{ fontSize: "1.5rem" }}>
           {}
