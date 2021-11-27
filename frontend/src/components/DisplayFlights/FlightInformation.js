@@ -1,9 +1,13 @@
 import React from "react";
 
 const DisplayFlights = ({ re }) => {
+  function onclick(){
+    console.log('hi')
+
+  }
   return (
-    <div className="flight-display-holder">
-      <div className="flight-details-single">
+    <div className="flight-display-holder" style={{marginTop:"5%"}}>
+      <div className="flight-details-single" onClick={onclick}>
         <div className="flight-details-departing-airport">
           <span>06.15</span>
           <br />
@@ -13,11 +17,11 @@ const DisplayFlights = ({ re }) => {
           <span>San Jose</span>
           <br />
         </div>
-        <div className="flight-details-connecting-line">
+        <div className="flight-details-connecting-line" style={{marginTop:'1rem'}}>
           <small>────────────────────────────────</small>
         </div>
         <div className="flight-details-arrival-airport">
-          <span>06.15</span>
+          <span>07.15</span>
           <br />
 
           <span>SJC</span>
@@ -25,8 +29,9 @@ const DisplayFlights = ({ re }) => {
           <span>San Jose</span>
           <br />
         </div>
+        
 
-        <div className="flight-details-time-duration">
+        {/* <div className="flight-details-time-duration">
           <span>Flight Duration</span>
           <br />
           <br />
@@ -38,7 +43,8 @@ const DisplayFlights = ({ re }) => {
           <span style={{ marginLeft: "10%" }}>---</span>
         </div>
         <p></p>
-      </div>
+  </div>*/}
+    </div> 
     </div>
   );
 };

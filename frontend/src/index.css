@@ -191,10 +191,30 @@ margin-left: auto;
 
 
 .flight-display-holder{
-  width:80%;
+  width:50%;
   margin:auto;
   height:20%;
 }
+
 .flight-details-single{
-  float: right;
+  margin-left: 15%;
+  border: 0.5px solid purple;
+
+}
+.flight-details-single:hover{
+  cursor: pointer;
+  box-shadow: inset;
+}
+.flight-details-departing-airport{
+  float: left;
+  margin-left: 2rem;
+}
+
+.flight-details-arrival-airport{
+  margin-left: 25rem;
+  margin-top: -2.2rem;
+}
+
+.single-flight-details{
+  margin-left: 10rem;
 }
