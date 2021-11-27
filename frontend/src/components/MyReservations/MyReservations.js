@@ -5,8 +5,6 @@ import axios from "axios";
 const MyReservations = () => {
   const [reservations, setReservations] = useState(null);
   
-
-
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const pnr = queryParams.get("pnr");
