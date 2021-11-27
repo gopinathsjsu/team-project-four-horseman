@@ -5,6 +5,7 @@ import FindReservations from "./components/ManageReservations/FindReservations";
 import BookFlights from "./components/BookFlights/BookFlights";
 import MyReservations from "./components/MyReservations/MyReservations";
 import DisplayFlights from "./components/DisplayFlights/DisplayFlights";
+import LoginPage from "./components/LoginPage/Login"
 
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route exact path='/register'>
           <Register/>
+        </Route>
+        <Route exact path='/login'>
+          <LoginPage/>
         </Route>
         <Route path='/reservations'>
           <FindReservations/>
