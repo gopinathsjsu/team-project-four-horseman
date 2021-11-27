@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from './Header'
-import Header from './Header'
+import Footer from './Footer'
+import Header from './Footer'
 import NavigationBar from './NavigationBar'
 import PersonalInfo from './PersonalInfo'
 const Login = () => {
