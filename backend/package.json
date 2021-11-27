@@ -4,7 +4,8 @@
   "description": "CMPE-202 - Team Project - Flight Booking Application",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
