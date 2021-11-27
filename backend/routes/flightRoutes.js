@@ -7,7 +7,7 @@ const {
 } = require("../controller/flightsController");
 
 router.get("/", async (req, res) => {
-  const { from, to, deptTime } = req.body;
+  const { from, to, deptTime } = req.query;
   console.log(from, to, deptTime);
   try {
     const flightsData = await getFlights(from, to, deptTime);
