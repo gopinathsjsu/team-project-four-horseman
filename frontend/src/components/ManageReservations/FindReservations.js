@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationBar from "../RegisterPage/NavigationBar";
 
 const FindReservations = () => {
-  function capitalize() {
-    this.value = this.value.toUpperCase();
-  }
+  
   return (
     <div>
       <NavigationBar />
@@ -33,8 +31,7 @@ const FindReservations = () => {
                   class="form-control width100"
                   type="text"
                   placeholder="Ticket Number or Reservation Code(PNR)"
-                  oninput={capitalize}
-                  name="pnr"
+                  name='pnr'
                 ></input>
                 <input
                   class="form-control width100-2"

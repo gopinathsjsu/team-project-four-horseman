@@ -16,7 +16,7 @@ const arrAirport = queryParams.get('arrival-airport');
 console.log(date, depAirport, arrAirport); // 55 test null
     let params = {
         from:depAirport,
-        to: arrAirport,
+        to:arrAirport,
         deptTime:date,
       };
       
@@ -27,6 +27,7 @@ console.log(date, depAirport, arrAirport); // 55 test null
     
      fetch(url)
     .then(res=>{
+        console.log(res.data)
      return (res.json())
 })
     .then(data=>{
