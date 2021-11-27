@@ -5,8 +5,6 @@ const LoginForm = () => {
   const [values, handleChange] = useForm({
     email: "",
     password: "",
-    firstName: "",
-    lastName: "",
   });
 
   return (
