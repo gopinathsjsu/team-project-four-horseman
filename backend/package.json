@@ -4,13 +4,15 @@
   "description": "CMPE-202 - Team Project - Flight Booking Application",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^5.5.3",
     "jsonwebtoken": "^8.5.1",
