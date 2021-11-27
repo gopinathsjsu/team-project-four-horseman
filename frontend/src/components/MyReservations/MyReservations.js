@@ -1,34 +1,40 @@
 import React,{useState,useEffect} from 'react'
-import ManageReservations from './ManageReservations'
 import FlightDetails from './FlightDetails'
-import ReservationHeader from './ReservationHeader'
+import axios from 'axios'
 
 const MyReservations = () => {
-    const [reservations,setReservations] = useState([])
+    const [reservations,setReservations] = useState({
+    })
+    
     useEffect(()=>{
-        fetch('http://localhost:8000/reservations')
-        .then(res=>{
-           return res.json()
-        })
-        .then(data=>{
-            setReservations(data)
+        const queryParams = new URLSearchParams(window.location.search);
+        const pnr = queryParams.get('pnr');
+        const params = pnr
+        console.log(params)
+        axios.get( `http://krishnagupta.live:3000/booking/${params}`)
+        .then(response=>{
+           console.log(response.data)
+           setReservations(response.data)
+           console.log(reservations)
+           
         })
     },[])
     
     
     
     return (
+        
         <div>
-            <div className='booking'>
-                <p style={{fontSize:'3rem'}}>Manage your booking</p>
-                <ReservationHeader/>
-                <p style={{fontSize:'2rem'}}>Travel Information</p>
-                <p style={{fontSize:'1.5rem',color:'purple'}}>Flights to be checked</p>
-                {reservations && <FlightDetails data={reservations}/>}
-                <FlightDetails/>
-                <ManageReservations/>
-        </div>
-        </div>
+            
+            
+            {reservations!=null && <FlightDetails reservations={reservations}/>} 
+
+                <div className='manage-reservations'>
+            <button style={{marginLeft:'25%'}}>Cancel booking</button>
+            <button style={{marginLeft:'2%'}}>Change booking</button>
+        </div>      
+        
+          </div>
     )
 }
 

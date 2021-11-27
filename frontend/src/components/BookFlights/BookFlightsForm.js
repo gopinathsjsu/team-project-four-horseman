@@ -10,7 +10,7 @@ useEffect(() => {
      return (res.json())
 })
     .then(data=>{
-    setairportList(data)    
+    setairportList(data) 
 })
 .catch((err) => {
     console.log(err);
@@ -22,6 +22,7 @@ useEffect(() => {
 
     
     return (
+        
         <div className='book-flights'>
             <p style={{fontSize:'3rem'}}>Book Flights</p>
             <form action='/displayflights' method='get'>

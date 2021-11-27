@@ -5,18 +5,19 @@ const DisplayFlights = () => {
 
 
 const [flights,setFlights] = useState();
-const queryParams = new URLSearchParams(window.location.search);
+
+
+
+useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
 const date = queryParams.get('trip-start');
 const depAirport = queryParams.get('departure-airport');
 const arrAirport = queryParams.get('arrival-airport');
 console.log(date, depAirport, arrAirport); // 55 test null
-
-
-useEffect(() => {
     let params = {
-        "from":depAirport,
-        "to": arrAirport,
-        "deptTime":date,
+        from:depAirport,
+        to: arrAirport,
+        deptTime:date,
       };
       
       let query = Object.keys(params)

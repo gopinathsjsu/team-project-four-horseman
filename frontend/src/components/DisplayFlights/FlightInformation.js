@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DisplayFlights = () => {
+const DisplayFlights = ({re}) => {
     return (
         
             <div className='flight-display-holder'>
@@ -44,7 +44,6 @@ const DisplayFlights = () => {
                 </div>
 
             </div>
-        
     )
 }
 

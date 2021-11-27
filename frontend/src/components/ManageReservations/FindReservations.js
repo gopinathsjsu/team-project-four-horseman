@@ -22,19 +22,20 @@ const FindReservations = () => {
   <body>
       <div class="input-bar">
         <div class="input-bar-item width100">
-          <form>
+          <form action='/booking'>
              <div class="form-group">
                 <input class="form-control width100" type='text' 
                 placeholder='Ticket Number or Reservation Code(PNR)'
-                oninput='capitalize()'></input>
-                <input class="form-control width100-2" type='text' placeholder='Passenger LastName'></input>
+                oninput={capitalize} name='pnr'></input>
+                <input class="form-control width100-2" type='text' name='Name' placeholder='Passenger LastName'></input>
 
             </div>
-          </form>
-        </div>
         <div class="input-bar-item">
-          <button class="btn btn-info"><h3>&gt;</h3></button>
-        </div>
+          <input type='submit' class="btn btn-info" ></input>
+         </div> </form>
+          </div>
+
+
       </div>
   </body>
 

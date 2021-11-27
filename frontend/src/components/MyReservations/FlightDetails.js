@@ -2,9 +2,22 @@ import React from 'react'
 
 const FlightDetails = ({reservations}) => {
     return (
+        <div className='booking'>
+                <p style={{fontSize:'3rem'}}>Manage your booking</p>
+                <div className='reservation-header'>
+
+            
+                <p style={{fontSize:'2rem'}}>{reservations['pnr']} - {reservations['flight']}</p>
+<p style={{fontSize:'1.2rem',color:'purple'}}>Departure Tuesday, December 14 - Return Thursday, January 13</p>
+<div className='airline-pnr'><h1>{reservations['pnr']}</h1>
+<p>Booking reference</p>
+</div>
+
+</div>                <p style={{fontSize:'2rem'}}>Travel Information</p>
+                <p style={{fontSize:'1.5rem',color:'purple'}}>Flights to be checked</p>
         <div className='flight-details'>
             <div style={{backgroundColor:'purple',width:'10%',textAlign:'center',color:'white',height:'1.5rem'}}>Flight 1</div>
-            <p style={{fontSize:'1.5rem'}}>{} - Istanbul on Tuesday, December 14</p>
+            <p style={{fontSize:'1.5rem'}}> - Istanbul on Tuesday, December 14</p>
             <table>
                 <tr>
                 <th style={{width:'40%'}}>FLIGHT</th>
@@ -40,6 +53,7 @@ const FlightDetails = ({reservations}) => {
                 </tr>
                 
             </table>
+        </div>
         </div>
     )
 }
