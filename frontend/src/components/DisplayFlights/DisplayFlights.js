@@ -53,10 +53,7 @@ console.log(date, depAirport, arrAirport); // 55 test null
             
             <FlightInformation />
            
-            <div className='manage-reservations'>
-            <button style={{marginLeft:'35%'}}>Cancel search</button>
-            <button style={{marginLeft:'2%'}}>Checkout</button>
-        </div>
+           
 
         </div>
     )

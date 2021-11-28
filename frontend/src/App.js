@@ -6,6 +6,7 @@ import BookFlights from "./components/BookFlights/BookFlights";
 import MyReservations from "./components/MyReservations/MyReservations";
 import DisplayFlights from "./components/DisplayFlights/DisplayFlights";
 import LoginPage from "./components/LoginPage/Login"
+import SingleFlightDetails from "./components/DisplayFlights/SingleFlightDetails";
 
 
 function App() {

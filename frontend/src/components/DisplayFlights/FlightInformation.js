@@ -8,10 +8,10 @@ const DisplayFlights = () => {
   }
   const [flightsData,setFlightsData] = useState({"flights": [
     {
-        "id": "b83f4b10-4d9e-11ec-b4e0-cf29e1479ba5",
-        "flightCode": "AA045",
-        "deptTime": "2021-12-04T02:44:57.000Z",
-        "arrTime": "2021-12-04T10:13:37.000Z",
+      "id": "b85c9710-4d9e-11ec-b4e0-cf29e1479ba5",
+      "flightCode": "AA045",
+      "deptTime": "2021-12-04T02:44:57.000Z",
+      "arrTime": "2021-12-04T10:13:37.000Z",
         "price": 229.5,
         "fromAirportCode": "JFK",
         "fromAirportName": "John F Kennedy International Airport",
