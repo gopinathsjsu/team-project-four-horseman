@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Footer = () => {
     return (
         <header className='header'>
             <h1>Subscribe to MileagePlus® if you already haven't</h1>
@@ -9,4 +9,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Footer
