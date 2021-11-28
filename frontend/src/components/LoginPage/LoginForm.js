@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { post } from "../../utils/Api";
 import useForm from "./useForm";
+import { Redirect } from "react-router-dom";
 
 const LoginForm = () => {
   const [values, handleChange] = useForm({
@@ -15,6 +16,7 @@ const LoginForm = () => {
     const response = await post({ endpoint: "user/login", body: values });
     if (response.status == 200 || response.status == 201) {
       // TODO: Write code for successful login redirection
+      window.location.pathname = "/";
     } else {
       console.log(response);
       setError(response.meesage.data.errors.message);
