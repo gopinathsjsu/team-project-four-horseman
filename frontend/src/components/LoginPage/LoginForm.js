@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { post } from "../../utils/Api";
 import useForm from "./useForm";
 
 const LoginForm = () => {
@@ -6,6 +7,20 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
+
+  const [error, setError] = useState('')
+
+  const checkLoginDetails = async (e) => {
+    e.preventDefault();
+    const response = await post({endpoint: 'user/login', body: values})
+    if (response.status == 200 || response.status == 201) {
+      console.log();
+      // Write code for successful login redirection
+    } else{
+      console.log(response);
+      setError(response.meesage.data.errors.message)
+    }
+  };
 
   return (
     <div className="login">
@@ -23,7 +38,6 @@ const LoginForm = () => {
           required
         ></input>
 
-
         <h3>Enter your password</h3>
         <input
           type="password"
@@ -36,9 +50,13 @@ const LoginForm = () => {
         ></input>
         <br />
         <br />
-        <input type="submit" className="signin-submit-button"></input>
-
+        <input
+          onClick={(e) => checkLoginDetails(e)}
+          type="submit"
+          className="signin-submit-button"
+        ></input>
       </form>
+      {error !== '' && <p text="red">{error}</p>}
     </div>
   );
 };
