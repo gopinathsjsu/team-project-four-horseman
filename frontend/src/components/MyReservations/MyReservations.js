@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FlightDetails from "./FlightDetails";
+import ReservationDetails from "./ReservationDetails";
 import axios from "axios";
 
 const MyReservations = () => {
@@ -24,7 +24,7 @@ const MyReservations = () => {
 
   return (
     <div>
-      {reservations && <FlightDetails reservations={reservations}/>}
+      {reservations && <ReservationDetails reservations={reservations}/>}
 
       <div className="manage-reservations">
         <button style={{ marginLeft: "25%" }}>Cancel booking</button>
