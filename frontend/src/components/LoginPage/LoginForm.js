@@ -8,17 +8,16 @@ const LoginForm = () => {
     password: "",
   });
 
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
   const checkLoginDetails = async (e) => {
     e.preventDefault();
-    const response = await post({endpoint: 'user/login', body: values})
+    const response = await post({ endpoint: "user/login", body: values });
     if (response.status == 200 || response.status == 201) {
-      console.log();
-      // Write code for successful login redirection
-    } else{
+      // TODO: Write code for successful login redirection
+    } else {
       console.log(response);
-      setError(response.meesage.data.errors.message)
+      setError(response.meesage.data.errors.message);
     }
   };
 
@@ -56,7 +55,7 @@ const LoginForm = () => {
           className="signin-submit-button"
         ></input>
       </form>
-      {error !== '' && <p text="red">{error}</p>}
+      {error !== "" && <p className="#error">{error}</p>}
     </div>
   );
 };
