@@ -9,6 +9,7 @@ import LoginPage from "./components/LoginPage/Login"
 import SingleFlightDetails from "./components/DisplayFlights/SingleFlightDetails";
 
 
+
 function App() {
   return (
     <Router>
@@ -35,6 +36,7 @@ function App() {
         <Route exact path='/displayflights/:id'>
           <SingleFlightDetails/>
         </Route>
+        
       </Switch>
       </div>
     </Router>

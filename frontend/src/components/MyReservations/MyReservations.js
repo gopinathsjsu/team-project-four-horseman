@@ -4,7 +4,32 @@ import axios from "axios";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState(null);
-  
+  async function cancelBooking(){
+    const body={
+    "userId": "94fd9100-4cb5-11ec-a071-2d0812b5f52b",
+    "flight": reservations.flight.id,
+    "pnr":reservations.pnr
+    
+    
+    }
+    try {
+        const response = await axios.post(`http://krishnagupta.live:3000/booking/cancel`, body);
+        if (response.data.status) {
+            console.log(response.data.status)
+          return response.data.data;
+        } else {
+          console.log(response.data.message);
+          return;
+        }
+      } catch (error) {
+        return {
+          status: 500,
+          message: error.toString(),
+        };
+      }
+    
+    
+    }
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const pnr = queryParams.get("pnr");
@@ -27,8 +52,7 @@ const MyReservations = () => {
       {reservations && <ReservationDetails reservations={reservations}/>}
 
       <div className="manage-reservations">
-        <button style={{ marginLeft: "25%" }}>Cancel booking</button>
-        <button style={{ marginLeft: "2%" }}>Change booking</button>
+        <button style={{ marginLeft: "35%" }} onClick={cancelBooking}>Cancel booking</button>
       </div>
     </div>
   );

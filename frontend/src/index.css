@@ -218,3 +218,31 @@ margin-left: auto;
 .single-flight-details{
   margin-left: 10rem;
 }
+
+.passenger-info{
+  margin-left: 5rem;
+}
+
+.seat-map-row {
+  float: left;
+  flex-wrap: nowrap;
+  width: 50rem;
+}
+
+.seat-map-row > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 20px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border: 0.5px solid black;
+}
+.seat-map-row > div:hover{
+  cursor: pointer;
+}
+
+.seat-map{
+  margin-left: 15rem;
+  margin-top: 10rem;
+}

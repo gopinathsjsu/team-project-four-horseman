@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import {Link} from 'react-router-dom';
+import { useParams,Link} from "react-router-dom";
+import PassengerDetails from "../PassengerInformation/PassengerDetails";
+import SeatSelection from "../PassengerInformation/SeatSelection";
 
 const SingleFlightDetails = () => {
   const [flightDetails, setFlightDetails] = useState({});
@@ -31,6 +32,13 @@ const SingleFlightDetails = () => {
     setArrTime(arrTimeFormat);
   }
 
+  function passengerDetails(){
+    document.getElementById('enter-passenger-info').style.display='block'
+  }
+
+  
+
+
   const { id } = useParams();
   useEffect(() => {
     fetch(`http://krishnagupta.live:3000/flights/details/${id}`)
@@ -39,9 +47,7 @@ const SingleFlightDetails = () => {
       })
       .then((data) => {
         setFlightDetails(data);
-        console.log(data);
         timeparser();
-        console.log(arrTime.length);
       })
       .catch((err) => {
         console.log(err);
@@ -107,11 +113,19 @@ const SingleFlightDetails = () => {
       </div>
 
       <div className="manage-reservations">
-          <Link to='/displayflights'>
+        <Link to='/displayflights'>
         <button style={{ marginLeft: "20%" }}>Cancel search</button>
         </Link>
-        <button style={{ marginLeft: "2%" }}>Proceed to Enter Passenger Information</button>
+
+        <button style={{ marginLeft: "2%" }} onClick={passengerDetails}>
+          Proceed to Enter Passenger Information
+        </button>
       </div>
+
+      <div id="enter-passenger-info" style={{marginTop:'15%',display:"none"}}>
+        <PassengerDetails details={flightDetails} />
+      </div>
+      
     </div>
   );
 };
