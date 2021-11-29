@@ -37,6 +37,13 @@ const PassengerDetails = ({details}) => {
   };
 
   function seatSelection(){
+    for(var i=0;i<=count-1;i++){
+        if((inputList[i].firstName)==""){
+            console.log("Enter the correct name in all selected fields") 
+            return 
+        }
+
+    }
     document.getElementById('seat-selection-button').style.display='block'
   }
 
@@ -59,7 +66,7 @@ const PassengerDetails = ({details}) => {
             
             <div className="btn-box">
               {inputList.length !== 1 && <button
-                className="mr10"
+                className="mr10" 
                 onClick={() => handleRemoveClick(i)}>Remove</button>}
               {inputList.length - 1 === i && <button id='passenger-adder' onClick={handleAddClick}>Add</button>}
             </div>

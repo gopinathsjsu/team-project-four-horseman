@@ -19,7 +19,7 @@ const SeatSelection = ({ details,passengers }) => {
           Proceed to Payment
         </button>
       <div id='payment-info' style={{ marginTop: "10%", display: "none" }}>
-        <PaymentInformation details={details} />
+        <PaymentInformation details={details} passengers={passengers} />
       </div>
     </div>
   );

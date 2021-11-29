@@ -1,7 +1,6 @@
 import React from 'react'
 const AirportList = ({value,title}) => {
     const arr= value[Object.keys(value)[0]]
-    console.log(arr)
     return (
 
         <div>

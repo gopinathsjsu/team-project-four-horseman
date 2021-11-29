@@ -34,6 +34,7 @@ const SingleFlightDetails = () => {
 
   function passengerDetails(){
     document.getElementById('enter-passenger-info').style.display='block'
+    document.getElementById('cancel-search-button').style.visibility='hidden'
   }
 
   
@@ -114,10 +115,10 @@ const SingleFlightDetails = () => {
 
       <div className="manage-reservations">
         <Link to='/displayflights'>
-        <button style={{ marginLeft: "20%" }}>Cancel search</button>
+        <button  id='cancel-search-button' style={{ marginLeft: "20%" }}>Cancel search</button>
         </Link>
 
-        <button style={{ marginLeft: "2%" }} onClick={passengerDetails}>
+        <button style={{ marginLeft: "1%" }} onClick={passengerDetails}>
           Proceed to Enter Passenger Information
         </button>
       </div>

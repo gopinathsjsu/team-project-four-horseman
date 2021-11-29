@@ -9,11 +9,8 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import LoginPage from "./components/LoginPage/Login"
 import SingleFlightDetails from "./components/DisplayFlights/SingleFlightDetails";
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 958e29ad593aed686d8e65f5363c38b9093725a6
 function App() {
   return (
     <Router>
