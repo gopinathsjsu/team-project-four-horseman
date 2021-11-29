@@ -48,10 +48,7 @@ router.post("/register", async (req, res) => {
       if (createRes.statusCode === 201) {
         res.status(201).send({
           user: {
-            id: createRes.body.dataValues.id,
-            firstName: createRes.body.dataValues.firstName,
-            lastName: createRes.body.dataValues.lastName,
-            role: createRes.body.dataValues.role,
+            ...createRes.body.dataValues,
           },
         });
       } else {
@@ -99,10 +96,7 @@ router.post("/login", async (req, res) => {
           delete userDetails.password;
           res.status(200).send({
             user: {
-              id: userDetails.id,
-              firstName: userDetails.firstName,
-              lastName: userDetails.lastName,
-              role: userDetails.role,
+              ...userDetails,
             },
           });
         }
