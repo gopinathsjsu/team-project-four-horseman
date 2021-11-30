@@ -49,8 +49,9 @@ const DisplayFlights = () => {
           </h1>
         )}
       </div>
-
-      {flights && <FlightInformation flights={flights} />}
+      <div style={{ height: "20rem" }}>
+        {flights && <FlightInformation flights={flights} />}
+      </div>
     </div>
   );
 };

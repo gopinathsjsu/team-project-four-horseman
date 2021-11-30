@@ -20,9 +20,11 @@ const BookFlightsForm = () => {
     <div className="book-flights">
       <p style={{ fontSize: "3rem" }}>Book Flights</p>
       <form action="/displayflights" method="get">
-        <div className="trip-type">
-          <input type="radio" name="tripType" value="oneWay" checked></input>{" "}
-          One-Way
+        <div
+          className="book-flights-form"
+          style={{ fontSize: "2rem", color: "purple" }}
+        >
+          Where would you like to go?
         </div>
         <div className="book-flights-form">
           <span>From</span>
@@ -43,20 +45,16 @@ const BookFlightsForm = () => {
         <div className="date-form">
           <label htmlFor="trip-start">Departure</label>
           <br />
+          <br />
           <input type="date" id="trip-start" name="trip-start" required></input>
         </div>
 
-        <div className="book-flights-form">
-          <span>Cabin</span>
-          <br />
-          <br />
-          <select name="selectList" className="selectList" required>
-              <option value="Economy">Economy</option> {" "}
-            <option value="Business">Business</option>
-          </select>
-        </div>
-
-        <button className="search-flights-button">Search Flights</button>
+        <button
+          className="search-flights-button"
+          style={{ marginRight: "50rem" }}
+        >
+          Search Flights
+        </button>
       </form>
     </div>
   );

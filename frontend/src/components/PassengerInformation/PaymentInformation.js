@@ -23,7 +23,7 @@ const PaymentInformation = ({ details, passengers }) => {
     };
     try {
       const response = await axios.post(
-        `http://krishnagupta.live:3000/booking/create`,
+        `http://krishnagupta.live:5000/booking/create`,
         body
       );
       if (response.data.status) {
@@ -61,14 +61,8 @@ const PaymentInformation = ({ details, passengers }) => {
         <br />
 
         <div class="slidecontainer">
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="50"
-            class="slider"
-            id="myRange"
-          />
+          <input type="range" min="0" max="10" step="2" value="6" />
+
           <p>
             Value: <span id="demo"></span>
           </p>

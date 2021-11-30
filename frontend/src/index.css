@@ -98,7 +98,6 @@ button {
 
 .book-flights-form,
 .date-form {
-  float: left;
   margin-left: 2%;
   margin-top: 2%;
 }
@@ -123,7 +122,6 @@ button {
   cursor: pointer;
   margin-top: 3.5%;
   width: 20rem;
-  float: left;
 }
 
 .trip-type {

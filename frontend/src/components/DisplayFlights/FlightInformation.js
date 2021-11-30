@@ -42,23 +42,30 @@ const DisplayFlights = ({ flights }) => {
           <div className="flight-details-departing-airport">
             <span>{depTime}</span>
             <br />
+            <br />
 
             <span>{flights[0]?.fromAirportCode}</span>
+            <br />
             <br />
             <span>{flights[0]?.fromAirportCity}</span>
             <br />
           </div>
           <div
             className="flight-details-connecting-line"
-            style={{ marginTop: "1rem" }}
+            style={{ marginTop: "3rem" }}
           >
             <small>────────────────────────────────</small>
           </div>
-          <div className="flight-details-arrival-airport">
+          <div
+            className="flight-details-arrival-airport"
+            style={{ marginTop: "-12%" }}
+          >
             <span>{arrTime}</span>
+            <br />
             <br />
 
             <span>{flights[0]?.toAirportCode}</span>
+            <br />
             <br />
             <span>{flights[0]?.toAirportCity}</span>
             <br />
