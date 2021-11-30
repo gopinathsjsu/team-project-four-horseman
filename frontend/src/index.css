@@ -178,36 +178,35 @@ table td p {
   margin-left: auto;
 }
 
-.flight-display-holder{
-  width:50%;
-  margin:auto;
-  height:20%;
+.flight-display-holder {
+  width: 50%;
+  margin: auto;
+  height: 20%;
 }
 
-.flight-details-single{
+.flight-details-single {
   margin-left: 15%;
   border: 0.5px solid purple;
-
 }
-.flight-details-single:hover{
+.flight-details-single:hover {
   cursor: pointer;
   box-shadow: inset;
 }
-.flight-details-departing-airport{
+.flight-details-departing-airport {
   float: left;
   margin-left: 2rem;
 }
 
-.flight-details-arrival-airport{
-  margin-left: 25rem;
+.flight-details-arrival-airport {
+  margin-left: 28rem;
   margin-top: -2.2rem;
 }
 
-.single-flight-details{
+.single-flight-details {
   margin-left: 10rem;
 }
 
-.passenger-info{
+.passenger-info {
   margin-left: 5rem;
 }
 
@@ -226,11 +225,11 @@ table td p {
   font-size: 30px;
   border: 0.5px solid black;
 }
-.seat-map-row > div:hover{
+.seat-map-row > div:hover {
   cursor: pointer;
 }
 
-.seat-map{
+.seat-map {
   margin-left: 15rem;
   margin-top: 10rem;
 }

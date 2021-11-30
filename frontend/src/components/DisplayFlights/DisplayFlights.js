@@ -3,6 +3,7 @@ import FlightInformation from "./FlightInformation";
 
 const DisplayFlights = () => {
   const [flights, setFlights] = useState();
+  console.log(flights ? flights[0] : flights);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -11,40 +12,45 @@ const DisplayFlights = () => {
     const arrAirport = queryParams.get("arrival-airport");
     console.log(date, depAirport, arrAirport); // 55 test null
     let params = {
-      from: "4a1b9780-4c11-11ec-bc30-c13971008366",
-      to: "4a1c81e0-4c11-11ec-bc30-c13971008366",
-      deptTime: "2021-12-04",
+      from: depAirport,
+      to: arrAirport,
+      deptTime: date,
     };
 
     let query = Object.keys(params)
       .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(params[k]))
       .join("&");
-    let url = "http://krishnagupta.live:3000/flights?" + query;
+    let url = "http://krishnagupta.live:5000/flights?" + query;
 
-    fetch(url)
+    fetch(url, {
+      method: "GET",
+    })
       .then((res) => {
-       
         console.log(res.data);
         return res.json();
       })
       .then((data) => {
         console.log(data);
-        setFlights(data);
+        setFlights(data.flights);
+        // console.log(flights)
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, []);
 
- 
   return (
     <div>
       <div style={{ marginLeft: "2rem" }}>
-        <h1>San Francisco to Istanbul on Thursday,December 2</h1>
+        {flights && (
+          <h1>
+            Showing flights from {flights[0]?.fromAirportCity} to{" "}
+            {flights[0]?.toAirportCity}
+          </h1>
+        )}
       </div>
-      <FlightInformation />
 
-      <FlightInformation />
+      {flights && <FlightInformation flights={flights} />}
     </div>
   );
 };

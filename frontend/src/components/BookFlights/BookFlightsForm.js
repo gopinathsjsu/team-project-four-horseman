@@ -4,7 +4,7 @@ const BookFlightsForm = () => {
   const [airportList, setairportList] = useState();
 
   useEffect(() => {
-    fetch("http://krishnagupta.live:3000/airports")
+    fetch("http://krishnagupta.live:5000/airports")
       .then((res) => {
         return res.json();
       })

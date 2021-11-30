@@ -45,6 +45,7 @@ const PassengerDetails = ({details}) => {
 
     }
     document.getElementById('seat-selection-button').style.display='block'
+    document.getElementById('passenger-cancel-button').style.visibility='hidden'
   }
 
 
@@ -73,9 +74,9 @@ const PassengerDetails = ({details}) => {
           </div>
         );
       })}
-      <div style={{ marginTop:'20%' }}>{JSON.stringify(inputList)}{count}</div>
+      <div style={{ marginTop:'20%' }}></div>
 
-      <Link to='/displayflights'>
+      <Link to='/displayflights' id='passenger-cancel-button'>
         <button style={{ marginLeft: "20%" }}>Cancel search</button>
         </Link>
       <button style={{ marginLeft: "5%" }} onClick={seatSelection}>
@@ -83,7 +84,7 @@ const PassengerDetails = ({details}) => {
         </button>
         
       <div id='seat-selection-button' style={{marginTop:'10%',display:'none'}}>
-      {details && <SeatSelection details={details} passengers={inputList[0].firstName} />}
+      {details && <SeatSelection details={details} passengers={JSON.stringify(inputList)} />}
       </div>
     </div>
   );

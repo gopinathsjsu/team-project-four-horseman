@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 const PaymentInformation = ({ details, passengers }) => {
+  const passengerDetails = JSON.parse(passengers);
+  console.log(passengerDetails);
   console.log(details);
   async function createBooking() {
     const body = {
@@ -41,9 +43,10 @@ const PaymentInformation = ({ details, passengers }) => {
   return (
     <div>
       <h1> Your travel information</h1>
-      <p>firstName : Seat selected</p>
-      <p>firstName , Seat selected</p>
-      <p>firstName , Seat selected</p>
+      {passengerDetails.map((item) => (
+        <p>{passengerDetails[item]}</p>
+      ))}
+      {passengerDetails[0].firstName}
       <div className="book-flights-form">
         <input
           type="tel"
@@ -70,14 +73,20 @@ const PaymentInformation = ({ details, passengers }) => {
             Value: <span id="demo"></span>
           </p>
         </div>
-
-        <button
-          type="submit"
-          style={{ marginLeft: "20rem" }}
-          onClick={createBooking}
-        >
-          Confirm booking{" "}
-        </button>
+        <div>
+          <Link to="/displayflights">
+            <button id="payment-cancel-button" style={{ marginLeft: "20%" }}>
+              Cancel search
+            </button>
+          </Link>
+          <button
+            type="submit"
+            style={{ marginLeft: "2%" }}
+            onClick={createBooking}
+          >
+            Confirm booking{" "}
+          </button>
+        </div>
       </div>
     </div>
   );
