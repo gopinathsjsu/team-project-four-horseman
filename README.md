@@ -61,6 +61,7 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 
 ## Architecture Diagram
 
+![202-diagram](https://user-images.githubusercontent.com/20012695/144321334-4918ab7f-1779-4edf-8d06-9c3c05302673.jpg)
 
 ## Component Diagram
 
