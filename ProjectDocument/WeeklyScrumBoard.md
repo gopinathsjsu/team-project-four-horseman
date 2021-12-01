@@ -61,9 +61,10 @@ Q1. What tasks did I work on / complete?
  - Completed script to get airports of the world and update it in DB
  
 Q2. What am I planning to work on next?  
- - Work on implementing Flight Search
+ - Work on script to create mock data for flights between all airports
 
 Q3. What tasks are blocked waiting on another team member?
+ - N/A
 
 #### Siddharth
 
@@ -106,13 +107,14 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Krishna
 
-Q1. What tasks did I work on / complete?  
- - Implemented API routes for flight search
+Q1. What tasks did I work on / complete?
+ - Finished script to create mock data for flights between all airports
 
 Q2. What am I planning to work on next?  
- - Implement add flight by employee  
+ - Design Flight seats json CRUD operation
 
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 #### Siddharth
 
@@ -154,9 +156,12 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Krishna
 
-Q1. What tasks did I work on / complete?  
+Q1. What tasks did I work on / complete?
+- Complete seatSelection functionality which updates seats of an airplane on booking and cancellation
 Q2. What am I planning to work on next?  
+- Work on bookings APIs
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 #### Siddharth
 
@@ -198,9 +203,12 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Krishna
 
-Q1. What tasks did I work on / complete?  
+Q1. What tasks did I work on / complete?
+- Worked on bookings APIs
 Q2. What am I planning to work on next?  
+- Complete booking APIs
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 #### Siddharth
 
@@ -230,9 +238,12 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Krishna
 
-Q1. What tasks did I work on / complete?  
+Q1. What tasks did I work on / complete?
+- Completed Bookings APIs
 Q2. What am I planning to work on next?  
+- Deploy backend server on ec2 for integration testing with frontend
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 #### Siddharth
 
@@ -262,9 +273,12 @@ Q3. What tasks are blocked waiting on another team member?
 
 #### Krishna
 
-Q1. What tasks did I work on / complete?  
+Q1. What tasks did I work on / complete?
+- Deployement, testing & bug fixes in backend APIs
 Q2. What am I planning to work on next?  
+- Assist in frontend to integrate APIs
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 #### Siddharth
 
@@ -296,8 +310,11 @@ Q3. What tasks are blocked waiting on another team member?
 #### Krishna
 
 Q1. What tasks did I work on / complete?  
+- Complete manual functional testind
 Q2. What am I planning to work on next?  
+- N/A
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 #### Siddharth
 
