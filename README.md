@@ -66,8 +66,5 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 ## Component Diagram
 
 
-## Deployment Diagram
-
-
 ## UI wireframes
 
