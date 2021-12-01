@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import SeatPicker from "react-seat-picker";
 
-const SeatSelection = ({ details, passengers }) => {
+const SeatSelection = ({ details, passengers, userDetails }) => {
   // function paymentInfo() {
   //   document.getElementById("seat-cancel-button").style.visibility = "hidden";
   //   document.getElementById("payment-info").style.display = "block";
@@ -158,12 +158,15 @@ const SeatSelection = ({ details, passengers }) => {
                   <input
                     type="range"
                     min="0"
-                    max="100"
+                    max={userDetails ? userDetails.miles : 100}
                     step="1"
                     defaultValue={miles}
                     onChange={setMilesInput}
                   />
-
+                  <p>
+                    Total Mile available are:{" "}
+                    <span id="demo">{userDetails?.miles}</span>
+                  </p>
                   <p>
                     Miles to be used: <span id="demo">{miles}</span>
                   </p>

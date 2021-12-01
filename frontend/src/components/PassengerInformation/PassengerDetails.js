@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SeatSelection from "./SeatSelection";
 
-const PassengerDetails = ({ details }) => {
+const PassengerDetails = ({ details, userDetails }) => {
   // The parent component
   const [count, setCount] = useState(1); // Name it however you wish
   const [inputList, setInputList] = useState([{ firstName: "", lastName: "" }]);
@@ -97,6 +97,7 @@ const PassengerDetails = ({ details }) => {
           <SeatSelection
             details={details}
             passengers={JSON.stringify(inputList)}
+            userDetails={userDetails}
           />
         )}
       </div>

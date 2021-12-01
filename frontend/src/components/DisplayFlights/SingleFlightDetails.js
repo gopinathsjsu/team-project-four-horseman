@@ -3,13 +3,22 @@ import { Spinner } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import PassengerDetails from "../PassengerInformation/PassengerDetails";
 import SeatSelection from "../PassengerInformation/SeatSelection";
-
+import { useHistory } from "react-router";
 const SingleFlightDetails = () => {
   const [flightDetails, setFlightDetails] = useState();
+  const [userDetails, setUserDetails] = useState();
+  const history = useHistory();
 
   function passengerDetails() {
-    document.getElementById("enter-passenger-info").style.display = "block";
-    document.getElementById("cancel-search-button").style.visibility = "hidden";
+    const user = localStorage.getItem("user");
+    if (user != null && user != undefined) {
+      setUserDetails(JSON.parse(user));
+      document.getElementById("enter-passenger-info").style.display = "block";
+      document.getElementById("cancel-search-button").style.visibility =
+        "hidden";
+    } else {
+      history.push("/login");
+    }
   }
 
   const { id } = useParams();
@@ -94,7 +103,7 @@ const SingleFlightDetails = () => {
             </Link>
 
             <button style={{ marginLeft: "1%" }} onClick={passengerDetails}>
-              Proceed to Enter Passenger Information
+              Book Flight
             </button>
           </div>
 
@@ -102,7 +111,10 @@ const SingleFlightDetails = () => {
             id="enter-passenger-info"
             style={{ marginTop: "15%", display: "none" }}
           >
-            <PassengerDetails details={flightDetails} />
+            <PassengerDetails
+              details={flightDetails}
+              userDetails={userDetails}
+            />
           </div>
         </div>
       ) : (
