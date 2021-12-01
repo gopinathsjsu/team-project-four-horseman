@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import PassengerDetails from "../PassengerInformation/PassengerDetails";
-import SeatSelection from "../PassengerInformation/SeatSelection";
 import { useHistory } from "react-router";
 const SingleFlightDetails = () => {
   const [flightDetails, setFlightDetails] = useState();
@@ -13,9 +12,7 @@ const SingleFlightDetails = () => {
     const user = localStorage.getItem("user");
     if (user != null && user != undefined) {
       setUserDetails(JSON.parse(user));
-      document.getElementById("enter-passenger-info").style.display = "block";
-      document.getElementById("cancel-search-button").style.visibility =
-        "hidden";
+      history.push("/travellerInfo");
     } else {
       history.push("/login");
     }
@@ -29,6 +26,7 @@ const SingleFlightDetails = () => {
       })
       .then((data) => {
         setFlightDetails(data);
+        localStorage.setItem("details", JSON.stringify(data));
       })
       .catch((err) => {
         console.log(err);
@@ -38,23 +36,12 @@ const SingleFlightDetails = () => {
   return (
     <>
       {flightDetails ? (
-        <div className="single-flight-details">
+        <div className="single-flight-details" style={{ marginTop: "5%" }}>
           <p style={{ fontSize: "2rem" }}>Travel Information</p>
           <p style={{ fontSize: "1.5rem", color: "purple" }}>
             Flights to be checked
           </p>
           <div className="flight-details">
-            <div
-              style={{
-                backgroundColor: "purple",
-                width: "10%",
-                textAlign: "center",
-                color: "white",
-                height: "1.5rem",
-              }}
-            >
-              Flight
-            </div>
             <p style={{ fontSize: "1.5rem" }}>
               {}
               {flightDetails.fromAirportCode} - {flightDetails.toAirportCode}
@@ -95,9 +82,9 @@ const SingleFlightDetails = () => {
             </table>
           </div>
 
-          <div className="manage-reservations">
+          <div className="manage-reservations" style={{ marginTop: "3%" }}>
             <Link to="/displayflights">
-              <button id="cancel-search-button" style={{ marginLeft: "20%" }}>
+              <button id="cancel-search-button" style={{ marginLeft: "27%" }}>
                 Cancel search
               </button>
             </Link>
@@ -107,7 +94,7 @@ const SingleFlightDetails = () => {
             </button>
           </div>
 
-          <div
+          {/* <div
             id="enter-passenger-info"
             style={{ marginTop: "15%", display: "none" }}
           >
@@ -115,7 +102,7 @@ const SingleFlightDetails = () => {
               details={flightDetails}
               userDetails={userDetails}
             />
-          </div>
+          </div> */}
         </div>
       ) : (
         <Spinner

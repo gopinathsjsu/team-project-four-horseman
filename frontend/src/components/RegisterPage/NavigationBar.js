@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar, Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
+import "bootstrap/dist/css/bootstrap.css";
+
 function NavBar() {
   const history = useHistory();
   const [userDetails, setUserDetails] = useState();
@@ -36,7 +38,7 @@ function NavBar() {
       variant="dark"
     >
       <Container fluid>
-        <Navbar.Brand href="/">Airline</Navbar.Brand>
+        <Navbar.Brand href="/">Four Horsemen Airlines</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>

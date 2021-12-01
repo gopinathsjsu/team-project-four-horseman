@@ -1,16 +1,14 @@
-import React from 'react'
-import Header from './Header'
-import NavigationBar from './NavigationBar'
-import PersonalInfo from './PersonalInfo'
+import React from "react";
+import Header from "./Header";
+import NavigationBar from "./NavigationBar";
+import PersonalInfo from "./PersonalInfo";
 const Register = () => {
-    return (
-        <div>
-                  <NavigationBar/>
-
-            <Header />
+  return (
+    <div>
+      <Header />
       <PersonalInfo />
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Register
+export default Register;

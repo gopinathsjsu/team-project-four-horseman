@@ -4,12 +4,15 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import SeatPicker from "react-seat-picker";
 
-const SeatSelection = ({ details, passengers, userDetails }) => {
+const SeatSelection = () => {
   // function paymentInfo() {
   //   document.getElementById("seat-cancel-button").style.visibility = "hidden";
   //   document.getElementById("payment-info").style.display = "block";
   // }
-  const travellers = JSON.parse(passengers);
+
+  const [details, setDetails] = useState();
+  const [userDetails, setUserDetails] = useState();
+  const [travellers, setPassengers] = useState();
   const [showSeatSelection, setShowSeatSelection] = useState(false);
   const [rows, setRows] = useState([]);
   const [seatsSelected, setSeatsSelected] = useState([]);
@@ -36,16 +39,29 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
     setSeatsSelected(temp);
   };
   useEffect(() => {
-    if (details?.seats) {
+    const details = localStorage.getItem("details");
+    const userDetails = localStorage.getItem("user");
+    const travellers = localStorage.getItem("passengers");
+    console.log(travellers);
+
+    const parsedDetails = JSON.parse(details);
+
+    if (userDetails != null && userDetails != undefined) {
+      setUserDetails(JSON.parse(userDetails));
+      setPassengers(JSON.parse(travellers));
+      setDetails(JSON.parse(details));
+    }
+    if (parsedDetails?.seats) {
       let rowNum = 1;
       let temp = [];
-      for (let seat of Object.keys(details.seats.seatMap)) {
+      console.log(parsedDetails.seats.seatMap);
+      for (let seat of Object.keys(parsedDetails.seats.seatMap)) {
         temp.push({
           id: seat,
           number: seat,
-          tooltip: `$ ${details.price}`,
+          tooltip: `$ ${parsedDetails.price}`,
           isSelected: false,
-          isReserved: details.seats.seatMap[seat].userId !== "",
+          isReserved: parsedDetails.seats.seatMap[seat].userId !== "",
         });
         if (rowNum % 2 === 0 && rowNum % 6 !== 0) {
           temp.push(null);
@@ -61,7 +77,7 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
     }
     console.log(JSON.stringify(rows));
     setShowSeatSelection(true);
-  }, [details, rows]);
+  }, []);
 
   const setMilesInput = (e) => {
     console.log(e.target.value);
@@ -80,13 +96,13 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
 
     console.log(seatInformation);
     const body = {
-      userId: "94fd9100-4cb5-11ec-a071-2d0812b5f52b",
+      userId: userDetails.id,
       flight: details.id,
       milesUsed: miles,
       seats: seatInformation,
     };
     console.log(body);
-    if (seatsSelected.length == JSON.parse(passengers).length) {
+    if (seatsSelected.length == travellers.length) {
       try {
         const response = await axios.post(
           `http://krishnagupta.live:5000/booking/create`,
@@ -125,8 +141,11 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
           }}
         >
           <Col xs={3}>
-            <Container style={{ width: "30vw" }}>
+            <Container
+              style={{ width: "40vw", marginLeft: "5rem", marginTop: "5rem" }}
+            >
               <h2>Your entered traveller information:</h2>
+              <br />
               {travellers.map((passenger) => (
                 <div key={passenger.firstName}>
                   Passenger {travellersTracker.push(passenger.firstName)}:
@@ -136,7 +155,8 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
                 </div>
               ))}
               <br />
-              <h2>Enter payment information:</h2>
+              <h3>Enter payment information:</h3>
+              <br />
               <div className="book-flights-form">
                 <input
                   type="tel"
@@ -153,6 +173,7 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
                   required
                 ></input>
                 <br />
+                <br />
 
                 <div class="slidecontainer">
                   <input
@@ -164,7 +185,7 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
                     onChange={setMilesInput}
                   />
                   <p>
-                    Total Mile available are:{" "}
+                    Total Miles available are:{" "}
                     <span id="demo">{userDetails?.miles}</span>
                   </p>
                   <p>
@@ -187,15 +208,19 @@ const SeatSelection = ({ details, passengers, userDetails }) => {
             </Container>
           </Col>
           <Col>
-            <Container style={{ width: "70vw", marginLeft: "20vw" }}>
-              <SeatPicker
-                addSeatCallback={addSeatCallback}
-                removeSeatCallback={removeSeatCallback}
-                rows={rows}
-                maxReservableSeats={JSON.parse(passengers).length}
-                visible
-                selectedByDefault
-              />
+            <Container
+              style={{ width: "70vw", marginLeft: "40vw", marginTop: "5%" }}
+            >
+              <div style={{ overflowY: "scroll", height: "20rem" }}>
+                <SeatPicker
+                  addSeatCallback={addSeatCallback}
+                  removeSeatCallback={removeSeatCallback}
+                  rows={rows}
+                  maxReservableSeats={travellers.length}
+                  visible
+                  selectedByDefault
+                />
+              </div>
             </Container>
           </Col>
         </Container>

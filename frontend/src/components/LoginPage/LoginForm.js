@@ -21,9 +21,10 @@ const LoginForm = () => {
       setUserProfile(response.data.user);
       localStorage.setItem("user", JSON.stringify(response.data.user));
       console.log(response);
+      history.go(-1);
     } else {
       console.log(response);
-      setError(response.meesage.data.errors.message);
+      setError(response.message.data.errors.message);
     }
   };
 

@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SeatSelection from "./SeatSelection";
+import { useHistory } from "react-router";
 
-const PassengerDetails = ({ details, userDetails }) => {
+const PassengerDetails = () => {
   // The parent component
   const [count, setCount] = useState(1); // Name it however you wish
   const [inputList, setInputList] = useState([{ firstName: "", lastName: "" }]);
+
+  const history = useHistory();
+
   useEffect(() => {
+    // const user = localStorage.getItem("user");
+    // const details = localStorage.getItem("details");
+    // if (user != null && user != undefined) {
+    //   setUserDetails(JSON.parse(user));
+    //   setFlightDetails(JSON.parse())
+
     if (count >= 3) {
       document.getElementById("passenger-adder").disabled = true;
       document.getElementById("passenger-adder").style.cursor = "not-allowed";
@@ -39,15 +49,15 @@ const PassengerDetails = ({ details, userDetails }) => {
       if (inputList[i].firstName == "") {
         console.log("Enter the correct name in all selected fields");
         return;
+      } else {
+        localStorage.setItem("passengers", JSON.stringify(inputList));
+        history.push("/seatSelection");
       }
     }
-    document.getElementById("seat-selection-button").style.display = "block";
-    document.getElementById("passenger-cancel-button").style.visibility =
-      "hidden";
   }
 
   return (
-    <div className="App">
+    <div className="single-flight-details" style={{ marginTop: "5%" }}>
       <h1>Enter your travel information</h1>
       <h3 style={{ color: "red" }}>
         You can select upto 3 passengers in a single booking!
@@ -61,18 +71,22 @@ const PassengerDetails = ({ details, userDetails }) => {
               name="firstName"
               placeholder="Enter Full Name"
               value={x.firstName}
-              onChange={(e) => handleInputChange(e, i)}
+              onInput={(e) => handleInputChange(e, i)}
               required
             />
             <br />
-            <div className="btn-box">
+            <div className="btn-box" style={{ marginTop: "2%" }}>
               {inputList.length !== 1 && (
                 <button className="mr10" onClick={() => handleRemoveClick(i)}>
                   Remove
                 </button>
               )}
               {inputList.length - 1 === i && (
-                <button id="passenger-adder" onClick={handleAddClick}>
+                <button
+                  id="passenger-adder"
+                  style={{ marginLeft: "2%" }}
+                  onClick={handleAddClick}
+                >
                   Add
                 </button>
               )}
@@ -93,13 +107,13 @@ const PassengerDetails = ({ details, userDetails }) => {
         id="seat-selection-button"
         style={{ marginTop: "10%", display: "none" }}
       >
-        {details && (
+        {/* {details && (
           <SeatSelection
             details={details}
             passengers={JSON.stringify(inputList)}
             userDetails={userDetails}
           />
-        )}
+        )} */}
       </div>
     </div>
   );

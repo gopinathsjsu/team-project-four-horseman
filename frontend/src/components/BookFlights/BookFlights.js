@@ -4,7 +4,6 @@ import NavBar from "../RegisterPage/NavigationBar";
 const BookFlights = () => {
   return (
     <div>
-      <NavBar />
       <BookFlightsForm />
     </div>
   );

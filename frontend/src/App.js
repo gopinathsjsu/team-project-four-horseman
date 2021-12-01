@@ -7,10 +7,15 @@ import DisplayFlights from "./components/DisplayFlights/DisplayFlights";
 import UserProfile from "./components/UserProfile/UserProfile";
 import LoginPage from "./components/LoginPage/Login";
 import SingleFlightDetails from "./components/DisplayFlights/SingleFlightDetails";
+import NavigationBar from "./components/RegisterPage/NavigationBar";
+import PassengerDetails from "./components/PassengerInformation/PassengerDetails";
+import SeatSelection from "./components/PassengerInformation/SeatSelection";
 
 function App() {
   return (
     <Router>
+      <NavigationBar />
+
       <div className="App">
         <Switch>
           <Route exact path="/register">
@@ -47,6 +52,12 @@ function App() {
           </Route>
           <Route exact path="/displayflights/:id">
             <SingleFlightDetails />
+          </Route>
+          <Route exact path="/travellerInfo">
+            <PassengerDetails />
+          </Route>
+          <Route exact path="/seatSelection">
+            <SeatSelection />
           </Route>
         </Switch>
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import NavigationBar from "../RegisterPage/NavigationBar";
 
 const FindReservations = () => {
-  
   return (
     <div>
       <NavigationBar />
@@ -31,7 +30,7 @@ const FindReservations = () => {
                   class="form-control width100"
                   type="text"
                   placeholder="Ticket Number or Reservation Code(PNR)"
-                  name='pnr'
+                  name="pnr"
                 ></input>
                 <input
                   class="form-control width100-2"

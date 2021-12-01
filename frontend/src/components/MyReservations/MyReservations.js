@@ -54,7 +54,10 @@ const MyReservations = () => {
       {reservations && <ReservationDetails reservations={reservations} />}
 
       <div className="manage-reservations">
-        <button style={{ marginLeft: "35%" }} onClick={cancelBooking}>
+        <button
+          style={{ marginLeft: "40%", marginTop: "5%" }}
+          onClick={cancelBooking}
+        >
           Cancel booking
         </button>
       </div>

@@ -43,22 +43,11 @@ const FlightDetails = ({ reservations }) => {
           <p>Booking reference</p>
         </div>
       </div>
-      <p style={{ fontSize: "2rem" }}>Travel Information</p>
+      <p style={{ fontSize: "2rem", marginTop: "2%" }}>Travel Information</p>
       <p style={{ fontSize: "1.5rem", color: "purple" }}>
         Flights to be checked
       </p>
       <div className="flight-details">
-        <div
-          style={{
-            backgroundColor: "purple",
-            width: "10%",
-            textAlign: "center",
-            color: "white",
-            height: "1.5rem",
-          }}
-        >
-          Flight
-        </div>
         <p style={{ fontSize: "1.5rem" }}>
           {}
           {reservations["flight"].fromAirportCode} -{" "}
@@ -100,20 +89,16 @@ const FlightDetails = ({ reservations }) => {
         </table>
       </div>
       <div style={{ marginTop: "5%" }}>
-        <table style={{ width: "40rem" }}>
+        <table style={{ textAlign: "center" }}>
           <tr>
-            <th>Bookings</th>
+            <th>Passenger Name</th>
+            <th>Seat Information</th>
           </tr>
           {reservations.seats.map((reservation) => (
-            <tr
-              style={{ textAlign: "center", borderBottom: "1px solid black" }}
-            >
+            <tr style={{ border: "1px solid black" }}>
               {" "}
-              <b>Passenger Name:</b>
-              {reservation.passengerName}
-              {"|"}
-              <b>Seat Selected:</b>
-              {reservation.seatNo}
+              <td>{reservation.passengerName}</td>
+              <td>{reservation.seatNo}</td>
             </tr>
           ))}
         </table>

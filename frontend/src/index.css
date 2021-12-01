@@ -167,7 +167,7 @@ table td p {
 }
 
 .flight-details {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .manage-reservations button {
@@ -246,5 +246,8 @@ table td p {
   color: blueviolet;
 }
 
-.userprofile-content {
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
