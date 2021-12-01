@@ -16,8 +16,6 @@ const UserProfile = (props) => {
     // console.log("CHECK : ", props);
   }, []);
 
-  const [data, setData] = useState();
-
   const getUserDetails = async (e) => {
     e.preventDefault();
     const response = await get({
@@ -61,7 +59,10 @@ const UserProfile = (props) => {
               Miles Balance: {userData.miles}
             </p>
           </div>
-          <button onClick={BookFlights}>Book Flight</button>
+          <div className="userprofile-card">
+            <button onClick={BookFlights}>Book your next journey</button>
+            <button onClick={BookFlights}>Check Existing Bookings</button>
+          </div>
         </div>
       ) : null}
     </>
