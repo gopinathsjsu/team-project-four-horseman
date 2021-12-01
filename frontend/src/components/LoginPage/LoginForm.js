@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { post } from "../../utils/Api";
 import useForm from "./useForm";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 const LoginForm = () => {
   const [values, handleChange] = useForm({
@@ -9,6 +9,7 @@ const LoginForm = () => {
     password: "",
   });
 
+  const history = useHistory();
   const [error, setError] = useState("");
   const [userProfile, setUserProfile] = useState();
 
@@ -24,6 +25,11 @@ const LoginForm = () => {
       console.log(response);
       setError(response.meesage.data.errors.message);
     }
+  };
+
+  const goToRegister = (e) => {
+    e.preventDefault();
+    history.push("/register");
   };
 
   return (
@@ -70,6 +76,7 @@ const LoginForm = () => {
             ></input>
           </form>
           {error !== "" && <p className="#error">{error}</p>}
+          <button onClick={(e) => goToRegister(e)}>Sign Up</button>
         </div>
       )}
     </>

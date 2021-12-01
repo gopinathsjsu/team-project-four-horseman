@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import useForm from "./useForm";
 import { post } from "../../utils/Api";
+import { useHistory } from "react-router";
 
 const SignInForm = () => {
   const [values, handleChange] = useForm({
-    email: "",
-    password: "",
     firstName: "",
     lastName: "",
+    phoneNumber: 0,
+    email: "",
+    password: "",
+    address: "",
+    city: "",
+    zip: 0,
+    state: "",
+    country: "",
+    role: "user",
   });
 
+  const history = useHistory();
   const [error, setError] = useState("");
 
-  const checkLoginDetails = async (e) => {
+  const registerUser = async (e) => {
     e.preventDefault();
-    const response = await post({ endpoint: "user/login", body: values });
+    const response = await post({ endpoint: "user/register", body: values });
     if (response.status == 200 || response.status == 201) {
       // TODO: Write code for successful login redirection
-      window.location.pathname = "/";
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+      console.log(response);
+      history.replace("/");
     } else {
       console.log(response);
       setError(response.meesage.data.errors.message);
@@ -69,18 +80,27 @@ const SignInForm = () => {
         <input
           type="tel"
           id="phone"
-          name="phone"
+          name="phoneNumber"
           className="signin-textbox"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           placeholder="000-000-0000"
           required
+          value={values.phoneNumber}
+          onChange={handleChange}
         ></input>
 
         <h3>Enter your address</h3>
         <small>Street</small>
         <br />
         <br />
-        <input type="text" className="signin-textbox" required></input>
+        <input
+          name="address"
+          type="text"
+          className="signin-textbox"
+          required
+          value={values.address}
+          onChange={handleChange}
+        ></input>
         <br />
 
         <br />
@@ -89,21 +109,42 @@ const SignInForm = () => {
         <br />
         <br />
 
-        <input type="text" className="signin-textbox" required></input>
+        <input
+          name="city"
+          type="text"
+          className="signin-textbox"
+          required
+          value={values.city}
+          onChange={handleChange}
+        ></input>
         <br />
 
         <small> State</small>
         <br />
         <br />
 
-        <input type="text" className="signin-textbox" required></input>
+        <input
+          name="state"
+          type="text"
+          className="signin-textbox"
+          required
+          value={values.state}
+          onChange={handleChange}
+        ></input>
         <br />
 
         <small>Country</small>
         <br />
         <br />
 
-        <input type="text" className="signin-textbox" required></input>
+        <input
+          type="text"
+          name="country"
+          className="signin-textbox"
+          required
+          value={values.country}
+          onChange={handleChange}
+        ></input>
         <br />
 
         <small>ZipCode</small>
@@ -113,45 +154,12 @@ const SignInForm = () => {
         <input
           type="tel"
           className="signin-textbox"
+          name="zip"
           maxLength="5"
           minLength="4"
           required
-        ></input>
-
-        <h3>Enter your date of birth</h3>
-        <select name="selectList" className="selectList" required>
-            <option value="January">January</option> {" "}
-          <option value="February">February</option>
-          <option value="March">March</option> {" "}
-          <option value="April">April</option>
-          <option value="May">May</option>  <option value="June">June</option>
-          <option value="July">July</option> {" "}
-          <option value="August">August</option>
-          <option value="September">September</option> {" "}
-          <option value="October">October</option>
-          <option value="November">November </option> {" "}
-          <option value="December">December </option>
-        </select>
-
-        <input
-          type="number"
-          name="birth-day"
-          className="dob"
-          min="1"
-          max="31"
-          placeholder="Day"
-          required
-        ></input>
-
-        <input
-          type="number"
-          name="birth-year"
-          className="dob"
-          maxLength="4"
-          min="1950"
-          max="2006"
-          placeholder="Year"
-          required
+          value={values.zip}
+          onChange={handleChange}
         ></input>
 
         <h3>Enter your password</h3>
@@ -163,17 +171,21 @@ const SignInForm = () => {
           minLength="8"
           value={values.password}
           onChange={handleChange}
+          value={values.password}
+          onChange={handleChange}
         ></input>
         <br />
         <br />
         <input type="checkbox" id="miles" name="miles"></input>
         <label htmlFor="miles">Subscribe to MileagePlus® account</label>
         <br />
-        <input type="submit" className="signin-submit-button"></input>
+        <input
+          type="submit"
+          className="signin-submit-button"
+          onClick={registerUser}
+        ></input>
 
-        <button onClick="" className="signin-cancel-button">
-          Cancel changes
-        </button>
+        <button className="signin-cancel-button">Cancel changes</button>
       </form>
     </div>
   );
