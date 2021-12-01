@@ -161,7 +161,11 @@ Q3. What tasks are blocked waiting on another team member?
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
+- Completed get user miles and update profile endpoints
+
 Q2. What am I planning to work on next?  
+- Search Flights and Get Flight details endpoints
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Unmesh
@@ -201,7 +205,11 @@ Q3. What tasks are blocked waiting on another team member?
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
+- Completed airports endpoint  
+
 Q2. What am I planning to work on next?  
+- Search flights endpoint
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Unmesh
@@ -218,7 +226,7 @@ Q3. What tasks are blocked waiting on another team member?
 
 ## Week 6:
 
-[11/07/2021 - 11/13/2021]
+[11/14/2021 - 11/20/2021]
 
 #### Krishna
 
@@ -229,7 +237,11 @@ Q3. What tasks are blocked waiting on another team member?
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
+- Search Flights endpoint
+
 Q2. What am I planning to work on next?  
+- Get Flight Details  
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Unmesh
@@ -246,7 +258,7 @@ Q3. What tasks are blocked waiting on another team member?
 
 ## Week 7:
 
-[11/14/2021 - 11/20/2021]
+[11/21/2021 - 11/27/2021]
 
 #### Krishna
 
@@ -257,7 +269,12 @@ Q3. What tasks are blocked waiting on another team member?
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
+- Get Flight details  
+
 Q2. What am I planning to work on next?  
+- Frontend and backend integration 
+- Deployment
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Unmesh
@@ -274,7 +291,7 @@ Q3. What tasks are blocked waiting on another team member?
 
 ## Week 8:
 
-[11/21/2021 - 11/27/2021]
+[11/28/2021 - 12/1/2021]
 
 #### Krishna
 
@@ -285,6 +302,9 @@ Q3. What tasks are blocked waiting on another team member?
 #### Siddharth
 
 Q1. What tasks did I work on / complete?  
+- Frontend and Backend integration
+- End-to-end testing
+- Deployment
 Q2. What am I planning to work on next?  
 Q3. What tasks are blocked waiting on another team member?
 
