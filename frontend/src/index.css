@@ -231,3 +231,20 @@ table td p {
   margin-left: 15rem;
   margin-top: 10rem;
 }
+
+.userprofile-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 5%;
+  padding: 5%;
+  animation: fade 3s;
+  background-color: #f1f1f1;
+  max-width: 700px;
+  animation: alternate 2sec;
+}
+
+.userprofile-title {
+  color: blueviolet;
+}
+
+.userprofile-content {
+}
