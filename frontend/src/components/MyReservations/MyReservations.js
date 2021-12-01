@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ReservationDetails from "./ReservationDetails";
 import axios from "axios";
+import { useHistory } from "react-router";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState(null);
+  const history = useHistory();
   async function cancelBooking() {
     const body = {
       userId: "94fd9100-4cb5-11ec-a071-2d0812b5f52b",
@@ -16,9 +18,9 @@ const MyReservations = () => {
         `http://krishnagupta.live:5000/booking/cancel`,
         body
       );
-      if (response.data.status) {
-        console.log(response.data.status);
-        return <div>Your booking has been cancelled.</div>;
+      if (response.status) {
+        console.log(response.data);
+        history.push("/userprofile");
       } else {
         console.log(response.data.message);
         return;
