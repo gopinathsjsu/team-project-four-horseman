@@ -5,11 +5,10 @@ export async function post({ endpoint, body }) {
   try {
     const response = await axios.post(`${API_BASE_URL}/${endpoint}`, body);
     return response;
-     
   } catch (error) {
-      return {
+    return {
       status: error.response.data.status,
-      meesage: error.response
+      meesage: error.response,
     };
   }
 }
