@@ -12,7 +12,7 @@ const UserProfile = (props) => {
   const userData = props.history.location.state;
 
   useEffect(() => {
-    console.log("CHECK : ", props);
+    // console.log("CHECK : ", props);
   }, []);
 
   const [data, setData] = useState();
@@ -23,7 +23,6 @@ const UserProfile = (props) => {
       endpoint: "user/profile/94fd9100-4cb5-11ec-a071-2d0812b5f52b",
       body: values,
     });
-    setData(response.data);
 
     console.log(response.data);
     /* if (response.status == 200 || response.status == 201) {

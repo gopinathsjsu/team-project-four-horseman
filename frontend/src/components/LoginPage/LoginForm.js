@@ -18,6 +18,7 @@ const LoginForm = () => {
     if (response.status === 200 || response.status === 201) {
       // TODO: Write code for successful login redirection
       setUserProfile(response.data.user);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
       console.log(response);
     } else {
       console.log(response);
