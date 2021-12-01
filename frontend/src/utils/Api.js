@@ -1,15 +1,14 @@
 import axios from "axios";
-const API_BASE_URL = "http://krishnagupta.live:3000";
+const API_BASE_URL = "http://krishnagupta.live:5000";
 
 export async function post({ endpoint, body }) {
   try {
     const response = await axios.post(`${API_BASE_URL}/${endpoint}`, body);
     return response;
-     
   } catch (error) {
-      return {
+    return {
       status: error.response.data.status,
-      meesage: error.response
+      meesage: error.response,
     };
   }
 }
