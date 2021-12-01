@@ -1,46 +1,39 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 
-const FlightDetails = ({ reservations  }) => {
+const FlightDetails = ({ reservations }) => {
+  const [depDate, setDepDate] = useState(null);
+  const [depTime, setDepTime] = useState(null);
+  const [arrDate, setArrDate] = useState(null);
+  const [arrTime, setArrTime] = useState(null);
 
-    const[depDate,setDepDate] = useState(null);
-    const[depTime,setDepTime] = useState(null);
-    const[arrDate,setArrDate] = useState(null);
-    const[arrTime,setArrTime] = useState(null);
+  useEffect(() => {
+    var dep = reservations["flight"].deptTime;
+    var arr = reservations["flight"].arrTime;
 
-    useEffect(()=>{
-        var dep = reservations['flight'].deptTime
-        var arr = reservations['flight'].arrTime
-        
-        var options = { weekday: "long",  
-                         year: "numeric",  
-                         month: "short",  
-                         day: "numeric" };  
-     
-        var depDateFormat = new Date(dep).toLocaleDateString("en-US", options); 
-        var depTimeFormat = new Date(dep).toLocaleTimeString();
-        var arrDateFormat = new Date(arr).toLocaleDateString("en-US", options); 
-        var arrTimeFormat = new Date(arr).toLocaleTimeString();
-        setDepDate(depDateFormat)
-        setDepTime(depTimeFormat)
-        setArrDate(arrDateFormat)
-        setArrTime(arrTimeFormat)
+    var options = {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
 
-},[]);
- 
-     
-     
-     
- 
- 
- 
- 
-    return (
-    
+    var depDateFormat = new Date(dep).toLocaleDateString("en-US", options);
+    var depTimeFormat = new Date(dep).toLocaleTimeString();
+    var arrDateFormat = new Date(arr).toLocaleDateString("en-US", options);
+    var arrTimeFormat = new Date(arr).toLocaleTimeString();
+    setDepDate(depDateFormat);
+    setDepTime(depTimeFormat);
+    setArrDate(arrDateFormat);
+    setArrTime(arrTimeFormat);
+  }, []);
+
+  return (
     <div className="booking">
       <p style={{ fontSize: "3rem" }}>Manage your booking</p>
       <div className="reservation-header">
         <p style={{ fontSize: "2rem" }}>
-          {reservations["flight"].fromAirportCode} - {reservations["flight"].toAirportCode}
+          {reservations["flight"].fromAirportCode} -{" "}
+          {reservations["flight"].toAirportCode}
         </p>
         <p style={{ fontSize: "1.2rem", color: "purple" }}>
           Departure {depDate}
@@ -64,11 +57,12 @@ const FlightDetails = ({ reservations  }) => {
             height: "1.5rem",
           }}
         >
-          Flight 
+          Flight
         </div>
         <p style={{ fontSize: "1.5rem" }}>
           {}
-          {reservations["flight"].fromAirportCode} - {reservations["flight"].toAirportCode} on {depDate}
+          {reservations["flight"].fromAirportCode} -{" "}
+          {reservations["flight"].toAirportCode} on {depDate}
         </p>
         <table>
           <tr>
@@ -79,18 +73,23 @@ const FlightDetails = ({ reservations  }) => {
           </tr>
           <tr>
             <td>
-              <b>{reservations['flight'].flightCode}</b>
-
-              
+              <b>{reservations["flight"].flightCode}</b>
             </td>
             <td>
               <b>{depTime}</b>
-              <h4> {reservations["flight"].fromAirportCity} ({reservations["flight"].fromAirportCode})</h4>
+              <h4>
+                {" "}
+                {reservations["flight"].fromAirportCity} (
+                {reservations["flight"].fromAirportCode})
+              </h4>
               <small>{reservations["flight"].fromAirportName}</small>
             </td>
             <td>
               <b>{arrTime}</b>
-              <h4>{reservations["flight"].toAirportCity} ({reservations["flight"].toAirportCode})</h4>
+              <h4>
+                {reservations["flight"].toAirportCity} (
+                {reservations["flight"].toAirportCode})
+              </h4>
               <small>{reservations["flight"].toAirportName}</small>
             </td>
 
@@ -98,6 +97,25 @@ const FlightDetails = ({ reservations  }) => {
               <h3>{reservations["flight"].price} $</h3>
             </td>
           </tr>
+        </table>
+      </div>
+      <div style={{ marginTop: "5%" }}>
+        <table style={{ width: "40rem" }}>
+          <tr>
+            <th>Bookings</th>
+          </tr>
+          {reservations.seats.map((reservation) => (
+            <tr
+              style={{ textAlign: "center", borderBottom: "1px solid black" }}
+            >
+              {" "}
+              <b>Passenger Name:</b>
+              {reservation.passengerName}
+              {"|"}
+              <b>Seat Selected:</b>
+              {reservation.seatNo}
+            </tr>
+          ))}
         </table>
       </div>
     </div>

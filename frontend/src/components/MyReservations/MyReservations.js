@@ -18,7 +18,7 @@ const MyReservations = () => {
       );
       if (response.data.status) {
         console.log(response.data.status);
-        return response.data.data;
+        return <div>Your booking has been cancelled.</div>;
       } else {
         console.log(response.data.message);
         return;

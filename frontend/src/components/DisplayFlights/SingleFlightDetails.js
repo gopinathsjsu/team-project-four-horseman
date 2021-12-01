@@ -6,32 +6,6 @@ import SeatSelection from "../PassengerInformation/SeatSelection";
 
 const SingleFlightDetails = () => {
   const [flightDetails, setFlightDetails] = useState();
-  const [depDate, setDepDate] = useState();
-  const [depTime, setDepTime] = useState();
-  const [arrDate, setArrDate] = useState();
-  const [arrTime, setArrTime] = useState([]);
-
-  function timeparser() {
-    var dep = flightDetails.deptTime;
-    var arr = flightDetails.arrTime;
-    console.log(dep);
-
-    var options = {
-      weekday: "long",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    };
-
-    var depDateFormat = new Date(dep).toLocaleDateString("en-US", options);
-    var depTimeFormat = new Date(dep).toLocaleTimeString();
-    var arrDateFormat = new Date(arr).toLocaleDateString("en-US", options);
-    var arrTimeFormat = new Date(arr).toLocaleTimeString();
-    setDepDate(depDateFormat);
-    setDepTime(depTimeFormat);
-    setArrDate(arrDateFormat);
-    setArrTime(arrTimeFormat);
-  }
 
   function passengerDetails() {
     document.getElementById("enter-passenger-info").style.display = "block";
@@ -46,12 +20,11 @@ const SingleFlightDetails = () => {
       })
       .then((data) => {
         setFlightDetails(data);
-        timeparser();
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [arrTime]);
+  }, []);
 
   return (
     <>
@@ -75,8 +48,7 @@ const SingleFlightDetails = () => {
             </div>
             <p style={{ fontSize: "1.5rem" }}>
               {}
-              {flightDetails.fromAirportCode} - {flightDetails.toAirportCode} on{" "}
-              {depDate}
+              {flightDetails.fromAirportCode} - {flightDetails.toAirportCode}
             </p>
             <table>
               <tr>
@@ -90,7 +62,7 @@ const SingleFlightDetails = () => {
                   <b>{flightDetails.flightCode}</b>
                 </td>
                 <td>
-                  <b>{depTime}</b>
+                  <b></b>
                   <h4>
                     {" "}
                     {flightDetails.fromAirportCity} (
@@ -99,7 +71,7 @@ const SingleFlightDetails = () => {
                   <small>{flightDetails.fromAirportName}</small>
                 </td>
                 <td>
-                  <b>{arrTime}</b>
+                  <b></b>
                   <h4>
                     {flightDetails.toAirportCity} ({flightDetails.toAirportCode}
                     )
