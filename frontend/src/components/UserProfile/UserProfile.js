@@ -8,8 +8,11 @@ const UserProfile = (props) => {
     password: "",
   });
 
+  console.log(props);
+  const userData = props.history.location.state;
+
   useEffect(() => {
-    console.log(props);
+    console.log("CHECK : ", props);
   }, []);
 
   const [data, setData] = useState();
@@ -33,24 +36,24 @@ const UserProfile = (props) => {
 
   return (
     <>
-      {data ? (
+      {userData ? (
         <div className="userprofile">
           <br />
           <h1 class="display-1">Welcome onboard, Happy flying!</h1>
           <p>
-            Name: {data.user.firstName} {data.user.lastName}
+            Name: {userData.firstName} {userData.lastName}
             <br />
-            Address: {data.user.address}
+            Address: {userData.address}
             <br />
-            Home City: {data.user.city}
+            Home City: {userData.city}
             <br />
-            State: {data.user.state}
+            State: {userData.state}
             <br />
-            Zip Code: {data.user.zip}
+            Zip Code: {userData.zip}
             <br />
-            Country: Email: {data.user.email}
+            Country: Email: {userData.email}
             <br />
-            Miles Balance: {data.user.miles}
+            Miles Balance: {userData.miles}
           </p>
 
           <input
