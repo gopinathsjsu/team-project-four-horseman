@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useForm from "./useForm";
-import { Redirect, useHistory } from "react-router";
-import { Accordion, Card, Col, Row, Spinner } from "react-bootstrap";
-import { useParams, Link } from "react-router-dom";
+import { useHistory } from "react-router";
+import { Navbar, Card, Col, Row, Spinner } from "react-bootstrap";
 import Button from "@restart/ui/esm/Button";
 import moment from "moment";
 
@@ -44,12 +43,10 @@ const UserProfile = (props) => {
         <>
           <div
             style={{
-              display: "flex",
-              justifyContent: "space-between",
               boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.3)",
             }}
           >
-            <h3 style={{ margin: "20px" }}>
+            <h3 style={{ padding: "20px" }}>
               <em>
                 Welcome Onboard, {userDetails.firstName} {userDetails.lastName}
               </em>
@@ -61,22 +58,17 @@ const UserProfile = (props) => {
               display: "flex",
               width: "100vw",
               margin: "0px",
-              paddingTop: "10px",
-              overflowX: "hidden",
+              paddingTop: "5px",
               backgroundColor: "#f1f1f1",
             }}
           >
-            <Col
-              style={{
-                margin: "10px",
-              }}
-            >
-              <Row className="miles-card" style={{ padding: "45px" }}>
+            <Col>
+              <Col className="miles-card" style={{ padding: "45px" }}>
                 <h4>
-                  <em>fh</em> Miles Member
+                  <em>fhMiles</em> Member
                 </h4>
 
-                <div style={{ paddingTop: "45px" }}>
+                <div style={{ paddingTop: "30px" }}>
                   <h4>
                     <em>{userDetails.miles}</em>
                     <p>status miles</p>
@@ -89,8 +81,8 @@ const UserProfile = (props) => {
                     } status miles or 28 flight segments for qualification as a Frequent Traveller.`}
                   </p>
                 </div>
-              </Row>
-              <Row className="userprofile-card">
+              </Col>
+              <Col className="userprofile-card">
                 <h4>Profile</h4>
                 <h6>Email</h6>
                 <p>{userDetails.email}</p>
@@ -99,14 +91,10 @@ const UserProfile = (props) => {
                 <h6>Address</h6>
                 <p>{`${userDetails.address}, ${userDetails.city}`}</p>
                 <p>{`${userDetails.state}, ${userDetails.country}, ${userDetails.zip}`}</p>
-              </Row>
+              </Col>
             </Col>
-            <Col
-              style={{
-                marginTop: "10px",
-              }}
-            >
-              <Row className="user-bookings-card">
+            <Col>
+              <Col className="user-bookings-card">
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
@@ -170,7 +158,7 @@ const UserProfile = (props) => {
                     </div>
                   </>
                 )}
-              </Row>
+              </Col>
             </Col>
           </Row>
         </>

@@ -44,16 +44,27 @@ function NavBar() {
       variant="dark"
     >
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" style={{ marginRight: "4rem" }}>
           <h2>
             <em>fh</em>Airlines
           </h2>
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/reservations">Find Booking</Nav.Link>
-            {userDetails && <Nav.Link href="/userprofile">Profile</Nav.Link>}
+            <Nav.Link href="/" style={{ color: "white", marginRight: "2rem" }}>
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="/reservations"
+              style={{ color: "white", marginRight: "2rem" }}
+            >
+              Find Booking
+            </Nav.Link>
+            {userDetails && (
+              <Nav.Link href="/userprofile" style={{ color: "white" }}>
+                Profile
+              </Nav.Link>
+            )}
           </Nav>
           <Form className="d-flex">
             {userDetails ? (
