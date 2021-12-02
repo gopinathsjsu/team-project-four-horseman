@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FlightInformation from "./FlightInformation";
 import { useHistory } from "react-router";
 import { Spinner } from "react-bootstrap";
+import moment from "moment";
 
 const DisplayFlights = () => {
   const [flights, setFlights] = useState();
@@ -18,7 +19,7 @@ const DisplayFlights = () => {
     let params = {
       from: depAirport,
       to: arrAirport,
-      deptTime: date,
+      deptTime: moment(date).format("YYYY-MM-DD"),
     };
 
     let query = Object.keys(params)

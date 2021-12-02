@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import moment from "moment-timezone";
 const DisplayFlights = ({ flights }) => {
   const [depDate, setDepDate] = useState();
   const [depTime, setDepTime] = useState();
@@ -19,10 +19,14 @@ const DisplayFlights = ({ flights }) => {
       day: "numeric",
     };
 
-    var depDateFormat = new Date(dep).toLocaleDateString("en-US", options);
-    var depTimeFormat = new Date(dep).toLocaleTimeString();
-    var arrDateFormat = new Date(arr).toLocaleDateString("en-US", options);
-    var arrTimeFormat = new Date(arr).toLocaleTimeString();
+    var depDateFormat = moment
+      .tz(dep, flights[0]?.fromAirportTz)
+      .format("dddd, MMM Do, YYYY");
+    var depTimeFormat = moment.tz(dep, flights[0]?.fromAirportTz).format("LT");
+    var arrDateFormat = moment
+      .tz(arr, flights[0]?.toAirportTz)
+      .format("dddd, MMM Do, YYYY");
+    var arrTimeFormat = moment.tz(arr, flights[0]?.toAirportTz).format("LT");
     setDepDate(depDateFormat);
     setDepTime(depTimeFormat);
     setArrDate(arrDateFormat);
@@ -30,6 +34,7 @@ const DisplayFlights = ({ flights }) => {
   }
 
   useEffect(() => {
+    console.log(flights);
     timeparser();
   }, []);
 
