@@ -33,6 +33,11 @@ const bookings = dbConfig.define("bookings", {
     type: DT.INTEGER,
     allowNull: false,
   },
+  status: {
+    type: DT.STRING(50),
+    allowNull: false,
+    defaultValue: "ACTIVE",
+  },
 });
 
 bookings.sync();
