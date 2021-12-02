@@ -49,27 +49,29 @@ const SingleFlightDetails = () => {
             </p>
             <table>
               <tr>
-                <th style={{ width: "20%" }}>FLIGHT</th>
-                <th>FROM</th>
-                <th>TO</th>
-                <th>PRICE</th>
+                <th style={{ width: "8%" }}>FLIGHT</th>
+                <th style={{ width: "25%" }}>FROM</th>
+                <th style={{ width: "25%" }}>TO</th>
+                <th style={{ width: "14%" }}>PRICE</th>
+                <th style={{ width: "14%" }}>TAX</th>
+                <th style={{ width: "14%" }}>TOTAL</th>
               </tr>
               <tr>
-                <td>
+                <td style={{ fontSize: "1rem" }}>
                   <b>{flightDetails.flightCode}</b>
                 </td>
-                <td>
+                <td style={{ fontSize: "1rem" }}>
                   <b></b>
-                  <h4>
+                  <h4 style={{ fontSize: "1.2rem" }}>
                     {" "}
                     {flightDetails.fromAirportCity} (
                     {flightDetails.fromAirportCode})
                   </h4>
                   <small>{flightDetails.fromAirportName}</small>
                 </td>
-                <td>
+                <td style={{ fontSize: "1rem" }}>
                   <b></b>
-                  <h4>
+                  <h4 style={{ fontSize: "1.2rem" }}>
                     {flightDetails.toAirportCity} ({flightDetails.toAirportCode}
                     )
                   </h4>
@@ -77,7 +79,17 @@ const SingleFlightDetails = () => {
                 </td>
 
                 <td>
-                  <h3>{flightDetails.price} $</h3>
+                  <h3 style={{ fontSize: "1.2rem" }}>
+                    $ {flightDetails.price}
+                  </h3>
+                </td>
+                <td>
+                  <h3 style={{ fontSize: "1.2rem" }}>$ {flightDetails.tax}</h3>
+                </td>
+                <td>
+                  <h3 style={{ fontSize: "1.2rem" }}>
+                    ${flightDetails.price + flightDetails.tax}
+                  </h3>
                 </td>
               </tr>
             </table>

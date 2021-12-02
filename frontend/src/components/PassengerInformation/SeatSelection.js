@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Spinner, Button } from "react-bootstrap";
+import { Col, Container, Spinner, Button, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import SeatPicker from "react-seat-picker";
@@ -131,99 +131,100 @@ const SeatSelection = () => {
   return (
     <>
       {showSeatSelection ? (
-        <Container
-          fluid
+        <div
           style={{
-            width: "85vw",
-            margin: 0,
-            padding: 0,
-            display: "flex",
+            margin: "0px",
+            padding: "0px",
+            width: "100vw",
           }}
         >
-          <Col xs={3}>
-            <Container
-              style={{ width: "40vw", marginLeft: "5rem", marginTop: "5rem" }}
-            >
-              <h2>Your entered traveller information:</h2>
-              <br />
-              {travellers.map((passenger) => (
-                <div key={passenger.firstName}>
-                  Passenger {travellersTracker.push(passenger.firstName)}:
-                  <b> {passenger.firstName}</b>
-                  <br />
-                  <br />
-                </div>
-              ))}
-              <br />
-              <h3>Enter payment information:</h3>
-              <br />
-              <div className="book-flights-form">
-                <input
-                  type="tel"
-                  pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
-                  maxLength="14"
-                  placeholder="Enter your card number"
-                  required
-                ></input>
-                <br />
-                <br />
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  required
-                ></input>
-                <br />
-                <br />
-
-                <div class="slidecontainer">
-                  <input
-                    type="range"
-                    min="0"
-                    max={userDetails ? userDetails.miles : 100}
-                    step="1"
-                    defaultValue={miles}
-                    onChange={setMilesInput}
-                  />
-                  <p>
-                    Total Miles available are:{" "}
-                    <span id="demo">{userDetails?.miles}</span>
-                  </p>
-                  <p>
-                    Miles to be used: <span id="demo">{miles}</span>
-                  </p>
-                </div>
-                <div></div>
-              </div>
-
-              <Button
-                variant="secondary"
-                style={{ alignSelf: "center" }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  createBooking();
-                }}
+          <Row>
+            <Col xs={4}>
+              <Container
+                style={{ width: "100%", marginLeft: "2rem", marginTop: "5rem" }}
               >
-                Confirm Booking
-              </Button>
-            </Container>
-          </Col>
-          <Col>
-            <Container
-              style={{ width: "70vw", marginLeft: "40vw", marginTop: "5%" }}
-            >
-              <div style={{ overflowY: "scroll", height: "20rem" }}>
-                <SeatPicker
-                  addSeatCallback={addSeatCallback}
-                  removeSeatCallback={removeSeatCallback}
-                  rows={rows}
-                  maxReservableSeats={travellers.length}
-                  visible
-                  selectedByDefault
-                />
-              </div>
-            </Container>
-          </Col>
-        </Container>
+                <h2>Your entered traveller information:</h2>
+                <br />
+                {travellers.map((passenger) => (
+                  <div key={passenger.firstName}>
+                    Passenger {travellersTracker.push(passenger.firstName)}:
+                    <b> {passenger.firstName}</b>
+                    <br />
+                    <br />
+                  </div>
+                ))}
+                <br />
+                <h3>Enter payment information:</h3>
+                <br />
+                <div className="book-flights-form">
+                  <input
+                    type="tel"
+                    pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
+                    maxLength="14"
+                    placeholder="Enter your card number"
+                    required
+                  ></input>
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                  ></input>
+                  <br />
+                  <br />
+
+                  <div class="slidecontainer">
+                    <input
+                      type="range"
+                      min="0"
+                      max={userDetails ? userDetails.miles : 100}
+                      step="1"
+                      defaultValue={miles}
+                      onChange={setMilesInput}
+                    />
+                    <p>
+                      Total Miles available are:{" "}
+                      <span id="demo">{userDetails?.miles}</span>
+                    </p>
+                    <p>
+                      Miles to be used: <span id="demo">{miles}</span>
+                    </p>
+                  </div>
+                  <div></div>
+                </div>
+
+                <Button
+                  variant="secondary"
+                  style={{ alignSelf: "center" }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    createBooking();
+                  }}
+                >
+                  Confirm Booking
+                </Button>
+              </Container>
+            </Col>
+            <Col xs={4}>
+              <p>jhsadbhjsda</p>
+            </Col>
+            <Col xs={4}>
+              <Container style={{ marginTop: "5%" }}>
+                <div style={{ overflowY: "scroll", height: "30rem" }}>
+                  <SeatPicker
+                    addSeatCallback={addSeatCallback}
+                    removeSeatCallback={removeSeatCallback}
+                    rows={rows}
+                    maxReservableSeats={travellers.length}
+                    visible
+                    selectedByDefault
+                  />
+                </div>
+              </Container>
+            </Col>
+          </Row>
+        </div>
       ) : (
         <Spinner
           style={{ marginLeft: "45%" }}
