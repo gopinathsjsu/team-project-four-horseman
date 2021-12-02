@@ -59,12 +59,13 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 
 # Project Diagrams:
 
+## UI wireframes
+
 ## Architecture Diagram
 ![202-diagram](https://user-images.githubusercontent.com/20012695/144321490-f5f3709d-1f77-4a80-884d-f1bf5afbedad.jpg)
 
 
-## Component Diagram
+## Deployment Diagram
+![dig](https://user-images.githubusercontent.com/20245964/144387343-820a04b5-3844-47ee-9a20-f5d3ed9d43a9.png)
 
-
-## UI wireframes
 
