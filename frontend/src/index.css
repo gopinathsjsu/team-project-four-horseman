@@ -244,10 +244,10 @@ table td p {
 
 .user-bookings-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  position: fixed;
+  position: absolute;
   background-color: #f1f1f1;
   padding: 1%;
-  max-width: 200px;
+  max-width: 400px;
   left: 900px;
   right: 20px;
   top: 170px;
