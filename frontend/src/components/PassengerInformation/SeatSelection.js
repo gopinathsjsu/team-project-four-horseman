@@ -43,7 +43,7 @@ const SeatSelection = () => {
     const userDetails = localStorage.getItem("user");
     const travellers = localStorage.getItem("passengers");
     console.log(travellers);
-
+    console.log(details);
     const parsedDetails = JSON.parse(details);
 
     if (userDetails != null && userDetails != undefined) {
@@ -122,6 +122,20 @@ const SeatSelection = () => {
           status: 500,
           message: error.toString(),
         };
+      } finally {
+        try {
+          const response = await axios.get(
+            `http://krishnagupta.live:5000/user/profile/${userDetails}`
+          );
+
+          if (response.status) {
+            localStorage.setItem("user", JSON.stringify(response.data.user));
+          } else {
+            alert(response);
+          }
+        } catch (error) {
+          alert(error.toString());
+        }
       }
     } else {
       alert("Please choose the correct number of seats");
@@ -135,11 +149,11 @@ const SeatSelection = () => {
           style={{
             margin: "0px",
             padding: "0px",
-            width: "100vw",
+            width: "96vw",
           }}
         >
           <Row>
-            <Col xs={4}>
+            <Col xs={5}>
               <Container
                 style={{ width: "100%", marginLeft: "2rem", marginTop: "5rem" }}
               >
@@ -206,12 +220,9 @@ const SeatSelection = () => {
                 </Button>
               </Container>
             </Col>
-            <Col xs={4}>
-              <p>jhsadbhjsda</p>
-            </Col>
-            <Col xs={4}>
+            <Col xs={3}>
               <Container style={{ marginTop: "5%" }}>
-                <div style={{ overflowY: "scroll", height: "30rem" }}>
+                <div style={{ overflowY: "scroll", height: "85vh" }}>
                   <SeatPicker
                     addSeatCallback={addSeatCallback}
                     removeSeatCallback={removeSeatCallback}
@@ -222,6 +233,9 @@ const SeatSelection = () => {
                   />
                 </div>
               </Container>
+            </Col>
+            <Col xs={4}>
+              <Container></Container>
             </Col>
           </Row>
         </div>
