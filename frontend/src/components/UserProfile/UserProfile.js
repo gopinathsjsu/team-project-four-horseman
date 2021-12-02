@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import useForm from "./useForm";
-import { get } from "../../utils/Api";
 import { Redirect, useHistory } from "react-router";
 import { Accordion, Spinner } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
@@ -54,6 +53,8 @@ const UserProfile = (props) => {
             <p className="user">
               Name: {userDetails.firstName} {userDetails.lastName}
               <br />
+              Email: {userDetails.email}
+              <br />
               Address: {userDetails.address}
               <br />
               Home City: {userDetails.city}
@@ -62,14 +63,14 @@ const UserProfile = (props) => {
               <br />
               Zip Code: {userDetails.zip}
               <br />
-              Country: Email: {userDetails.country}
+              Country: {userDetails.country}
               <br />
               Miles Balance: {userDetails.miles}
             </p>
             <button
               onClick={(e) => {
                 e.preventDefault();
-                history.push(`/booking/`);
+                history.push(`/`);
               }}
             >
               Book your next journey
@@ -83,7 +84,14 @@ const UserProfile = (props) => {
                   <Accordion.Item eventKey={index} key={index}>
                     <Accordion.Header>PNR : {item.pnr}</Accordion.Header>
                     <Accordion.Body>
-                      Paid : ${item.totalCost}, Miles Used: {item.milesUsed},
+                      Paid : ${item.totalCost},
+                      <br />
+                      <div style={{ color: "#fb6219" }}>
+                        Miles Used: {item.milesUsed}
+                      </div>
+                      <div style={{ color: "green" }}>
+                        Miles Earned: {item.milesEarned}
+                      </div>
                       Booked on: {item.createdAt}
                       <br />
                       <Button
