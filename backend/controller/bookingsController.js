@@ -11,7 +11,8 @@ const generatePNR = (flightDate) => {
 const createBooking = async (userData, flightData, milesUsed, seats) => {
   flightData = { ...flightData.body[0] };
   userData = { ...userData.body.dataValues };
-  let totalCost = (flightData.price + flightData.tax) * seats.length;
+  let totalCost =
+    (flightData.price + flightData.tax - milesUsed * 0.093) * seats.length;
   let milesEarned = Math.floor(totalCost);
   let userMiles = userData.miles - milesUsed + milesEarned;
 
