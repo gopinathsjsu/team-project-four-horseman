@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Spinner, Button, Row } from "react-bootstrap";
+import { Col, Container, Spinner, Button, Row, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import SeatPicker from "react-seat-picker";
@@ -143,7 +143,9 @@ const SeatSelection = () => {
           style={{
             margin: "0px",
             padding: "0px",
-            width: "96vw",
+            width: "98vw",
+            justifyContent: "center",
+            alignContent: "center",
           }}
         >
           <Row>
@@ -228,8 +230,131 @@ const SeatSelection = () => {
                 </div>
               </Container>
             </Col>
-            <Col xs={4}>
-              <Container></Container>
+            <Col xs={4} style={{ display: "flex", justifyContent: "center" }}>
+              <Card
+                style={{
+                  height: "60vh",
+                  width: "20vw",
+                  alignSelf: "center",
+                  opacity: 0.9,
+                }}
+              >
+                <Card.Header>
+                  <h6 className="display-6">Trip Cost</h6>
+                </Card.Header>
+                <Card.Body>
+                  <Container
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Flight Cost</p>
+                      </div>
+                      <div>
+                        <p>${details?.price}</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Tax</p>
+                      </div>
+                      <div>
+                        <p>${details?.tax}</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Cost</p>
+                      </div>
+                      <div>
+                        <p>${details?.price + details?.tax}</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Passengers</p>
+                      </div>
+                      <div>
+                        <p>x {travellers.length}</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Total</p>
+                      </div>
+                      <div>
+                        <p>
+                          ${(details?.price + details?.tax) * travellers.length}
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Miles Discount</p>
+                      </div>
+                      <div>
+                        <p>- ${(miles * 0.093).toFixed(2)}</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <p>Amount</p>
+                      </div>
+                      <div>
+                        <p>
+                          $
+                          {(
+                            (details?.price + details?.tax) *
+                              travellers.length -
+                            miles * 0.093
+                          ).toFixed(2)}
+                        </p>
+                      </div>
+                    </div>
+                  </Container>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </div>
