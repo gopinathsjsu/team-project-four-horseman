@@ -47,12 +47,6 @@ function App() {
           <Route exact path="/booking">
             <MyReservations />
           </Route>
-          <Route exact path="/displayflights">
-            <DisplayFlights />
-          </Route>
-          <Route exact path="/displayflights/:id">
-            <SingleFlightDetails />
-          </Route>
           <Route exact path="/travellerInfo">
             <PassengerDetails />
           </Route>

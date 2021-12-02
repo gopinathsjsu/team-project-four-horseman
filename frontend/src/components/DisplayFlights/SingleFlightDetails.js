@@ -20,6 +20,7 @@ const SingleFlightDetails = () => {
 
   const { id } = useParams();
   useEffect(() => {
+    console.log(id);
     fetch(`http://krishnagupta.live:5000/flights/details/${id}`)
       .then((res) => {
         return res.json();

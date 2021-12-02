@@ -4,6 +4,7 @@ import { get } from "../../utils/Api";
 import { Redirect, useHistory } from "react-router";
 import { Accordion, Spinner } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
+import Button from "@restart/ui/esm/Button";
 
 const UserProfile = (props) => {
   const [values, handleChange] = useForm({
@@ -14,9 +15,6 @@ const UserProfile = (props) => {
   const [userDetails, setUserDetails] = useState();
   const [userBookings, setUserBookings] = useState();
   const history = useHistory();
-
-  //console.log(props);
-  // const userData = props.history.location.state;
 
   const { id } = useParams();
 
@@ -67,21 +65,32 @@ const UserProfile = (props) => {
               Country: Email: {userDetails.country}
               <br />
               Miles Balance: {userDetails.miles}
-              {JSON.stringify(userBookings)}
             </p>
           </div>
-          <div className="userprofile-card">
-            {/* <button onClick={BookFlights}>Book your next journey</button>
-            <button onClick={BookFlights}>Check Existing Bookings</button> */}
-          </div>
-          <div class="userprofile-card">
+          {/* <div className="userprofile-card">
+            <button onClick={BookFlights}>Book your next journey</button>
+            <button onClick={BookFlights}>Check Existing Bookings</button>
+          </div> */}
+          <div class="user-bookings-card">
             <Accordion>
               <h3>Scheduled Trips</h3>
               {userBookings.map((item, index) => {
                 return (
                   <Accordion.Item eventKey={index} key={index}>
-                    <Accordion.Header>{item.id}</Accordion.Header>
-                    <Accordion.Body>{item.totalCost}</Accordion.Body>
+                    <Accordion.Header>PNR : {item.pnr}</Accordion.Header>
+                    <Accordion.Body>
+                      Paid : ${item.totalCost}, Miles Used: {item.milesUsed},
+                      Booked on: {item.createdAt}
+                      <br />
+                      <Button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          history.push(`/booking/?pnr=${item.pnr}`);
+                        }}
+                      >
+                        Details
+                      </Button>
+                    </Accordion.Body>
                   </Accordion.Item>
                 );
               })}
@@ -95,5 +104,3 @@ const UserProfile = (props) => {
   );
 };
 export default UserProfile;
-
-// Login registration {} deployment diagram
