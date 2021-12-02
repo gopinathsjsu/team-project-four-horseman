@@ -79,11 +79,6 @@ const SeatSelection = () => {
     setShowSeatSelection(true);
   }, []);
 
-  const setMilesInput = (e) => {
-    console.log(e.target.value);
-    setMiles(e.target.value);
-    console.log(miles);
-  };
   async function createBooking() {
     const seatInformation = [];
     for (let i = 0; i < seatsSelected.length; i++) {
@@ -111,6 +106,19 @@ const SeatSelection = () => {
         console.log(response);
         if (response.status) {
           console.log(response.status);
+          try {
+            const res = await axios.get(
+              `http://krishnagupta.live:5000/user/profile/${userDetails.id}`
+            );
+            console.log(res);
+            if (res.status) {
+              localStorage.setItem("user", JSON.stringify(res.data.user));
+            } else {
+              console.log(res);
+            }
+          } catch (error) {
+            console.log(error.toString());
+          }
           history.push(`/booking?pnr=${response.data.pnr}`);
           return response.data.data;
         } else {
@@ -122,20 +130,6 @@ const SeatSelection = () => {
           status: 500,
           message: error.toString(),
         };
-      } finally {
-        try {
-          const response = await axios.get(
-            `http://krishnagupta.live:5000/user/profile/${userDetails}`
-          );
-
-          if (response.status) {
-            localStorage.setItem("user", JSON.stringify(response.data.user));
-          } else {
-            alert(response);
-          }
-        } catch (error) {
-          alert(error.toString());
-        }
       }
     } else {
       alert("Please choose the correct number of seats");
@@ -195,7 +189,7 @@ const SeatSelection = () => {
                       max={userDetails ? userDetails.miles : 100}
                       step="1"
                       defaultValue={miles}
-                      onChange={setMilesInput}
+                      onChange={(e) => setMiles(e.target.value)}
                     />
                     <p>
                       Total Miles available are:{" "}
