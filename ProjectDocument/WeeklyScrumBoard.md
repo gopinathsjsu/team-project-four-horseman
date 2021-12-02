@@ -228,6 +228,7 @@ Q1. What tasks did I work on / complete?
 
 Q2. What am I planning to work on next?  
 - Adding Backend API calls to login page
+
 Q3. What tasks are blocked waiting on another team member?
 
 #### Pratik
@@ -262,8 +263,17 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-Q2. What am I planning to work on next?  
-Q3. What tasks are blocked waiting on another team member?
+- Added calls to get data from backend to check login details
+- Registration page modified with pattern matching
+
+Q2. What am I planning to work on next? 
+- Connectivity with MySQL database
+- Adding new user to the database
+- Design changes to the application
+
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
+
 
 #### Pratik
 
@@ -298,8 +308,10 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-Q2. What am I planning to work on next?  
-Q3. What tasks are blocked waiting on another team member?
+Q2. What am I planning to work on next? 
+
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
 
 #### Pratik
 
@@ -332,8 +344,14 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
-Q2. What am I planning to work on next?  
-Q3. What tasks are blocked waiting on another team member?
+- Application deployment
+- Deployment digram for the web app
+
+Q2. What am I planning to work on next? 
+- Application testing
+
+Q3. What tasks are blocked waiting on another team member? 
+ - N/A
 
 #### Pratik
 
