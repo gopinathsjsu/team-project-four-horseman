@@ -223,7 +223,11 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
+- User login state management
+- Bug fixes in login page  
+
 Q2. What am I planning to work on next?  
+- Adding Backend API calls to login page
 Q3. What tasks are blocked waiting on another team member?
 
 #### Pratik
