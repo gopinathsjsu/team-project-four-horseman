@@ -18,9 +18,9 @@ const LoginForm = () => {
     const response = await post({ endpoint: "user/login", body: values });
     if (response.status === 200 || response.status === 201) {
       // TODO: Write code for successful login redirection
-      setUserProfile(response.data.user);
       localStorage.setItem("user", JSON.stringify(response.data.user));
-      console.log(response);
+      setUserProfile(response.data.user);
+      console.log("Login Response", response);
       history.go(-1);
     } else {
       console.log(response);
@@ -47,9 +47,7 @@ const LoginForm = () => {
           className="login"
           style={{ display: "flex", justifyContent: "flex-start" }}
         >
-          <form action="2.js" method="get">
-            {/* <h1>Login</h1> */}
-
+          <form onSubmit={checkLoginDetails}>
             <h4>Enter email</h4>
             <input
               type="email"
@@ -71,14 +69,12 @@ const LoginForm = () => {
               required
               name="password"
               className="signin-textbox"
-              minLength="8"
               value={values.password}
               onChange={handleChange}
             ></input>
             <br />
             <div>
               <input
-                onClick={(e) => checkLoginDetails(e)}
                 type="submit"
                 className="signin-submit-button"
                 value="Login"

@@ -10,7 +10,11 @@ function NavBar() {
   useEffect(() => {
     setInterval(() => {
       const user = localStorage.getItem("user");
-      if (user != null && user != undefined) {
+      if (
+        user != null &&
+        user != undefined &&
+        JSON.stringify(userDetails) != user
+      ) {
         setUserDetails(JSON.parse(user));
       }
     }, 1000);
@@ -41,7 +45,9 @@ function NavBar() {
     >
       <Container fluid>
         <Navbar.Brand href="/">
-          <em>fh</em>Airlines
+          <h2>
+            <em>fh</em>Airlines
+          </h2>
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -70,7 +76,7 @@ function NavBar() {
           </Form>
         </Navbar.Collapse>
       </Container>
-      {userDetails && <p>{userDetails.id}</p>}
+      {/* {userDetails && <p>{userDetails.id}</p>} */}
     </Navbar>
   );
 }

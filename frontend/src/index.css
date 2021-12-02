@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -39,7 +40,7 @@ code {
 
 button,
 input[type="submit"] {
-  background-color: blueviolet;
+  background-color: rgb(19, 0, 128);
   border: none;
   color: white;
   padding: 16px 32px;
@@ -50,11 +51,11 @@ input[type="submit"] {
 }
 
 button {
-  background-color: rgb(154, 108, 197);
+  background-color: rgb(19, 0, 128);
 }
 
 .navigation-bar {
-  background-color: blueviolet;
+  background-color: rgb(19, 0, 128);
   width: 10rem;
 }
 
@@ -80,11 +81,11 @@ button {
   margin-left: 70rem;
   height: 10rem;
   margin-top: -15.5rem;
-  background-color: blueviolet;
+  background-color: rgb(19, 0, 128);
   width: 10rem;
 }
 .input-bar-item button:hover {
-  background-color: rgb(154, 108, 197);
+  background-color: rgb(19, 0, 128);
 }
 
 .width100 {
@@ -113,7 +114,7 @@ button {
 }
 
 .search-flights-button {
-  background-color: blueviolet;
+  background-color: rgb(19, 0, 128);
   border: none;
   color: white;
   padding: 16px 32px;
@@ -184,7 +185,7 @@ table td p {
 
 .flight-details-single {
   margin-left: 15%;
-  border: 0.5px solid purple;
+  border: 0.5px solid rgb(19, 0, 128);
 }
 .flight-details-single:hover {
   cursor: pointer;
@@ -233,28 +234,37 @@ table td p {
 }
 
 .userprofile-card {
+  border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  margin: 5%;
-  padding: 5%;
+  margin: 25px;
+  padding: 25px;
   animation: fade 3s;
-  background-color: #f1f1f1;
-  max-width: 700px;
+  background-color: #ffffff;
+  animation: alternate 2sec;
+}
+
+.miles-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  color: white;
+  margin: 25px;
+  animation: fade 3s;
+  background-color: #05164d;
   animation: alternate 2sec;
 }
 
 .user-bookings-card {
+  border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  position: absolute;
-  background-color: #f1f1f1;
-  padding: 1%;
-  max-width: 400px;
-  left: 900px;
-  right: 20px;
-  top: 170px;
+  margin: 25px;
+  padding: 25px;
+  animation: fade 3s;
+  background-color: #ffffff;
+  animation: alternate 2sec;
 }
 
 .userprofile-title {
-  color: blueviolet;
+  color: rgb(19, 0, 128);
 }
 
 td,

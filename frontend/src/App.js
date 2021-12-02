@@ -19,6 +19,9 @@ function App() {
 
       <div className="App">
         <Switch>
+          <Route exact path="/">
+            <BookFlights />
+          </Route>
           <Route exact path="/register">
             <Register />
           </Route>
@@ -27,9 +30,6 @@ function App() {
           </Route>
           <Route path="/reservations">
             <FindReservations />
-          </Route>
-          <Route exact path="/">
-            <BookFlights />
           </Route>
           <Route
             exact
