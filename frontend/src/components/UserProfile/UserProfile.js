@@ -66,11 +66,15 @@ const UserProfile = (props) => {
               <br />
               Miles Balance: {userDetails.miles}
             </p>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                history.push(`/booking/`);
+              }}
+            >
+              Book your next journey
+            </button>
           </div>
-          {/* <div className="userprofile-card">
-            <button onClick={BookFlights}>Book your next journey</button>
-            <button onClick={BookFlights}>Check Existing Bookings</button>
-          </div> */}
           <div class="user-bookings-card">
             <Accordion>
               <h3>Scheduled Trips</h3>

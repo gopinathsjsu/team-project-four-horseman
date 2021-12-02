@@ -233,7 +233,7 @@ table td p {
 }
 
 .userprofile-card {
-  box-shadow: 0 4px 8px 0 rgba(114, 18, 158, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   margin: 5%;
   padding: 5%;
   animation: fade 3s;
@@ -243,13 +243,13 @@ table td p {
 }
 
 .user-bookings-card {
-  box-shadow: 0 4px 8px 0 gray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   position: fixed;
   background-color: #f1f1f1;
   padding: 1%;
   max-width: 200px;
   left: 900px;
-  right: 300px;
+  right: 20px;
   top: 170px;
 }
 

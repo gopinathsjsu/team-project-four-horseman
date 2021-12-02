@@ -8,10 +8,12 @@ function NavBar() {
   const [userDetails, setUserDetails] = useState();
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (user != null && user != undefined) {
-      setUserDetails(JSON.parse(user));
-    }
+    setInterval(() => {
+      const user = localStorage.getItem("user");
+      if (user != null && user != undefined) {
+        setUserDetails(JSON.parse(user));
+      }
+    }, 1000);
   }, []);
 
   const logoutClicked = (e) => {
