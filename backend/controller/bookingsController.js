@@ -12,7 +12,7 @@ const createBooking = async (userData, flightData, milesUsed, seats) => {
   flightData = { ...flightData.body[0] };
   userData = { ...userData.body.dataValues };
   let totalCost =
-    (flightData.price + flightData.tax - milesUsed * 0.093) * seats.length;
+    (flightData.price + flightData.tax) * seats.length - milesUsed * 0.093;
   let milesEarned = Math.floor(totalCost);
   let userMiles = userData.miles - milesUsed + milesEarned;
 
