@@ -119,7 +119,10 @@ const cancelBooking = async (bookingData, userData, flightData) => {
       { where: { id: flightData.id } },
       { transaction: trans }
     );
-    const deleteBooking = bookings.destroy(
+    const deleteBooking = bookings.update(
+      {
+        status: "CANCELLED",
+      },
       {
         where: {
           pnr: bookingData.pnr,
@@ -133,6 +136,7 @@ const cancelBooking = async (bookingData, userData, flightData) => {
       updateFlightSeats,
       deleteBooking,
     ]);
+    console.log({ updateUserMiles, updateFlightSeats, deleteBooking });
     await trans.commit();
     return { status: 200, body: result };
   } catch (error) {
