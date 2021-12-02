@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div>
       <Row style={{ marginRight: "0" }}>
-        <Col xs={6} style={{ paddingRight: "0" }}>
+        <Col style={{ paddingRight: "0" }}>
           <Header />
         </Col>
         <Col style={{ paddingLeft: "0", paddingRight: "0" }}>
