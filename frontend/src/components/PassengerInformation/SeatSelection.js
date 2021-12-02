@@ -3,6 +3,7 @@ import { Col, Container, Spinner, Button, Row, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import SeatPicker from "react-seat-picker";
+import { cc_format } from "../../utils/Validations";
 
 const SeatSelection = () => {
   // function paymentInfo() {
@@ -18,6 +19,9 @@ const SeatSelection = () => {
   const [seatsSelected, setSeatsSelected] = useState([]);
   const [miles, setMiles] = useState(0);
   const travellersTracker = [];
+  const [creditCard, setCredirCard] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const history = useHistory();
 
   const addSeatCallback = ({ row, number, id }, addCb) => {
@@ -80,6 +84,14 @@ const SeatSelection = () => {
   }, []);
 
   async function createBooking() {
+    if (creditCard.length !== 19) {
+      setError("credit");
+      return false;
+    } else if (name.length === 0) {
+      setError("name");
+      return false;
+    }
+    setError("");
     const seatInformation = [];
     for (let i = 0; i < seatsSelected.length; i++) {
       seatInformation.push({
@@ -135,6 +147,10 @@ const SeatSelection = () => {
       alert("Please choose the correct number of seats");
     }
   }
+  const formatCreditCard = (e) => {
+    let card = cc_format(e.target.value);
+    setCredirCard(card);
+  };
 
   return (
     <>
@@ -169,20 +185,39 @@ const SeatSelection = () => {
                 <div className="book-flights-form">
                   <input
                     type="tel"
-                    pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
-                    maxLength="14"
                     placeholder="Enter your card number"
+                    value={creditCard}
+                    onChange={(e) => formatCreditCard(e)}
                     required
                   ></input>
-                  <br />
-                  <br />
+                  {error === "credit" ? (
+                    <p style={{ color: "red", fontSize: "0.8rem" }}>
+                      Enter a valid card number
+                    </p>
+                  ) : (
+                    <>
+                      <br />
+                      <br />
+                    </>
+                  )}
+
                   <input
                     type="text"
                     placeholder="Enter your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
                   ></input>
-                  <br />
-                  <br />
+                  {error === "name" ? (
+                    <p style={{ color: "red", fontSize: "0.8rem" }}>
+                      Enter a valid name
+                    </p>
+                  ) : (
+                    <>
+                      <br />
+                      <br />
+                    </>
+                  )}
 
                   <div class="slidecontainer">
                     <input

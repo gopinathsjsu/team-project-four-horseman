@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useForm from "./useForm";
 import { post } from "../../utils/Api";
 import { Redirect, useHistory } from "react-router";
+import { formatPhoneNumber } from "../../utils/Validations";
 
 const SignInForm = () => {
   const [values, handleChange] = useForm({
@@ -33,6 +34,10 @@ const SignInForm = () => {
       console.log(response);
       setError(response.meesage.data.errors.message);
     }
+  };
+  const formatPhoneNum = (e) => {
+    e.target.value = formatPhoneNumber(e.target.value);
+    handleChange(e);
   };
   return (
     <>
@@ -109,11 +114,11 @@ const SignInForm = () => {
               id="phone"
               name="phoneNumber"
               className="signin-textbox"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder="000-000-0000"
+              placeholder="(123) 456 678"
               required
+              maxLength={12}
               value={values.phoneNumber}
-              onChange={handleChange}
+              onChange={(e) => formatPhoneNum(e)}
             ></input>
             <br />
             <br />
