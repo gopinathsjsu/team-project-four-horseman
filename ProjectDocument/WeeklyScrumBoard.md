@@ -229,7 +229,8 @@ Q1. What tasks did I work on / complete?
 Q2. What am I planning to work on next?  
 - Adding Backend API calls to login page
 
-Q3. What tasks are blocked waiting on another team member?
+Q3. What tasks are blocked waiting on another team member? 
+- N/A
 
 #### Pratik
 
