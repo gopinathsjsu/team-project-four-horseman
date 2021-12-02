@@ -33,7 +33,7 @@ const DisplayFlights = () => {
       .then((res) => {
         if (res.status == 404) {
           alert("Flights not found.Please enter a different route");
-          history.replace("/");
+          history.push("/");
         } else {
           return res.json();
         }

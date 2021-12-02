@@ -88,7 +88,7 @@ const SingleFlightDetails = () => {
                 </td>
                 <td>
                   <h3 style={{ fontSize: "1.2rem" }}>
-                    ${flightDetails.price + flightDetails.tax}
+                    ${(flightDetails.price + flightDetails.tax).toFixed(2)}
                   </h3>
                 </td>
               </tr>
