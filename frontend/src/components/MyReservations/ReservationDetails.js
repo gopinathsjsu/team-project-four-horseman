@@ -28,17 +28,24 @@ const FlightDetails = ({ reservations }) => {
   }, []);
 
   return (
-    <div className="booking">
-      <p style={{ fontSize: "3rem" }}>Manage your booking</p>
-      <div className="reservation-header">
-        <p style={{ fontSize: "2rem" }}>
-          {reservations["flight"].fromAirportCode} -{" "}
-          {reservations["flight"].toAirportCode}
-        </p>
-        <p style={{ fontSize: "1.2rem", color: "purple" }}>
-          Departure {depDate}
-        </p>
-        <div className="airline-pnr">
+    <div style={{ padding: "0 15rem 0 15rem" }}>
+      <p style={{ fontSize: "3rem" }}>Trip Details</p>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>
+          <p style={{ fontSize: "2rem" }}>
+            {reservations["flight"].fromAirportCode} -{" "}
+            {reservations["flight"].toAirportCode}
+          </p>
+          <p style={{ fontSize: "1.2rem", color: "purple" }}>
+            Departure {depDate}
+          </p>
+        </div>
+        <div>
           <h1>{reservations["pnr"]}</h1>
           <p>Booking reference</p>
         </div>
@@ -47,49 +54,59 @@ const FlightDetails = ({ reservations }) => {
       <p style={{ fontSize: "1.5rem", color: "purple" }}>
         Flights to be checked
       </p>
-      <div className="flight-details">
-        <p style={{ fontSize: "1.5rem" }}>
-          {}
-          {reservations["flight"].fromAirportCode} -{" "}
-          {reservations["flight"].toAirportCode} on {depDate}
-        </p>
-        <table>
-          <tr>
-            <th style={{ width: "20%" }}>FLIGHT</th>
-            <th>FROM</th>
-            <th>TO</th>
-            <th>PRICE</th>
-          </tr>
-          <tr>
-            <td>
-              <b>{reservations["flight"].flightCode}</b>
-            </td>
-            <td>
-              <b>{depTime}</b>
-              <h4>
-                {" "}
-                {reservations["flight"].fromAirportCity} (
-                {reservations["flight"].fromAirportCode})
-              </h4>
-              <small>{reservations["flight"].fromAirportName}</small>
-            </td>
-            <td>
-              <b>{arrTime}</b>
-              <h4>
-                {reservations["flight"].toAirportCity} (
-                {reservations["flight"].toAirportCode})
-              </h4>
-              <small>{reservations["flight"].toAirportName}</small>
-            </td>
+      <div
+        style={{
+          width: "100%",
+        }}
+      >
+        <div className="flight-details">
+          <p style={{ fontSize: "1.5rem" }}>
+            {}
+            {reservations["flight"].fromAirportCode} -{" "}
+            {reservations["flight"].toAirportCode} on {depDate}
+          </p>
+          <table style={{ margin: "0px", width: "100%" }}>
+            <tr>
+              <th style={{ width: "20%" }}>FLIGHT</th>
+              <th>FROM</th>
+              <th>TO</th>
+              <th>PRICE</th>
+            </tr>
+            <tr>
+              <td>
+                <b>{reservations["flight"].flightCode}</b>
+              </td>
+              <td>
+                <b>{depTime}</b>
+                <h4>
+                  {" "}
+                  {reservations["flight"].fromAirportCity} (
+                  {reservations["flight"].fromAirportCode})
+                </h4>
+                <small>{reservations["flight"].fromAirportName}</small>
+              </td>
+              <td>
+                <b>{arrTime}</b>
+                <h4>
+                  {reservations["flight"].toAirportCity} (
+                  {reservations["flight"].toAirportCode})
+                </h4>
+                <small>{reservations["flight"].toAirportName}</small>
+              </td>
 
-            <td>
-              <h3>{reservations["flight"].price} $</h3>
-            </td>
-          </tr>
-        </table>
+              <td>
+                <h3>{reservations.totalCost.toFixed(2)} $</h3>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div style={{ marginTop: "5%" }}>
-        <table style={{ textAlign: "center" }}>
+      <div
+        style={{
+          width: "100%",
+        }}
+      >
+        <table style={{ textAlign: "center", margin: "0px", width: "100%" }}>
           <tr>
             <th>Passenger Name</th>
             <th>Seat Information</th>

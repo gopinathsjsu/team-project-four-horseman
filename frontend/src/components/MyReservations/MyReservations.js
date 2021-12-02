@@ -7,18 +7,19 @@ const MyReservations = () => {
   const [reservations, setReservations] = useState(null);
   const history = useHistory();
   async function cancelBooking() {
+    const user = localStorage.getItem("user");
     const body = {
-      userId: "94fd9100-4cb5-11ec-a071-2d0812b5f52b",
+      userId: JSON.parse(user).id,
       flight: reservations.flight.id,
       pnr: reservations.pnr,
     };
-    console.log(body);
+    console.log({ body });
     try {
       const response = await axios.post(
         `http://krishnagupta.live:5000/booking/cancel`,
         body
       );
-      if (response.status) {
+      if (response.status === 200) {
         console.log(response.data);
         history.push("/userprofile");
       } else {
@@ -50,16 +51,13 @@ const MyReservations = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {reservations && <ReservationDetails reservations={reservations} />}
 
-      <div className="manage-reservations">
-        <button
-          style={{ marginLeft: "40%", marginTop: "5%" }}
-          onClick={cancelBooking}
-        >
-          Cancel booking
-        </button>
+      <div
+        style={{ display: "flex", justifyContent: "center", margin: "20px" }}
+      >
+        <button onClick={cancelBooking}>Cancel booking</button>
       </div>
     </div>
   );

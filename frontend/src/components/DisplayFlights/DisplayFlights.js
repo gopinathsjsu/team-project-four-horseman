@@ -5,7 +5,7 @@ import { Spinner } from "react-bootstrap";
 
 const DisplayFlights = () => {
   const [flights, setFlights] = useState();
-  console.log(flights ? flights[0] : flights);
+  // console.log(flights ? flights[0] : flights);
   const history = useHistory();
   const [isPending, setisPending] = useState(false);
 
@@ -50,8 +50,8 @@ const DisplayFlights = () => {
   return (
     <>
       {isPending ? (
-        <div>
-          <div style={{ marginLeft: "2rem", marginTop: "3%" }}>
+        <div style={{ background: "#e8effa", height: "100vh" }}>
+          <div style={{ padding: "30px" }}>
             {flights && (
               <h1>
                 Showing flights from {flights[0]?.fromAirportCity} to{" "}
@@ -59,16 +59,28 @@ const DisplayFlights = () => {
               </h1>
             )}
           </div>
-          <div style={{ height: "20rem" }}>
-            {flights && <FlightInformation flights={flights} />}
+          <div>
+            {flights &&
+              flights.map((flight) => {
+                return (
+                  <div style={{ margin: "20px" }}>
+                    {flights && <FlightInformation flights={[flight]} />}
+                  </div>
+                );
+              })}
           </div>
         </div>
       ) : (
-        <Spinner
-          style={{ marginLeft: "45%" }}
-          animation="border"
-          variant="success"
-        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "90vh",
+          }}
+        >
+          <Spinner animation="border" variant="success" />
+        </div>
       )}
     </>
   );

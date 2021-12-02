@@ -21,54 +21,77 @@ const BookFlightsForm = () => {
   return (
     <>
       {isPending ? (
-        <div className="book-flights">
-          <p style={{ fontSize: "3rem" }}>Book Flights</p>
-          <form action="/displayflights" method="get">
+        <>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "90vh",
+              paddingTop: "100px",
+              background: "#e8effa",
+            }}
+          >
             <div
               className="book-flights-form"
-              style={{ fontSize: "2rem", color: "purple" }}
+              style={{ fontSize: "2rem", color: "purple", textAlign: "center" }}
             >
               Where would you like to go?
             </div>
-            <div className="book-flights-form">
-              <span>From</span>
-              {airportList && (
-                <AirportList value={airportList} title="departure-airport" />
-              )}
-            </div>
-            <br />
-            <div className="book-flights-form">
-              <span>To</span>
-              <br />
-              {airportList && (
-                <AirportList value={airportList} title="arrival-airport" />
-              )}
-            </div>
-            <div className="date-form">
-              <label htmlFor="trip-start">Departure</label>
-              <br />
-              <input
-                type="date"
-                id="trip-start"
-                name="trip-start"
-                required
-              ></input>
-            </div>
-
-            <button
-              className="search-flights-button"
-              style={{ marginRight: "50rem" }}
-            >
-              Search Flights
-            </button>
-          </form>
-        </div>
+            <form action="/displayflights" method="get">
+              <div
+                style={{
+                  display: "flex",
+                  width: "100vw",
+                  justifyContent: "center",
+                }}
+              >
+                <div className="book-flights-form">
+                  <span>From</span>
+                  {airportList && (
+                    <AirportList
+                      value={airportList}
+                      title="departure-airport"
+                    />
+                  )}
+                </div>
+                <br />
+                <div className="book-flights-form">
+                  <span>To</span>
+                  <br />
+                  {airportList && (
+                    <AirportList value={airportList} title="arrival-airport" />
+                  )}
+                </div>
+                <div className="date-form">
+                  <label htmlFor="trip-start">Departure</label>
+                  <br />
+                  <input
+                    type="date"
+                    id="trip-start"
+                    name="trip-start"
+                    required
+                  ></input>
+                </div>
+                <div className="date-form">
+                  <button className="search-flights-button">
+                    Search Flights
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </>
       ) : (
-        <Spinner
-          style={{ marginLeft: "45%" }}
-          animation="border"
-          variant="success"
-        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "90vh",
+          }}
+        >
+          <Spinner animation="border" variant="success" />
+        </div>
       )}
     </>
   );

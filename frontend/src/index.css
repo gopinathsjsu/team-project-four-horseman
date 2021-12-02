@@ -109,6 +109,15 @@ button {
   height: 2.5rem;
 }
 
+.booking-id-input {
+  margin-top: 3.5%;
+  width: 15rem;
+  padding: 10px;
+  height: 2.5rem;
+  margin-left: 2%;
+  /* margin-top: 2%; */
+}
+
 .date-form input {
   height: 2.5rem;
 }
@@ -117,12 +126,12 @@ button {
   background-color: rgb(19, 0, 128);
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 10px;
   text-decoration: none;
   margin-left: 3%;
   cursor: pointer;
   margin-top: 3.5%;
-  width: 20rem;
+  width: 15rem;
 }
 
 .trip-type {

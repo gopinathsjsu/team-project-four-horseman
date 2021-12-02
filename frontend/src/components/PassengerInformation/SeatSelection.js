@@ -16,7 +16,7 @@ const SeatSelection = () => {
   const [showSeatSelection, setShowSeatSelection] = useState(false);
   const [rows, setRows] = useState([]);
   const [seatsSelected, setSeatsSelected] = useState([]);
-  const [miles, setMiles] = useState(50);
+  const [miles, setMiles] = useState(0);
   const travellersTracker = [];
   const history = useHistory();
 
@@ -359,14 +359,18 @@ const SeatSelection = () => {
           </Row>
         </div>
       ) : (
-        <Spinner
-          style={{ marginLeft: "45%" }}
-          animation="border"
-          variant="success"
-        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "90vh",
+          }}
+        >
+          <Spinner animation="border" variant="success" />
+        </div>
       )}
     </>
-    //</div>
   );
 };
 

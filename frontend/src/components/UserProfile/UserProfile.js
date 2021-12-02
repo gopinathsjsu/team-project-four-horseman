@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import useForm from "./useForm";
 import { Redirect, useHistory } from "react-router";
-import { Accordion, Col, Row, Spinner } from "react-bootstrap";
+import { Accordion, Card, Col, Row, Spinner } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import Button from "@restart/ui/esm/Button";
+import moment from "moment";
 
 const UserProfile = (props) => {
   const [userDetails, setUserDetails] = useState();
@@ -49,11 +50,9 @@ const UserProfile = (props) => {
             }}
           >
             <h3 style={{ margin: "20px" }}>
-              Welcome Onboard,{" "}
               <em>
-                {userDetails.firstName} {userDetails.lastName}
+                Welcome Onboard, {userDetails.firstName} {userDetails.lastName}
               </em>
-              . Happy flying!
             </h3>
           </div>
           {/* <hr style={{ margin: "0px" }} /> */}
@@ -73,7 +72,10 @@ const UserProfile = (props) => {
               }}
             >
               <Row className="miles-card" style={{ padding: "45px" }}>
-                <h4>FH Miles Member</h4>
+                <h4>
+                  <em>fh</em> Miles Member
+                </h4>
+
                 <div style={{ paddingTop: "45px" }}>
                   <h4>
                     <em>{userDetails.miles}</em>
@@ -105,73 +107,83 @@ const UserProfile = (props) => {
               }}
             >
               <Row className="user-bookings-card">
-                <h4>Recent Trips</h4>
-                {userBookings === null || userBookings === undefined ? (
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <h4>Trip & Miles History</h4>
+                </div>
+                {userBookings === null ||
+                userBookings === undefined ||
+                userBookings.length === 0 ? (
                   <div style={{ textAlign: "center", padding: "30px" }}>
+                    {console.log({ userBookings })}
                     You have not booked any flights yet.
                   </div>
                 ) : (
                   <>
-                    <Accordion>
+                    <div>
+                      {console.log({ userBookings })}
                       {userBookings.map((item, index) => {
                         return (
-                          <Accordion.Item eventKey={index} key={index}>
-                            <Accordion.Header>
-                              PNR : {item.pnr}
-                            </Accordion.Header>
-                            <Accordion.Body>
-                              Paid : ${item.totalCost},
-                              <br />
-                              <div style={{ color: "#fb6219" }}>
-                                Miles Used: {item.milesUsed}
+                          <Card>
+                            <Card.Header>
+                              <em>{`Booking Id. ${item.pnr}`}</em>
+                            </Card.Header>
+                            <Card.Body
+                              style={{
+                                display: "flex",
+                                flexDirection: "row",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <div>
+                                <div>
+                                  <Button
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      history.push(`/booking/?pnr=${item.pnr}`);
+                                    }}
+                                    style={{
+                                      backgroundColor: "white",
+                                      color: "blue",
+                                      padding: "5px",
+                                      margin: "0",
+                                      textDecoration: "underline",
+                                    }}
+                                  >
+                                    <em>More Info</em>
+                                  </Button>
+                                </div>
                               </div>
-                              <div style={{ color: "green" }}>
-                                Miles Earned: {item.milesEarned}
+                              <div>
+                                <div
+                                  style={{ color: "green", textAlign: "right" }}
+                                >{`+ ${item.milesEarned} miles`}</div>
+                                <div
+                                  style={{ color: "red", textAlign: "right" }}
+                                >{`- ${item.milesUsed} miles`}</div>
                               </div>
-                              Booked on: {item.createdAt}
-                              <br />
-                              <Button
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  history.push(`/booking/?pnr=${item.pnr}`);
-                                }}
-                              >
-                                Details
-                              </Button>
-                            </Accordion.Body>
-                          </Accordion.Item>
+                            </Card.Body>
+                          </Card>
                         );
                       })}
-                    </Accordion>
+                    </div>
                   </>
                 )}
               </Row>
             </Col>
-
-            {/* {userBookings ? (
-              <>
-                
-              </>
-            ) : (
-              <div></div>
-            )} */}
           </Row>
         </>
       ) : (
         <div
           style={{
-            height: "200px",
             display: "flex",
-            flexDirection: "column",
             justifyContent: "center",
-            alignContent: "center",
+            alignItems: "center",
+            height: "90vh",
           }}
         >
-          <Spinner
-            style={{ marginLeft: "45%" }}
-            animation="border"
-            variant="success"
-          />
+          <Spinner animation="border" variant="success" />
         </div>
       )}
     </>

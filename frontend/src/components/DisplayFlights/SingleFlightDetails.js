@@ -118,11 +118,16 @@ const SingleFlightDetails = () => {
           </div> */}
         </div>
       ) : (
-        <Spinner
-          style={{ marginLeft: "45%" }}
-          animation="border"
-          variant="success"
-        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "90vh",
+          }}
+        >
+          <Spinner animation="border" variant="success" />
+        </div>
       )}
     </>
   );

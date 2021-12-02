@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const DisplayFlights = ({ flights }) => {
@@ -33,44 +34,51 @@ const DisplayFlights = ({ flights }) => {
   }, []);
 
   return (
-    <div className="flight-display-holder" style={{ marginTop: "5%" }}>
+    <div>
       <Link
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", color: "black" }}
         to={`/displayflights/${flights[0]?.id}`}
       >
-        <div className="flight-details-single">
-          <div className="flight-details-departing-airport">
-            <span>{depTime}</span>
-            <br />
-            <br />
-
-            <span>{flights[0]?.fromAirportCode}</span>
-            <br />
-            <br />
-            <span>{flights[0]?.fromAirportCity}</span>
-            <br />
-          </div>
-          <div
-            className="flight-details-connecting-line"
-            style={{ marginTop: "3rem" }}
+        <Card>
+          <Card.Header
+            style={{ display: "flex", justifyContent: "space-around" }}
           >
-            <small>────────────────────────────────</small>
-          </div>
-          <div
-            className="flight-details-arrival-airport"
-            style={{ marginTop: "-12%" }}
-          >
-            <span>{arrTime}</span>
-            <br />
-            <br />
-
-            <span>{flights[0]?.toAirportCode}</span>
-            <br />
-            <br />
-            <span>{flights[0]?.toAirportCity}</span>
-            <br />
-          </div>
-        </div>
+            <div name="from">
+              <h5>{flights[0]?.fromAirportCode}</h5>
+              <h6>{flights[0]?.fromAirportCity}</h6>
+              <br />
+              <span>{depDate}</span>
+              <br />
+              <span>{depTime}</span>
+              <br />
+            </div>
+            <div
+              name="line"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <h6 style={{ letterSpacing: "3px" }}>
+                  {flights[0]?.flightCode}
+                </h6>
+              </div>
+              <small>──────────────────────────────────────────────</small>
+            </div>
+            <div name="to">
+              <h5>{flights[0]?.toAirportCode}</h5>
+              <h6>{flights[0]?.toAirportCity}</h6>
+              <br />
+              <span>{arrDate}</span>
+              <br />
+              <span>{arrTime}</span>
+              <br />
+            </div>
+          </Card.Header>
+        </Card>
       </Link>
     </div>
   );

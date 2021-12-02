@@ -52,6 +52,7 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/reservations">Find Booking</Nav.Link>
             {userDetails && <Nav.Link href="/userprofile">Profile</Nav.Link>}
           </Nav>
           <Form className="d-flex">

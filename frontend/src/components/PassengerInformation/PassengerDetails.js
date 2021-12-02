@@ -59,13 +59,11 @@ const PassengerDetails = () => {
   return (
     <div className="single-flight-details" style={{ marginTop: "5%" }}>
       <h1>Enter your travel information</h1>
-      <h3 style={{ color: "red" }}>
-        You can select upto 3 passengers in a single booking!
-      </h3>
+
       {inputList.map((x, i) => {
         return (
           <div className="book-flights-form">
-            Passenger Info: <br />
+            Passenger Name: <br />
             <br />
             <input
               name="firstName"
