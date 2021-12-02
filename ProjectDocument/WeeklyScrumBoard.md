@@ -308,7 +308,14 @@ Q3. What tasks are blocked waiting on another team member?
 #### Unmesh
 
 Q1. What tasks did I work on / complete?  
+- New user to database method added
+- User Profile Page added
+- Details from existing user bookings added for user profile
+
 Q2. What am I planning to work on next? 
+- Testing web pages routing
+- Additional design changes to all the pages
+- Navigation bar design
 
 Q3. What tasks are blocked waiting on another team member? 
  - N/A
