@@ -83,7 +83,14 @@ const UserProfile = (props) => {
                   <Accordion.Item eventKey={index} key={index}>
                     <Accordion.Header>PNR : {item.pnr}</Accordion.Header>
                     <Accordion.Body>
-                      Paid : ${item.totalCost}, Miles Used: {item.milesUsed},
+                      Paid : ${item.totalCost},
+                      <br />
+                      <div style={{ color: "#fb6219" }}>
+                        Miles Used: {item.milesUsed}
+                      </div>
+                      <div style={{ color: "green" }}>
+                        Miles Earned: {item.milesEarned}
+                      </div>
                       Booked on: {item.createdAt}
                       <br />
                       <Button
