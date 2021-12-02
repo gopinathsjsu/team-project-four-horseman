@@ -32,11 +32,11 @@ const BookFlightsForm = () => {
             </div>
             <div className="book-flights-form">
               <span>From</span>
-              <br />
               {airportList && (
                 <AirportList value={airportList} title="departure-airport" />
               )}
             </div>
+            <br />
             <div className="book-flights-form">
               <span>To</span>
               <br />
