@@ -1,18 +1,19 @@
-import React from 'react'
-import Footer from './Footer'
-import Header from './Footer'
-import NavigationBar from './NavigationBar'
-import PersonalInfo from './PersonalInfo'
+import React from "react";
+import { Col, Row } from "react-bootstrap";
+import Footer from "./Footer";
+import PersonalInfo from "./PersonalInfo";
 const Login = () => {
-    return (
-        <div>
-            <NavigationBar/>
-            <PersonalInfo />
-            <br/>
-            <br/>
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Row>
+        <Col xs={6}>
+          <Footer />
+          <PersonalInfo />
+        </Col>
+        <Col></Col>
+      </Row>
+    </div>
+  );
+};
 
-export default Login
+export default Login;

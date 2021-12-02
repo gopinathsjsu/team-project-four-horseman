@@ -1,12 +1,18 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import Header from "./Header";
-import NavigationBar from "./NavigationBar";
 import PersonalInfo from "./PersonalInfo";
 const Register = () => {
   return (
     <div>
-      <Header />
-      <PersonalInfo />
+      <Row style={{ marginRight: "0" }}>
+        <Col xs={6} style={{ paddingRight: "0" }}>
+          <Header />
+        </Col>
+        <Col style={{ paddingLeft: "0", paddingRight: "0" }}>
+          <PersonalInfo />
+        </Col>
+      </Row>
     </div>
   );
 };
