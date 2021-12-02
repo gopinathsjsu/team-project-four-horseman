@@ -17,7 +17,7 @@ function NavBar() {
       ) {
         setUserDetails(JSON.parse(user));
       }
-    }, 1000);
+    }, 500);
   }, []);
 
   const logoutClicked = (e) => {
