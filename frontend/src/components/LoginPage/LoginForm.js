@@ -43,11 +43,14 @@ const LoginForm = () => {
           }}
         />
       ) : (
-        <div className="login">
+        <div
+          className="login"
+          style={{ display: "flex", justifyContent: "flex-start" }}
+        >
           <form action="2.js" method="get">
-            <h1>Login</h1>
+            {/* <h1>Login</h1> */}
 
-            <h3>Enter email</h3>
+            <h4>Enter email</h4>
             <input
               type="email"
               name="email"
@@ -57,8 +60,12 @@ const LoginForm = () => {
               onChange={handleChange}
               required
             ></input>
-
-            <h3>Enter your password</h3>
+            <div
+              style={{
+                height: "20px",
+              }}
+            ></div>
+            <h4>Enter your password</h4>
             <input
               type="password"
               required
@@ -69,15 +76,17 @@ const LoginForm = () => {
               onChange={handleChange}
             ></input>
             <br />
-            <br />
-            <input
-              onClick={(e) => checkLoginDetails(e)}
-              type="submit"
-              className="signin-submit-button"
-            ></input>
+            <div>
+              <input
+                onClick={(e) => checkLoginDetails(e)}
+                type="submit"
+                className="signin-submit-button"
+                value="Login"
+              ></input>
+              <button onClick={(e) => goToRegister(e)}>Sign Up</button>
+            </div>
           </form>
           {error !== "" && <p className="#error">{error}</p>}
-          <button onClick={(e) => goToRegister(e)}>Sign Up</button>
         </div>
       )}
     </>

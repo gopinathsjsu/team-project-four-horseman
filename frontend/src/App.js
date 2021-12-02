@@ -7,9 +7,10 @@ import DisplayFlights from "./components/DisplayFlights/DisplayFlights";
 import UserProfile from "./components/UserProfile/UserProfile";
 import LoginPage from "./components/LoginPage/Login";
 import SingleFlightDetails from "./components/DisplayFlights/SingleFlightDetails";
-import NavigationBar from "./components/RegisterPage/NavigationBar";
+import NavigationBar from "./components/NavigationBar";
 import PassengerDetails from "./components/PassengerInformation/PassengerDetails";
 import SeatSelection from "./components/PassengerInformation/SeatSelection";
+import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (

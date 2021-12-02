@@ -1,12 +1,12 @@
-import React from 'react'
-import SignInForm from './SignInForm'
+import React from "react";
+import SignInForm from "./SignInForm";
 
 const PersonalInfo = () => {
-    return (
-        <div className='personal-info'>
-            
-            <SignInForm />
-        </div>
-    )}
+  return (
+    <div>
+      <SignInForm />
+    </div>
+  );
+};
 
-export default PersonalInfo
+export default PersonalInfo;

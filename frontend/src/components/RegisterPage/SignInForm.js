@@ -7,12 +7,12 @@ const SignInForm = () => {
   const [values, handleChange] = useForm({
     firstName: "",
     lastName: "",
-    phoneNumber: 0,
+    phoneNumber: "",
     email: "",
     password: "",
     address: "",
     city: "",
-    zip: 0,
+    zip: "",
     state: "",
     country: "",
     role: "user",
@@ -36,47 +36,70 @@ const SignInForm = () => {
   };
   return (
     <div className="signin">
-      <form action="2.js" method="get">
+      <form action="2.js" onSubmit={registerUser}>
         <h1>Personal Information</h1>
         <p>
           Your name, date of birth and gender should match the government-issued
           ID that you show at the airport.
         </p>
-        <h3>First Name</h3>
-        <input
-          type="text"
-          className="signin-textbox"
-          maxLength="15"
-          name="firstName"
-          value={values.firstName}
-          onChange={handleChange}
-          required
-        ></input>
-
-        <h3>Last Name</h3>
-        <input
-          type="text"
-          maxLength="15"
-          className="signin-textbox"
-          name="lastName"
-          value={values.lastName}
-          onChange={handleChange}
-          required
-        ></input>
-
-        <h3>Enter email</h3>
-        <input
-          type="email"
-          name="email"
-          className="signin-textbox"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-          value={values.email}
-          onChange={handleChange}
-          required
-        ></input>
-
-        <h3>Enter your phone number</h3>
-
+        <div style={{ display: "flex" }}>
+          <div>
+            <h5>First Name *</h5>
+            <input
+              type="text"
+              className="signin-textbox"
+              maxLength="15"
+              name="firstName"
+              value={values.firstName}
+              onChange={handleChange}
+              required
+              autoFocus
+            ></input>
+          </div>
+          <div>
+            <h5>Last Name *</h5>
+            <input
+              type="text"
+              maxLength="15"
+              className="signin-textbox"
+              name="lastName"
+              value={values.lastName}
+              onChange={handleChange}
+              required
+            ></input>
+          </div>
+        </div>
+        <br />
+        <div style={{ display: "flex" }}>
+          <div>
+            <h5>Enter Email *</h5>
+            <input
+              type="email"
+              name="email"
+              className="signin-textbox"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              value={values.email}
+              onChange={handleChange}
+              required
+            ></input>
+          </div>
+          <div>
+            <h5>Enter Password *</h5>
+            <input
+              type="password"
+              required
+              name="password"
+              className="signin-textbox"
+              minLength="8"
+              value={values.password}
+              onChange={handleChange}
+              value={values.password}
+              onChange={handleChange}
+            ></input>
+          </div>
+        </div>
+        <br />
+        <h5>Enter Phone Number *</h5>
         <input
           type="tel"
           id="phone"
@@ -88,69 +111,60 @@ const SignInForm = () => {
           value={values.phoneNumber}
           onChange={handleChange}
         ></input>
-
-        <h3>Enter your address</h3>
-        <small>Street</small>
         <br />
         <br />
-        <input
-          name="address"
-          type="text"
-          className="signin-textbox"
-          required
-          value={values.address}
-          onChange={handleChange}
-        ></input>
+        <h5>Enter Your Address</h5>
+        <div style={{ display: "flex" }}>
+          <div>
+            <h6>Street *</h6>
+            <input
+              name="address"
+              type="text"
+              className="signin-textbox"
+              required
+              value={values.address}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div>
+            <h6>City *</h6>
+            <input
+              name="city"
+              type="text"
+              className="signin-textbox"
+              required
+              value={values.city}
+              onChange={handleChange}
+            ></input>
+          </div>
+        </div>
         <br />
-
+        <div style={{ display: "flex" }}>
+          <div>
+            <h6>State *</h6>
+            <input
+              name="state"
+              type="text"
+              className="signin-textbox"
+              required
+              value={values.state}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div>
+            <h6>Country *</h6>
+            <input
+              type="text"
+              name="country"
+              className="signin-textbox"
+              required
+              value={values.country}
+              onChange={handleChange}
+            ></input>
+          </div>
+        </div>
         <br />
-
-        <small>City</small>
-        <br />
-        <br />
-
-        <input
-          name="city"
-          type="text"
-          className="signin-textbox"
-          required
-          value={values.city}
-          onChange={handleChange}
-        ></input>
-        <br />
-
-        <small> State</small>
-        <br />
-        <br />
-
-        <input
-          name="state"
-          type="text"
-          className="signin-textbox"
-          required
-          value={values.state}
-          onChange={handleChange}
-        ></input>
-        <br />
-
-        <small>Country</small>
-        <br />
-        <br />
-
-        <input
-          type="text"
-          name="country"
-          className="signin-textbox"
-          required
-          value={values.country}
-          onChange={handleChange}
-        ></input>
-        <br />
-
-        <small>ZipCode</small>
-        <br />
-        <br />
-
+        <h6>ZipCode *</h6>
         <input
           type="tel"
           className="signin-textbox"
@@ -161,31 +175,18 @@ const SignInForm = () => {
           value={values.zip}
           onChange={handleChange}
         ></input>
-
-        <h3>Enter your password</h3>
+        <br />
+        <br />
         <input
-          type="password"
+          type="checkbox"
+          id="miles"
+          name="miles"
+          style={{ marginRight: "10px" }}
           required
-          name="password"
-          className="signin-textbox"
-          minLength="8"
-          value={values.password}
-          onChange={handleChange}
-          value={values.password}
-          onChange={handleChange}
         ></input>
-        <br />
-        <br />
-        <input type="checkbox" id="miles" name="miles"></input>
         <label htmlFor="miles">Subscribe to MileagePlus® account</label>
         <br />
-        <input
-          type="submit"
-          className="signin-submit-button"
-          onClick={registerUser}
-        ></input>
-
-        <button className="signin-cancel-button">Cancel changes</button>
+        <input type="submit" className="signin-submit-button"></input>
       </form>
     </div>
   );
