@@ -1,13 +1,13 @@
 const { sequelize } = require("../models/index");
 const { QueryTypes } = require("sequelize");
-
+const moment = require("moment-timezone");
 const getFlights = async (from, to, deptTime) => {
   try {
     const flightsData = await sequelize.query(
       `
       SELECT flights.id, flights.flightCode,flights.deptTime, flights.arrTime, flights.price, 
-      airportFrom.airportCode AS fromAirportCode, airportFrom.name AS fromAirportName, airportFrom.city AS fromAirportCity, 
-      airportTo.airportCode AS toAirportCode, airportTo.name AS toAirportName, airportTo.city AS toAirportCity 
+      airportFrom.airportCode AS fromAirportCode, airportFrom.name AS fromAirportName, airportFrom.city AS fromAirportCity, airportFrom.tz AS fromAirportTz,
+      airportTo.airportCode AS toAirportCode, airportTo.name AS toAirportName, airportTo.city AS toAirportCity, airportTo.tz AS toAirportTz 
       FROM flights 
       JOIN airports AS airportFrom ON flights.from = airportFrom.id 
       JOIN airports AS airportTo ON flights.to = airportTo.id 
@@ -16,8 +16,15 @@ const getFlights = async (from, to, deptTime) => {
     );
     if (flightsData !== undefined && flightsData !== null) {
       let flight = JSON.parse(JSON.stringify(flightsData));
+      console.log(flight);
       flight = flight.filter((item) => {
-        return deptTime === item.deptTime.toString().split("T")[0];
+        return (
+          deptTime ===
+          moment
+            .tz(item.deptTime, item.fromAirportTz)
+            .format("YYYY-MM-DD[T]HH:mm:ss")
+            .split("T")[0]
+        );
       });
       if (flight.length > 0) {
         return {
