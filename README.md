@@ -71,7 +71,7 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 
 ![image](https://user-images.githubusercontent.com/20012695/144534107-962618a3-620c-42ba-9d77-3bb8de522966.png)
 
-##Cloudwatch - Packets In/Out & CPU Utilisation
+## Cloudwatch - Packets In/Out & CPU Utilisation
 
 ![image](https://user-images.githubusercontent.com/20012695/144534398-37ec9dae-f954-4701-82d3-95694f82bb3b.png)
 
