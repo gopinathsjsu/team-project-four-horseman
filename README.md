@@ -54,7 +54,7 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 
 
 # TaskSheet & Burndown Charts
-
+https://docs.google.com/spreadsheets/d/1pYSIBtUeA8Ueq5ykEHDkq2VwjKff7XyjJz8N37T0f28/edit?usp=sharing
 
 
 # Project Diagrams:
@@ -69,4 +69,9 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 ## Deployment Diagram
 ![dig](https://user-images.githubusercontent.com/20245964/144387343-820a04b5-3844-47ee-9a20-f5d3ed9d43a9.png)
 
+![image](https://user-images.githubusercontent.com/20012695/144534107-962618a3-620c-42ba-9d77-3bb8de522966.png)
+
+## Cloudwatch - Packets In/Out & CPU Utilisation
+
+![image](https://user-images.githubusercontent.com/20012695/144534398-37ec9dae-f954-4701-82d3-95694f82bb3b.png)
 
