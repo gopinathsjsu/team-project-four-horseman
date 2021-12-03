@@ -192,10 +192,10 @@ Q1. What tasks did I work on / complete?
  - Completed Search Flights Page UI, Flight Details page UI
  
 Q2. What am I planning to work on next?  
- - Setup a fake json server to input data from the fake database into the components.
+ - Setup a fake json server to test data.
  
 Q3. What tasks are blocked waiting on another team member?
- - N/A
+ - Waiting for backend API endpoints.
 
 ## Week 5:
 
@@ -235,8 +235,13 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
+- Completed Find Reservations and Manage Reservations UI as well as setting up react hooks for  bringing data in from the server.
+
 Q2. What am I planning to work on next?  
+- UI and setting up react hooks for Book flights/Display Flights/Display airports
+
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 ## Week 6:
 
@@ -279,8 +284,13 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
+- Develop Flight details UI , UI and setting up API calls for Book flights/Display Flights/Display airports
+
 Q2. What am I planning to work on next?  
+-  Develop UI of passenger Info, Seat Selection and implementing post API calls for Cancel Booking, GET calls for displaying all flights and displaying details of a single flight.
+
 Q3. What tasks are blocked waiting on another team member?
+- N/A
 
 ## Week 7:
 
@@ -324,7 +334,11 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
+- Develop UI of passenger Info, Seat Selection and implementing post API calls for Cancel Booking, GET calls for displaying all flights and displaying details of a single flight.
+
 Q2. What am I planning to work on next?  
+- POST API calls for Booking reservations and UI changes.
+
 Q3. What tasks are blocked waiting on another team member?
 
 ## Week 8:
@@ -334,7 +348,7 @@ Q3. What tasks are blocked waiting on another team member?
 #### Krishna
 
 Q1. What tasks did I work on / complete?  
-- Complete manual functional testind
+- Complete manual functional testing
 Q2. What am I planning to work on next?  
 - N/A
 Q3. What tasks are blocked waiting on another team member?
@@ -364,5 +378,10 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete?  
+- POST API calls for Booking reservations and UI changes.
+
 Q2. What am I planning to work on next?  
+-N/A
+
 Q3. What tasks are blocked waiting on another team member?
+-N/A
