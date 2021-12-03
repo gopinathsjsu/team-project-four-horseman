@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const history = useHistory();
   async function cancelBooking() {
     const user = localStorage.getItem("user");
@@ -34,6 +35,10 @@ const MyReservations = () => {
     }
   }
   useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user !== null && user !== undefined) {
+      setIsLoggedIn(true);
+    }
     const queryParams = new URLSearchParams(window.location.search);
     const pnr = queryParams.get("pnr");
     const params = pnr;
@@ -54,7 +59,7 @@ const MyReservations = () => {
     <div style={{ display: "flex", flexDirection: "column" }}>
       {reservations && <ReservationDetails reservations={reservations} />}
 
-      {reservations?.status === "ACTIVE" && (
+      {isLoggedIn && reservations?.status === "ACTIVE" && (
         <div
           style={{ display: "flex", justifyContent: "center", margin: "20px" }}
         >
