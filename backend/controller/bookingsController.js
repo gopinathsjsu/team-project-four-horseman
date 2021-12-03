@@ -82,6 +82,7 @@ const getBookingByUserId = async (userId) => {
   try {
     const bookingsResponse = await bookings.findAll({
       where: { user: userId },
+      order: [["createdAt", "DESC"]],
     });
     if (bookingsResponse) {
       return {
