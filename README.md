@@ -60,6 +60,7 @@ https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocu
 # Project Diagrams:
 
 ## UI wireframes
+https://github.com/gopinathsjsu/team-project-four-horseman/blob/main/ProjectDocument/UI%20Wireframes.pdf
 
 ## Architecture Diagram
 ![202-diagram](https://user-images.githubusercontent.com/20012695/144321490-f5f3709d-1f77-4a80-884d-f1bf5afbedad.jpg)
