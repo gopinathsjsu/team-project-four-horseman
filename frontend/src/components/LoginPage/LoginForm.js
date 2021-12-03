@@ -24,7 +24,7 @@ const LoginForm = () => {
       history.go(-1);
     } else {
       console.log(response);
-      setError(response.message.data.errors.message);
+      setError(response.meesage.data.errors.message);
     }
   };
 
