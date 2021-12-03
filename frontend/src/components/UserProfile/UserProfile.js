@@ -112,10 +112,31 @@ const UserProfile = (props) => {
                     <div>
                       {console.log({ userBookings })}
                       {userBookings.map((item, index) => {
+                        const isActive = item?.status !== "ACTIVE";
                         return (
                           <Card>
                             <Card.Header>
-                              <em>{`Booking Id. ${item.pnr}`}</em>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  flexDirection: "row",
+                                  justifyContent: "space-between",
+                                }}
+                              >
+                                <em>{`Booking Id. ${item.pnr}`}</em>
+                                {isActive && (
+                                  <p
+                                    style={{
+                                      margin: 0,
+                                      color: "red",
+                                      fontSize: "0.7rem",
+                                      fontWeight: "bold",
+                                    }}
+                                  >
+                                    CANCELLED
+                                  </p>
+                                )}
+                              </div>
                             </Card.Header>
                             <Card.Body
                               style={{
@@ -145,10 +166,22 @@ const UserProfile = (props) => {
                               </div>
                               <div>
                                 <div
-                                  style={{ color: "green", textAlign: "right" }}
+                                  style={{
+                                    color: "green",
+                                    textAlign: "right",
+                                    textDecoration: isActive
+                                      ? "line-through"
+                                      : "",
+                                  }}
                                 >{`+ ${item.milesEarned} miles`}</div>
                                 <div
-                                  style={{ color: "red", textAlign: "right" }}
+                                  style={{
+                                    color: "red",
+                                    textAlign: "right",
+                                    textDecoration: isActive
+                                      ? "line-through"
+                                      : "",
+                                  }}
                                 >{`- ${item.milesUsed} miles`}</div>
                               </div>
                             </Card.Body>

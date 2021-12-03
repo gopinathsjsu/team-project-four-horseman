@@ -1,11 +1,16 @@
 import React from "react";
 const AirportList = ({ value, title }) => {
   const arr = value[Object.keys(value)[0]];
-  console.log(arr);
+  // console.log(arr);
   return (
     <div>
-      <select className="selectList" name={title} required>
-        <option disabled selected>
+      <select
+        className="selectList"
+        name={title}
+        defaultValue="--Select city--"
+        required
+      >
+        <option disabled value="--Select city--">
           --Select city--
         </option>
         {arr.map((list) => (

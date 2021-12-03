@@ -48,6 +48,14 @@ const FlightDetails = ({ reservations }) => {
         <div>
           <h1>{reservations["pnr"]}</h1>
           <p>Booking reference</p>
+          {reservations.status === "CANCELLED" && (
+            <p
+              className="display-6"
+              style={{ color: "red", fontSize: "1.2rem", fontWeight: "bold" }}
+            >
+              CANCELLED
+            </p>
+          )}
         </div>
       </div>
       <p style={{ fontSize: "2rem", marginTop: "2%" }}>Travel Information</p>

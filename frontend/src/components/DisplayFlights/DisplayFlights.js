@@ -62,9 +62,9 @@ const DisplayFlights = () => {
           </div>
           <div>
             {flights &&
-              flights.map((flight) => {
+              flights.map((flight, index) => {
                 return (
-                  <div style={{ margin: "20px" }}>
+                  <div style={{ margin: "20px" }} key={index}>
                     {flights && <FlightInformation flights={[flight]} />}
                   </div>
                 );

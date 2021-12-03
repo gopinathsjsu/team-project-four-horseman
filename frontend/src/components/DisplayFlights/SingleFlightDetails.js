@@ -96,7 +96,7 @@ const SingleFlightDetails = () => {
           </div>
 
           <div className="manage-reservations" style={{ marginTop: "3%" }}>
-            <Link to="/displayflights">
+            <Link to="/">
               <button id="cancel-search-button" style={{ marginLeft: "27%" }}>
                 Cancel search
               </button>

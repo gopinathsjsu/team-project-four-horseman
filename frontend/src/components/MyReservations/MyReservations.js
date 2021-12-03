@@ -54,11 +54,13 @@ const MyReservations = () => {
     <div style={{ display: "flex", flexDirection: "column" }}>
       {reservations && <ReservationDetails reservations={reservations} />}
 
-      <div
-        style={{ display: "flex", justifyContent: "center", margin: "20px" }}
-      >
-        <button onClick={cancelBooking}>Cancel booking</button>
-      </div>
+      {reservations?.status === "ACTIVE" && (
+        <div
+          style={{ display: "flex", justifyContent: "center", margin: "20px" }}
+        >
+          <button onClick={cancelBooking}>Cancel booking</button>
+        </div>
+      )}
     </div>
   );
 };
