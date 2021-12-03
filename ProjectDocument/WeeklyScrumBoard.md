@@ -46,7 +46,7 @@ Q1. What tasks did I work on / complete?
  - Researched about the technologies that we are going to use in the project.  
 
 Q2. What am I planning to work on next?  
- - Research about AWS hosting services.
+ - Plan UI wireframes (basic workflow of the website)
  
 Q3. What tasks are blocked waiting on another team member?
  - N/A
@@ -93,8 +93,8 @@ Q3. What tasks are blocked waiting on another team member?
 #### Pratik
 
 Q1. What tasks did I work on / complete? 
- - Research about AWS hosting services
- 
+-Plan UI wireframes (basic workflow of the website)
+
 Q2. What am I planning to work on next?  
  - Implementing the Signin Page(UI) and React API endpoints.
  
