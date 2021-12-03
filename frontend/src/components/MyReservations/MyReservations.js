@@ -22,6 +22,19 @@ const MyReservations = () => {
       );
       if (response.status === 200) {
         console.log(response.data);
+        try {
+          const res = await axios.get(
+            `http://krishnagupta.live:5000/user/profile/${JSON.parse(user).id}`
+          );
+          console.log(res);
+          if (res.status) {
+            localStorage.setItem("user", JSON.stringify(res.data.user));
+          } else {
+            console.log(res);
+          }
+        } catch (error) {
+          console.log(error.toString());
+        }
         history.push("/userprofile");
       } else {
         console.log(response.data.message);
