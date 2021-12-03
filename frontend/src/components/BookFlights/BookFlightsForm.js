@@ -69,6 +69,7 @@ const BookFlightsForm = () => {
                     type="date"
                     id="trip-start"
                     name="trip-start"
+                    min={new Date().toISOString().split("T")[0]}
                     required
                   ></input>
                 </div>
